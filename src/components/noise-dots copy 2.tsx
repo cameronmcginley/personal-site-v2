@@ -82,13 +82,13 @@ function generatePerlinNoise(width, height, scale = 1, callback) {
   };
 }
 
-export function NoiseDots({ children }) {
+export function NoiseDots() {
   const canvasRef = useRef(null);
   const [noiseData, setNoiseData] = useState(null);
   const [animStarted, setAnimStarted] = useState(false);
 
   const gridSpacing = 24;
-  const dotSize = 4;
+  const dotSize = 16;
   let noiseOffsetX = 0;
   let noiseOffsetY = 0;
   let minAlpha = 0;
@@ -102,21 +102,22 @@ export function NoiseDots({ children }) {
   const scale = 1; // Set your desired scale
 
   useEffect(() => {
+    // const noise = generatePerlinNoise(width, height, scale);
+    // setNoiseData(noise);
+
+    // Print size of noise array
+    // console.log(noise.length);
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-
-    // Must resize here, otherwise the canvas will be stretched to fit the container
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
     // Ensure to pass a function as the callback
     generatePerlinNoise(width, height, scale, (noise) => {
       setNoiseData(noise);
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
       const dotsArray = createDots(canvas);
+      //   const animationDelay = 100; // Adjust this value to control animation speed
+      //   animate(dotsArray, canvas, ctx);
     });
 
     const handleResize = () => {
@@ -131,11 +132,13 @@ export function NoiseDots({ children }) {
   }, []);
 
   function getNoiseAlpha(x, y, width) {
+    // console.log("getNoiseAlpha");
+    // Ensure noiseData is not null
     if (!noiseData) {
-      return 0;
+      //   console.error("Noise data is null or not loaded");
+      return 0; // Default alpha value
     }
 
-    // Offset position to get new value from Perlin noise
     let adjustedX = (x + noiseOffsetX) % width;
     let adjustedY = (y + noiseOffsetY) % width;
     let pos = adjustedY * width + adjustedX;
@@ -145,6 +148,7 @@ export function NoiseDots({ children }) {
   }
 
   function createDots(canvas) {
+    console.log("createDots");
     let dots = [];
     for (let x = 0; x < canvas.width; x += gridSpacing) {
       for (let y = 0; y < canvas.height; y += gridSpacing) {
@@ -155,6 +159,8 @@ export function NoiseDots({ children }) {
   }
 
   function drawDots(dotsArray, canvas, ctx) {
+    console.log("drawDots");
+    // console.log(canvas.width, canvas.height);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     dotsArray.forEach((dot) => {
       let alpha = getNoiseAlpha(dot.x, dot.y, canvas.width);
@@ -176,7 +182,19 @@ export function NoiseDots({ children }) {
   }
 
   useEffect(() => {
+    // Quadruple noiseData, rotating for each quadrant
+    // if (!noiseData) return;
+    // const noiseDataQuad = [
+    //   ...noiseData,
+    //   ...noiseData.map((x) => x),
+    //   ...noiseData.map((x) => x),
+    //   ...noiseData.map((x) => x),
+    // ];
+    // console.log(noiseDataQuad);
+
+    console.log("Kick off");
     if (noiseData && !animStarted) {
+      console.log("Anim started");
       setAnimStarted(true);
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
@@ -186,17 +204,16 @@ export function NoiseDots({ children }) {
   }, [noiseData]);
 
   return (
-    <Card className="p-[1%] w-full h-full flex justify-center overflow-hidden">
-      <div className="w-full h-full">
+    // <div className="w-[512px] h-[512px]">
+    <Card className="p-[1%] w-[400px] h-[200px] flex justify-center overflow-hidden">
+      <div>
         <canvas
           ref={canvasRef}
           id="myCanvas"
           width="512"
           height="512"
-          // style={{ width: "100%", height: "100%" }}
-          className="absolute top-0 left-0 object-none"
-        ></canvas>
-        <div className="top-0 left-0 h-full w-full">{children}</div>
+          style={{ width: "100%" }}
+        />
       </div>
     </Card>
   );

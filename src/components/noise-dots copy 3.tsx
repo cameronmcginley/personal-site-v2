@@ -105,12 +105,6 @@ export function NoiseDots({ children }) {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    // Must resize here, otherwise the canvas will be stretched to fit the container
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
     // Ensure to pass a function as the callback
     generatePerlinNoise(width, height, scale, (noise) => {
       setNoiseData(noise);
@@ -145,6 +139,7 @@ export function NoiseDots({ children }) {
   }
 
   function createDots(canvas) {
+    console.log("createDots");
     let dots = [];
     for (let x = 0; x < canvas.width; x += gridSpacing) {
       for (let y = 0; y < canvas.height; y += gridSpacing) {
@@ -155,6 +150,7 @@ export function NoiseDots({ children }) {
   }
 
   function drawDots(dotsArray, canvas, ctx) {
+    console.log("drawDots");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     dotsArray.forEach((dot) => {
       let alpha = getNoiseAlpha(dot.x, dot.y, canvas.width);
@@ -176,7 +172,9 @@ export function NoiseDots({ children }) {
   }
 
   useEffect(() => {
+    console.log("Kick off");
     if (noiseData && !animStarted) {
+      console.log("Anim started");
       setAnimStarted(true);
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
@@ -187,16 +185,15 @@ export function NoiseDots({ children }) {
 
   return (
     <Card className="p-[1%] w-full h-full flex justify-center overflow-hidden">
-      <div className="w-full h-full">
+      <div>
         <canvas
           ref={canvasRef}
           id="myCanvas"
           width="512"
           height="512"
-          // style={{ width: "100%", height: "100%" }}
-          className="absolute top-0 left-0 object-none"
+          style={{ width: "100%" }}
         ></canvas>
-        <div className="top-0 left-0 h-full w-full">{children}</div>
+        <div className="absolute top-0 left-0 w-full">{children}</div>
       </div>
     </Card>
   );
