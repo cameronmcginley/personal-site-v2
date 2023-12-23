@@ -65,17 +65,24 @@ export default function Home() {
         <CardDots>
           <div className="flex flex-row w-full">
             {/* Education */}
-            <div className="flex flex-col w-full items-center">
+            <div className="p-2 flex flex-col w-full items-center">
               <CardCompany
-                company="Capital One"
-                positions={["Software Engineer", "Software Engineer Intern"]}
-                dates={["Feb 2024 - Current", "Summer 2023"]}
-                logo="/CapitalOneLogo.svg"
-                logoSize="extrawide"
+                company="University of California San Diego"
+                positions={["M.S. Computer Science"]}
+                dates={["December 2023"]}
+                logo="/UCSDLogo.png"
+                logoSize="small"
+              />
+              <CardCompany
+                company="Wichita State University"
+                positions={["B.S. Computer Science"]}
+                dates={["August 2023"]}
+                logo="/WSULogo.png"
+                logoSize="wide"
               />
             </div>
             {/* Work */}
-            <div className="flex flex-col w-full items-center">
+            <div className="p-2 flex flex-col w-full items-center">
               <CardCompany
                 company="Capital One"
                 positions={["Software Engineer", "Software Engineer Intern"]}

@@ -36,6 +36,14 @@
 
     --tile-width: 6rem;
     --tile-height: 4rem;
+
+    --dot-color: #c7ccd4;
+
+    --company-card-bg: #f7f7f7;
+    --card-sheen: #ffffff;
+    --card-sheen-hover: #e8e6f5;
+
+    --bg-color-highlight: #d5c5ff;
   }
 
   .dark {
@@ -66,6 +74,14 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --dot-color: #1e293b;
+    /* Also define in tailwindconfigjs to use in classnames */
+    --company-card-bg: #040b1c;
+    --card-sheen: #020817;
+    --card-sheen-hover: #0a0a22;
+
+    --bg-color-highlight: #120929;
   }
 }
 

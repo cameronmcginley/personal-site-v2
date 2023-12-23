@@ -41,7 +41,15 @@ export function CardCompany(props) {
     logoHeight = 180;
   }
   return (
-    <Card className="flex flex-row p-4 m-2 max-w-96 w-full">
+    <Card
+      className="
+        group
+        border flex flex-row p-4 m-2 max-w-946 w-full 
+        bg-gradient-to-br from-companycardbg from-40% via-cardsheen via-65% to-companycardbg to-90%
+        hover:via-cardsheenhover
+        hover:border
+        "
+    >
       <div>
         <div className="pb-1 text-3xl font-bold">{props.company}</div>
         <div className="text-lg">
@@ -60,7 +68,7 @@ export function CardCompany(props) {
           width={logoWidth}
           height={logoHeight}
           //   style={{ filter: "grayscale(100%)" }}
-          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-15 dark:opacity-15"
+          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-30 dark:opacity-30 group-hover:opacity-70"
         />
       </div>
     </Card>

@@ -22,6 +22,10 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        companycardbg: "var(--company-card-bg)",
+        cardsheen: "var(--card-sheen)",
+        bgcolorhighlight: "var(--bg-color-highlight)",
+        cardsheenhover: "var(--card-sheen-hover)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

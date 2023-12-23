@@ -22,11 +22,18 @@ import { CardContainer } from "./card-container";
 
 export function CardDots({ children }) {
   // Inline styles for dynamic/customizable parts of the pattern
+  //   const patternStyle = {
+  //     backgroundColor: "var(--border, transparent)",
+  //     backgroundImage: `radial-gradient(var(--pattern-color, black) 10%, var(--pattern-bg-color, transparent) 10%)`,
+  //     backgroundSize: "var(--pattern-size, 25px) var(--pattern-size, 25px)",
+  //     opacity: "var(--pattern-opacity, 1)",
+  //   };
+
   const patternStyle = {
-    backgroundColor: "var(--border, transparent)",
-    backgroundImage: `radial-gradient(var(--pattern-color, black) 10%, var(--pattern-bg-color, transparent) 10%)`,
-    backgroundSize: "var(--pattern-size, 25px) var(--pattern-size, 25px)",
-    opacity: "var(--pattern-opacity, 0.4)",
+    // backgroundColor: "hsl(var(--background))",
+    backgroundImage: `radial-gradient(var(--dot-color) 10%, transparent 10%)`,
+    backgroundSize: "var(--pattern-size, 15px) var(--pattern-size, 15px)",
+    opacity: "var(--pattern-opacity, 1)",
   };
 
   return (
