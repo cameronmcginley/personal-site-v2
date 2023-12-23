@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -19,6 +21,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function CardContainer({ children }) {
-  return <Card className="flex items-stretch p-4 m-2">{children}</Card>;
+export function CardContainer({ children }: { children: React.ReactNode }) {
+  return <Card className="flex items-stretch m-2 p-4">{children}</Card>;
 }

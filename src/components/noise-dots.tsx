@@ -3,51 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
-// A simple Perlin noise generator (placeholder for actual implementation)
-// function generatePerlinNoise(width, height, scale = 1) {
-//   //   Implement the Perlin noise generation logic here.
-//   //   This function should return an array representing the noise values.
-//   //   For now, it returns an array of random values.
-//   const noise = new Array(width * height);
-//   for (let i = 0; i < noise.length; i++) {
-//     noise[i] = Math.random();
-//   }
-
-//   console.log(noise);
-//   return noise;
-// }
-
-// function generatePerlinNoise(width, height, scale = 1) {
-//   const noise = new Array(width * height);
-//   for (let y = 0; y < height; y++) {
-//     for (let x = 0; x < width; x++) {
-//       // Generate a scaled random value
-//       let n = Math.random(); // Placeholder for Noise2D(x * scale, y * scale)
-
-//       // Transform the range to [0.0, 1.0]
-//       n += 1.0;
-//       n /= 2.0;
-
-//       // Store the value in the array
-//       noise[y * width + x] = n;
-//     }
-//   }
-//   return noise;
-// }
-
-// function generatePerlinNoise(width, height, scale = 1) {
-//   // Create array of sequential numbers from 0 to width * height
-//   const indices = new Array(width * height).fill(0).map((_, i) => i);
-
-//   //   Normalize the indices to be between 0.0 and 1.0, save in place
-//   indices.forEach((_, i, arr) => {
-//     arr[i] /= arr.length;
-//   });
-
-//   console.log(indices);
-//   return indices;
-// }
-
+// Images must be 512x512
 function generatePerlinNoise(width, height, scale = 1, callback) {
   // Create an off-screen canvas
   const offscreenCanvas = document.createElement("canvas");
@@ -86,24 +42,23 @@ export function NoiseDots({ children }) {
   const canvasRef = useRef(null);
   const [noiseData, setNoiseData] = useState(null);
   const [animStarted, setAnimStarted] = useState(false);
+  const [dotsArray, setDotsArray] = useState(null);
+  const [noiseWidth, setNoiseWidth] = useState(512);
+  const [noiseHeight, setNoiseHeight] = useState(512);
+  const scale = 1; // Set your desired scale
 
-  const gridSpacing = 24;
-  const dotSize = 4;
+  const gridSpacing = 16;
+  const dotSize = 16;
   let noiseOffsetX = 0;
   let noiseOffsetY = 0;
   let minAlpha = 0;
   let maxAlpha = 0.6;
 
-  //   let offsetXadd = true;
-  //   let offsetYadd = true;
-
-  const width = 512; // Set your desired width
-  const height = 512; // Set your desired height
-  const scale = 1; // Set your desired scale
-
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+
+    setDotsArray(createDots(canvas));
 
     // Must resize here, otherwise the canvas will be stretched to fit the container
     canvas.style.width = "100%";
@@ -112,23 +67,20 @@ export function NoiseDots({ children }) {
     canvas.height = canvas.offsetHeight;
 
     // Ensure to pass a function as the callback
-    generatePerlinNoise(width, height, scale, (noise) => {
+    generatePerlinNoise(noiseWidth, noiseHeight, scale, (noise) => {
       setNoiseData(noise);
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      const dotsArray = createDots(canvas);
     });
-
-    const handleResize = () => {
-      // Handle resize logic
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
+
+  useEffect(() => {
+    // Build initial grid
+    if (!dotsArray) {
+      return;
+    }
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    drawDots(dotsArray, canvas, ctx);
+  }, [dotsArray]);
 
   function getNoiseAlpha(x, y, width) {
     if (!noiseData) {
@@ -172,6 +124,14 @@ export function NoiseDots({ children }) {
     noiseOffsetX += 1;
     noiseOffsetY += 1;
 
+    // Reset offset to prevent eventual overflow
+    if (noiseOffsetX >= noiseWidth) {
+      noiseOffsetX = 0;
+    }
+    if (noiseOffsetY >= noiseHeight) {
+      noiseOffsetY = 0;
+    }
+
     requestAnimationFrame(() => animate(dotsArray, canvas, ctx));
   }
 
@@ -180,7 +140,7 @@ export function NoiseDots({ children }) {
       setAnimStarted(true);
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
-      const dotsArray = createDots(canvas);
+      // const dotsArray = createDots(canvas);
       animate(dotsArray, canvas, ctx);
     }
   }, [noiseData]);

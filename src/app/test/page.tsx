@@ -8,6 +8,7 @@ import { Cell } from "@/components/cell";
 import { GridContainer } from "@/components/grid-container";
 import { CardContainer } from "@/components/card-container";
 import { CardCompany } from "@/components/card-company";
+import { CardDots } from "@/components/card-dots";
 // import { MainContainer } from "@/components/main-container";
 
 export default function Home() {
@@ -61,7 +62,7 @@ export default function Home() {
         </div>
 
         {/* Education and Work */}
-        <NoiseDots>
+        <CardDots>
           <div className="flex flex-row w-full">
             {/* Education */}
             <div className="flex flex-col w-full items-center">
@@ -116,7 +117,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </NoiseDots>
+        </CardDots>
       </div>
     </>
   );
