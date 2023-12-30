@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { RadialGradientBG } from "@/components/radial-gradient-bg";
+import { BackgroundTwo } from "@/components/background-two";
 import { Navbar } from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,7 +29,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="flex min-h-screen flex-col items-center p-32">
-            <RadialGradientBG />
+            {/* <RadialGradientBG /> */}
+            <BackgroundTwo />
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
               <Navbar />
               {children}

@@ -14,10 +14,10 @@ export function RadialGradientBG() {
         <div
           className="
         absolute inset-0 -z-10 h-full w-full 
-        bg-[var(--background)] 
-        bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)]
-        bg-[size:var(--tile-width)_var(--tile-height)]
-        [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_70%,transparent_110%)]
+        bg-[var(--bg-primary)] 
+        bg-[linear-gradient(to_right,var(--bg-linecolor)_1px,transparent_1px),linear-gradient(to_bottom,var(--bg-linecolor)_1px,transparent_1px)]
+        bg-[size:var(--bg-tilewidth)_var(--bg-tileheight)]
+        [mask-image:radial-gradient(ellipse_100%_100%_at_40%_0%,#000_70%,transparent_110%)]
         "
         >
           <div

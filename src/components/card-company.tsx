@@ -51,8 +51,10 @@ export function CardCompany(props) {
         "
     >
       <div>
-        <div className="pb-1 text-3xl font-bold">{props.company}</div>
-        <div className="text-lg">
+        <div className="pb-1 text-xl font-bold light:drop-shadow-[0_0px_2px_#ffffff]">
+          {props.company}
+        </div>
+        <div className="text-md">
           {props.positions.map((position, index) => (
             <div key={position} className="pb-2 last:pb-0">
               {position}
@@ -68,7 +70,7 @@ export function CardCompany(props) {
           width={logoWidth}
           height={logoHeight}
           //   style={{ filter: "grayscale(100%)" }}
-          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-30 dark:opacity-30 group-hover:opacity-70"
+          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-60 dark:opacity-30 group-hover:opacity-90"
         />
       </div>
     </Card>
