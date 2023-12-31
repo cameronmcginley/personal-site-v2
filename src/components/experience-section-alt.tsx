@@ -1,6 +1,7 @@
 import React from "react";
 import { CardCompany } from "@/components/card-company";
 import { CardDots } from "@/components/card-dots";
+import { CardContainer } from "./card-container";
 
 const companies = [
   {
@@ -61,10 +62,11 @@ export function ExperienceSectionAlt() {
   return (
     <>
       {/* Education and Work */}
-      <CardDots>
+      {/* <CardDots> */}
+      <CardContainer bgpattern="topography" patterncolor="blue-300/20">
         <div className="flex flex-row w-full">
           {/* Education */}
-          <div className="p-2 flex flex-col w-full items-center">
+          <div className="pr-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Education</p>
             {schools.map((item, index) => (
               <CardCompany
@@ -78,7 +80,7 @@ export function ExperienceSectionAlt() {
             ))}
           </div>
           {/* Work */}
-          <div className="p-2 flex flex-col w-full items-center">
+          <div className="pl-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Professional</p>
             {companies.map((item, index) => (
               <CardCompany
@@ -92,7 +94,8 @@ export function ExperienceSectionAlt() {
             ))}
           </div>
         </div>
-      </CardDots>
+        {/* </CardDots> */}
+      </CardContainer>
     </>
   );
 }

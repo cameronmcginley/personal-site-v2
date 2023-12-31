@@ -20,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Tilt from "react-parallax-tilt";
 
 // title="Capital One"
 // positions={["Software Engineer", "Software Engineer Inter"]}
@@ -41,13 +42,23 @@ export function CardCompany(props) {
     logoHeight = 180;
   }
   return (
+    // tilt causes text to be blurry :/
+    // <Tilt
+    //   className="m-2 max-w-946 w-full"
+    //   tiltMaxAngleX={0}
+    //   tiltMaxAngleY={0}
+    //   perspective={1000}
+    //   transitionSpeed={1000}
+    //   scale={1.025}
+    // >
     <Card
       className="
         group
         border flex flex-row p-4 m-2 max-w-946 w-full 
         bg-gradient-to-br from-companycardbg from-40% via-cardsheen via-65% to-companycardbg to-90%
         hover:via-cardsheenhover
-        hover:border
+        hover:border-bgcolorhighlight
+        hover:drop-shadow
         "
     >
       <div>
@@ -74,5 +85,6 @@ export function CardCompany(props) {
         />
       </div>
     </Card>
+    // </Tilt>
   );
 }
