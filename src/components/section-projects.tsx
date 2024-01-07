@@ -35,8 +35,8 @@ const projects = [
   {
     title: "Brainf**k Interpreter",
     image: "/",
-    github_link: "", // Add GitHub link
-    public_link: "", // Add public link if available
+    github_link:
+      "https://github.com/cameronmcginley/optimized-brainfk-interpreter",
     description:
       "Interpreter for the brainf**k programming language, enhanced with instruction condensing and peephole optimization for improved execution efficiency.",
     tools: [
@@ -53,8 +53,9 @@ const projects = [
   {
     title: "Projectile Points Database",
     image: "/",
-    github_link: "", // Add GitHub link
-    public_link: "", // Add public link if available
+    github_link:
+      "https://github.com/cameronmcginley/projectile-points-web-database",
+    public_link: "http://projectile-points-database.vercel.app/",
     description:
       "Web app serving as a dynamic database for archaeological projectile point data, featuring data management and advanced search and comparison capabilities.",
     tools: [
@@ -79,8 +80,8 @@ const projects = [
   {
     title: "Sorting Visualizer",
     image: "/",
-    github_link: "", // Add GitHub link
-    public_link: "", // Add public link if available
+    github_link: "https://github.com/cameronmcginley/sorting-visualizer/",
+    public_link: "https://cameronmcginley.com/sorting-visualizer/",
     description:
       "Interactive visualizer for sorting algorithms including bubble, merge, radix, and bogo sort, with customizable delay, array size, and sound settings.",
     tools: [
@@ -97,8 +98,7 @@ const projects = [
   {
     title: "Algorithm Tester",
     image: "/",
-    github_link: "", // Add GitHub link
-    public_link: "", // Add public link if available
+    github_link: "https://github.com/cameronmcginley/ml-algorithm-testing",
     description:
       "Tool for assessing and visualizing machine learning algorithm performance, featuring easy integration of new models and automatic hyperparameter optimization.",
     tools: [
@@ -115,8 +115,9 @@ const projects = [
   {
     title: "Roblox Object Placement",
     image: "/",
-    github_link: "", // Add GitHub link
-    public_link: "", // Add public link if available
+    github_link: "https://github.com/cameronmcginley/RBLX-PlacementSystem/",
+    public_link:
+      "https://www.roblox.com/games/7619626087/Placement-System-Demo",
     description:
       "Roblox project featuring an object placement system with raycasting, client-server communication, customizable object design, per-account saving, and Rojo Git integration.",
     tools: [

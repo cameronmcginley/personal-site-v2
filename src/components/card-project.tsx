@@ -11,7 +11,7 @@ export function CardProject(props) {
         {/* Flex container for the whole card */}
         <div className="flex flex-col">
           {/* Image container with Link and hover effect */}
-          <Link href="/">
+          <Link href={props.github_link}>
             {/* Replace with your link destination */}
             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-t-lg cursor-pointer group">
               <Image
@@ -19,10 +19,10 @@ export function CardProject(props) {
                 layout="fill"
                 objectFit="cover"
                 alt={props.image}
-                className="transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                className="border-b transition-transform duration-300 ease-in-out transform group-hover:scale-105"
               />
               {/* Overlay for fade effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[color-of-your-card-background] to-transparent z-10"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-companycardbg to-transparent z-10"></div>
             </div>
           </Link>
 
@@ -44,7 +44,7 @@ export function CardProject(props) {
                   <CardHoverShine isLink={true}>GitHub</CardHoverShine>
                 </Link>
                 {/* Public App */}
-                {props.public_link === "" && (
+                {props.public_link && (
                   <Link
                     href={props.public_link}
                     className="pr-2 pb-1 last:pr-0 last:pb-0"
