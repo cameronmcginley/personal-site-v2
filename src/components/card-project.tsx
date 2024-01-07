@@ -5,6 +5,8 @@ import { CardHoverShine } from "./card-hovershine";
 import { CustomLink } from "./custom-link";
 
 export function CardProject(props) {
+  const isWebm = props.image.endsWith(".webm");
+
   return (
     <div className="w-72">
       <CardHoverShine isLink={false} fullHeight={true}>
@@ -14,13 +16,25 @@ export function CardProject(props) {
           <Link href={props.github_link}>
             {/* Replace with your link destination */}
             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-t-lg cursor-pointer group">
-              <Image
-                src={"/perlin-noise.webp"}
-                layout="fill"
-                objectFit="cover"
-                alt={props.image}
-                className="border-b transition-transform duration-300 ease-in-out transform group-hover:scale-105"
-              />
+              {/* Render video if webm file */}
+              {isWebm ? (
+                // Render video if the media file is a WebM
+                <video
+                  src={props.image}
+                  loop
+                  autoPlay
+                  muted
+                  className="border-b transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                />
+              ) : (
+                <Image
+                  src={props.image}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={props.image}
+                  className="border-b transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                />
+              )}
               {/* Overlay for fade effect */}
               <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-companycardbg to-transparent z-10"></div>
             </div>

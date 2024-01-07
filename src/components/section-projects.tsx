@@ -8,7 +8,7 @@ import { CardProject } from "./card-project";
 const projects = [
   {
     title: "Course Sign-In Dashboard",
-    image: "/",
+    image: "/media/projects/course-signin-dashboard.webp",
     github_link: "https://github.com/cameronmcginley/CourseDashboard/",
     public_link: "https://coursedashboard.web.app/",
     description:
@@ -34,7 +34,7 @@ const projects = [
   },
   {
     title: "Brainf**k Interpreter",
-    image: "/",
+    image: "/media/projects/brainfk.webp",
     github_link:
       "https://github.com/cameronmcginley/optimized-brainfk-interpreter",
     description:
@@ -52,7 +52,7 @@ const projects = [
   },
   {
     title: "Projectile Points Database",
-    image: "/",
+    image: "/media/projects/projectile-points.webp",
     github_link:
       "https://github.com/cameronmcginley/projectile-points-web-database",
     public_link: "http://projectile-points-database.vercel.app/",
@@ -79,7 +79,7 @@ const projects = [
   },
   {
     title: "Sorting Visualizer",
-    image: "/",
+    image: "/media/projects/sorting-vis.webm",
     github_link: "https://github.com/cameronmcginley/sorting-visualizer/",
     public_link: "https://cameronmcginley.com/sorting-visualizer/",
     description:
@@ -97,7 +97,7 @@ const projects = [
   },
   {
     title: "Algorithm Tester",
-    image: "/",
+    image: "/media/projects/ml-test.webp",
     github_link: "https://github.com/cameronmcginley/ml-algorithm-testing",
     description:
       "Tool for assessing and visualizing machine learning algorithm performance, featuring easy integration of new models and automatic hyperparameter optimization.",
@@ -114,7 +114,7 @@ const projects = [
   },
   {
     title: "Roblox Object Placement",
-    image: "/",
+    image: "/media/projects/rblx-placement.webm",
     github_link: "https://github.com/cameronmcginley/RBLX-PlacementSystem/",
     public_link:
       "https://www.roblox.com/games/7619626087/Placement-System-Demo",
@@ -149,7 +149,7 @@ export function SectionProjects() {
               worked on. Read more via the GitHub links below.
             </p>
           </div>
-          <div className="gap-2 flex flex-row flex-wrap w-full justify-center">
+          <div className="gap-8 flex flex-row flex-wrap w-full justify-center">
             {/* <div className="pr-1 flex flex-col w-full items-center"> */}
             {projects.map((item, index) => (
               <CardProject
