@@ -63,10 +63,10 @@ export function ExperienceSectionAlt() {
     <>
       {/* Education and Work */}
       {/* <CardDots> */}
-      <CardContainer bgpattern="topography" patterncolor="blue-300/20">
-        <div className="flex flex-row w-full">
+      <CardContainer bgpattern="wood" patterncolor="blue-300/20">
+        <div className="flex md:flex-row flex-col w-full">
           {/* Education */}
-          <div className="pr-1 flex flex-col w-full items-center">
+          <div className="gap-2 pr-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Education</p>
             {schools.map((item, index) => (
               <CardCompany
@@ -80,7 +80,7 @@ export function ExperienceSectionAlt() {
             ))}
           </div>
           {/* Work */}
-          <div className="pl-1 flex flex-col w-full items-center">
+          <div className="gap-2 pl-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Professional</p>
             {companies.map((item, index) => (
               <CardCompany

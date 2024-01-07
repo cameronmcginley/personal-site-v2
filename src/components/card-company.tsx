@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Tilt from "react-parallax-tilt";
+import { CardHoverShine } from "./card-hovershine";
 
 // title="Capital One"
 // positions={["Software Engineer", "Software Engineer Inter"]}
@@ -42,27 +43,19 @@ export function CardCompany(props) {
     logoHeight = 180;
   }
   return (
-    // tilt causes text to be blurry :/
-    // <Tilt
-    //   className="m-2 max-w-946 w-full"
-    //   tiltMaxAngleX={0}
-    //   tiltMaxAngleY={0}
-    //   perspective={1000}
-    //   transitionSpeed={1000}
-    //   scale={1.025}
+    // <Card
+    //   className="
+    //     group
+    //     border flex flex-row p-2 m-2 max-w-946 w-full
+    //     bg-gradient-to-br from-companycardbg from-40% via-cardsheen via-65% to-companycardbg to-90%
+    //     hover:via-cardsheenhover
+    //     hover:border-bgcolorhighlight
+    //     hover:drop-shadow
+    //     "
     // >
-    <Card
-      className="
-        group
-        border flex flex-row p-4 m-2 max-w-946 w-full 
-        bg-gradient-to-br from-companycardbg from-40% via-cardsheen via-65% to-companycardbg to-90%
-        hover:via-cardsheenhover
-        hover:border-bgcolorhighlight
-        hover:drop-shadow
-        "
-    >
-      <div>
-        <div className="pb-1 text-xl font-bold light:drop-shadow-[0_0px_2px_#ffffff]">
+    <CardHoverShine isLink={false}>
+      <div className="p-2">
+        <div className="pb-1 text-xl font-bold drop-shadow-[0_1px_1px_#ffffff]">
           {props.company}
         </div>
         <div className="text-md">
@@ -81,10 +74,9 @@ export function CardCompany(props) {
           width={logoWidth}
           height={logoHeight}
           //   style={{ filter: "grayscale(100%)" }}
-          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-60 dark:opacity-30 group-hover:opacity-90"
+          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-30 dark:opacity-30 group-hover:opacity-70"
         />
       </div>
-    </Card>
-    // </Tilt>
+    </CardHoverShine>
   );
 }

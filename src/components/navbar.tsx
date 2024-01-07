@@ -77,10 +77,11 @@ export function Navbar() {
   }, [yValue]);
 
   return (
+    //         "fixed top-0 left-0 right-0 flex py-3 px-4 border-b z-[1] bg-background backdrop-filter-blur " +
+    // (toHide && " py-0 h-0 hidden ")
     <div
       className={
-        "fixed top-0 left-0 right-0 flex py-3 px-4 border-b z-[1] bg-background backdrop-filter-blur " +
-        (toHide && " py-0 h-0 hidden ")
+        "fixed top-0 left-0 right-0 flex py-3 px-4 border-b z-[1] bg-background backdrop-filter-blur"
       }
     >
       <Container>

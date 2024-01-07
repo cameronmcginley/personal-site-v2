@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { TestCard } from "@/components/test-card";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -20,76 +21,66 @@ import { CardSocial } from "@/components/card-social";
 import Tilt from "react-parallax-tilt";
 import My3DTiltComponent from "@/components/3d-component"; // adjust the path as necessary
 
+import { SectionPublications } from "@/components/section-publications";
+import { SectionProjects } from "@/components/section-projects";
+
+// import TextAnimate from "@/components/functions/text-animate";
+
 export default function Home() {
+  const text = "Cameron McGinley";
+  const [char, setChar] = React.useState(-1);
+
+  const animate = () => {
+    let timer = setInterval(() => {
+      setChar((prevChar) => {
+        if (prevChar < text.length - 1) {
+          return prevChar + 1;
+        } else {
+          clearInterval(timer);
+          return prevChar;
+        }
+      });
+    }, 50);
+  };
+
+  React.useEffect(() => {
+    let timer = animate();
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
-      {/* <Container>
-        <Container>Hi</Container>
-
-        <Container>
-          <ModeToggle />
-          <div className="h-10" />
-
-          <TestCard />
-          <div className="h-10" />
-
-          <NoiseDots />
-        </Container>
-      </Container> */}
-
-      {/* <Container>
-        <div className="flex min-w-80">
-          <div className="w-1/4">Hi</div>
-          <div>
-            <div>Test</div>
-            <div>Test</div>
-          </div>
-        </div>
-      </Container> */}
-
-      {/* <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-0 bg-red-50 w-full max-w-7xl mx-auto">
-        <Cell content="Cell 1" widthMultiplier={1} heightMultiplier={1} />
-        <Cell content="Cell 1" widthMultiplier={1} heightMultiplier={1} />
-        <Cell content="Cell 2" widthMultiplier={2} heightMultiplier={1} />
-        <Cell content="Cell 3" widthMultiplier={1} heightMultiplier={2} />
-      </div> */}
-
       <div className="flex flex-col w-full">
-        {/* Div that contains two divs, split into left and right half */}
-        {/* <div className="flex flex-row flex-1 min-w-80">
-          <div className="flex flex-col flex-1 w-1/2 h-full">
-            <CardContainer>Test</CardContainer>
-          </div>
-          <div className="w-1/2 flex-col">
-            <div>
-              <CardContainer>Test</CardContainer>
-            </div>
-            <div>
-              <CardContainer>
-                <div className="flex flex-col">
-                  <div>About Me</div>
-                  <div>
-                    I am a Computer Science MS student at UC San Diego set to
-                    graduate in December 2023. Before coming to San Diego, I
-                    spent my time working on automating C++ vulnerability
-                    detection for the U.S. Department of Defense, buggy Java
-                    code detection at Purdue University, phishing email
-                    detection and generating natural language responses at
-                    Wichita State University, and working in software test
-                    automation on data storage system firmware at NetApp.
-                  </div>
-                </div>
-              </CardContainer>
-            </div>
-          </div>
-        </div> */}
+        <div className="flex h-fit pb-4 sm:justify-start justify-center">
+          <h1 className="text font-bold text-5xl tracking-wide text-center">
+            {Array.from(text).map((c, i) => (
+              <span
+                key={i}
+                className={`transition delay-0 ease-in ${
+                  char >= i ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {c}
+              </span>
+            ))}
+          </h1>
+        </div>
+
+        {/* <p className="typewriter w-fit">Cameron</p> */}
 
         {/* Section 1 */}
         {/* Three parts: image has defined width, socials has width fit to buttons, about me takes rest */}
         {/* <div className="grid grid-cols-7 gap-0"> */}
-        <div className="flex flex-row w-full">
+        <div
+          className="
+          delay-100 opacity-0 fill-forwards animate-fade-in-up 
+          flex w-full flex-col md:flex-row justify-center items-center
+        "
+        >
           {/* Image */}
-          <div className="w-1/2">
+          <div className="sm:w-1/2 w-1/2 h-fit">
             <CardContainer>
               <Tilt
                 className="tilt"
@@ -118,10 +109,10 @@ export default function Home() {
           </div>
 
           {/* Socials */}
-          <div className="w-fit">
+          <div className="flex justify-center">
             {/* <CardContainer>Socials</CardContainer> */}
-            <CardContainer bgpattern="topography" patterncolor="blue-300/20">
-              <div className="flex flex-col">
+            <CardContainer bgpattern="wood" patterncolor="blue-300/20">
+              <div className="flex md:flex-col flex-row">
                 <CardSocial text="Resume" url="/resume.pdf" />
                 <CardSocial
                   text="LinkedIn"
@@ -162,7 +153,19 @@ export default function Home() {
         </div>
 
         {/* Section 2 */}
-        <ExperienceSectionAlt />
+        <div className="delay-200 opacity-0 fill-forwards animate-fade-in-up">
+          <ExperienceSectionAlt />
+        </div>
+
+        {/* Section 3 */}
+        <div className="delay-200 opacity-0 fill-forwards animate-fade-in-up">
+          <SectionPublications />
+        </div>
+
+        {/* Section 4 */}
+        <div className="delay-200 opacity-0 fill-forwards animate-fade-in-up">
+          <SectionProjects />
+        </div>
       </div>
     </>
   );

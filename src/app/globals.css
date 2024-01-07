@@ -149,3 +149,30 @@
     animation-delay: 4s;
   }
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden; /* Ensures the content is clipped */
+  border-right: 0.15em solid rgba(255, 255, 255, 0.75); /* Cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: 0.15em; /* Adjust to your liking */
+  animation: typing 3.5s steps(40, end), blinkCursor 0.75s step-end infinite;
+}

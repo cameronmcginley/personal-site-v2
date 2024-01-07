@@ -12,6 +12,7 @@ import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
+import { CardHoverShine } from "./card-hovershine";
 
 interface CardSocialProps {
   text: string;
@@ -20,7 +21,10 @@ interface CardSocialProps {
 
 export function CardSocial(props: CardSocialProps) {
   return (
-    <Link href={props.url} className="w-full h-full mb-2 last:mb-0">
+    <Link
+      href={props.url}
+      className="w-full h-full md:mb-2 md:mr-0 mb-0 mr-2 last:mb-0"
+    >
       {/* <Tilt
         className="max-w-946 w-full"
         tiltMaxAngleX={0}
@@ -29,7 +33,7 @@ export function CardSocial(props: CardSocialProps) {
         transitionSpeed={1000}
         scale={1.025}
       > */}
-      <Card
+      {/* <Card
         className="
         group
         border flex flex-row p-1 max-w-946 w-full h-full
@@ -39,7 +43,9 @@ export function CardSocial(props: CardSocialProps) {
         hover:drop-shadow
         hover:z-10
         "
-      >
+      > */}
+
+      <CardHoverShine isLink={true}>
         <div className="flex flex-col justify-center items-center w-full h-full">
           {/* Icon */}
           {props.text === "GitHub" ? (
@@ -81,8 +87,7 @@ export function CardSocial(props: CardSocialProps) {
           {/* Text */}
           {props.text}
         </div>
-      </Card>
-      {/* </Tilt> */}
+      </CardHoverShine>
     </Link>
   );
 }

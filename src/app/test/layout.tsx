@@ -28,7 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex min-h-screen flex-col items-center p-32">
+          <main className="flex min-h-screen flex-col items-center pt-24 sm:pt-24 sm:p-16">
             {/* <RadialGradientBG /> */}
             <BackgroundTwo />
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
