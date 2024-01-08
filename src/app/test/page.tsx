@@ -133,19 +133,15 @@ export default function Home() {
           {/* About Me */}
           <div className="w-fit">
             <CardContainer>
-              <div className="flex flex-col">
-                <p className="text-3xl font-bold pb-2">About Me</p>
-                <p className="pb-2">
-                  I am a Computer Science MS student at UC San Diego set to
-                  graduate in December 2023.{" "}
+              <div className="flex flex-col gap-2">
+                <p className="text-3xl font-bold">Hi!</p>
+                <p>
+                  I am a software engineer in San Francisco with a love for all
+                  things backend and systems.
                 </p>
                 <p>
-                  Before coming to San Diego, I spent my time working on
-                  automating C++ vulnerability detection for the U.S. Department
-                  of Defense, buggy Java code detection at Purdue University,
-                  phishing email detection and generating natural language
-                  responses at Wichita State University, and working in software
-                  test automation on data storage system firmware at NetApp.
+                  I'm all about creating efficient and elegant solutions, along
+                  with exploring new technologies to tackle new problems.
                 </p>
               </div>
             </CardContainer>

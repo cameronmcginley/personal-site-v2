@@ -57,7 +57,7 @@ const projects = [
       "https://github.com/cameronmcginley/projectile-points-web-database",
     public_link: "http://projectile-points-database.vercel.app/",
     description:
-      "Web app serving as a dynamic database for archaeological projectile point data, featuring data management and advanced search and comparison capabilities.",
+      "Web app serving as a dynamic database for archaelogical projectile point data. Inspired by projectilepoints.net and designed with greater structure and maintainability.",
     tools: [
       {
         name: "TypeScript",

@@ -28,11 +28,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex min-h-screen flex-col items-center pt-24 sm:pt-24 sm:p-16">
+          <main className="flex min-h-screen flex-col items-center pt-12 sm:pt-12 sm:p-16">
             {/* <RadialGradientBG /> */}
             <BackgroundTwo />
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-              <Navbar />
+              {/* <Navbar /> */}
               {children}
             </div>
           </main>
@@ -41,29 +41,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// import { ThemeProvider } from "@/components/theme-provider";
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <>
-//       <html lang="en" suppressHydrationWarning>
-//         <head />
-//         <body>
-//           <ThemeProvider
-//             attribute="class"
-//             defaultTheme="system"
-//             enableSystem
-//             disableTransitionOnChange
-//           >
-//             {children}
-//           </ThemeProvider>
-//         </body>
-//       </html>
-//     </>
-//   );
-// }
