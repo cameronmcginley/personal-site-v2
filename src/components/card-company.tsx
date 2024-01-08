@@ -43,16 +43,6 @@ export function CardCompany(props) {
     logoHeight = 180;
   }
   return (
-    // <Card
-    //   className="
-    //     group
-    //     border flex flex-row p-2 m-2 max-w-946 w-full
-    //     bg-gradient-to-br from-companycardbg from-40% via-cardsheen via-65% to-companycardbg to-90%
-    //     hover:via-cardsheenhover
-    //     hover:border-bgcolorhighlight
-    //     hover:drop-shadow
-    //     "
-    // >
     <CardHoverShine isLink={false}>
       <div className="p-2">
         <div className="pb-1 text-xl font-bold drop-shadow-[0_1px_1px_#ffffff]">
@@ -74,7 +64,7 @@ export function CardCompany(props) {
           width={logoWidth}
           height={logoHeight}
           //   style={{ filter: "grayscale(100%)" }}
-          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-30 dark:opacity-30 group-hover:opacity-70"
+          className="-rotate-3 -z-10 absolute -bottom-1 -right-3 opacity-30 dark:opacity-30 group-hover/unlinked:opacity-70"
         />
       </div>
     </CardHoverShine>
