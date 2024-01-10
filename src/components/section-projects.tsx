@@ -96,7 +96,7 @@ const projects = [
     ],
   },
   {
-    title: "Algorithm Tester",
+    title: "ML Algorithm Tester",
     image: "/media/projects/ml-test.webp",
     github_link: "https://github.com/cameronmcginley/ml-algorithm-testing",
     description:
@@ -145,8 +145,8 @@ export function SectionProjects() {
           <div className="flex flex-col justify-center">
             <p className="text-center text-3xl font-bold pb-2">Projects</p>
             <p className="text-center pb-2">
-              I love to build things! Here are some of my favorite projects I've
-              worked on. Read more via the GitHub links below.
+              Here are some of my favorite projects I've worked on. Read more
+              via the GitHub links!
             </p>
           </div>
           <div className="gap-8 flex flex-row flex-wrap w-full justify-center">

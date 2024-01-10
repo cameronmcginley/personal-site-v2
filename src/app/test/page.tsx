@@ -24,48 +24,17 @@ import My3DTiltComponent from "@/components/3d-component"; // adjust the path as
 import { SectionPublications } from "@/components/section-publications";
 import { SectionProjects } from "@/components/section-projects";
 
+import { CardGrainy } from "@/components/card-grainy";
+
 // import TextAnimate from "@/components/functions/text-animate";
 
 export default function Home() {
-  const text = "Cameron McGinley";
-  const [char, setChar] = React.useState(-1);
-
-  const animate = () => {
-    let timer = setInterval(() => {
-      setChar((prevChar) => {
-        if (prevChar < text.length - 1) {
-          return prevChar + 1;
-        } else {
-          clearInterval(timer);
-          return prevChar;
-        }
-      });
-    }, 50);
-  };
-
-  React.useEffect(() => {
-    let timer = animate();
-
-    // Clean up the interval on component unmount
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <>
       <div className="flex flex-col w-full">
-        <div className="flex h-fit pb-4 sm:justify-start justify-center">
-          <h1 className="text font-bold text-5xl tracking-wide text-center">
-            {Array.from(text).map((c, i) => (
-              <span
-                key={i}
-                className={`transition delay-0 ease-in ${
-                  char >= i ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {c}
-              </span>
-            ))}
-          </h1>
+        {/* Name Banner */}
+        <div className="animate-fade-in delay-0">
+          <CardGrainy />
         </div>
 
         {/* <p className="typewriter w-fit">Cameron</p> */}
@@ -136,8 +105,8 @@ export default function Home() {
               <div className="flex flex-col gap-2">
                 <p className="text-3xl font-bold">Hi!</p>
                 <p>
-                  I am a software engineer in San Francisco with a love for all
-                  things backend and systems.
+                  I am a software engineer located in San Francisco with an
+                  interest in all things backend and systems.
                 </p>
                 <p>
                   I'm all about creating efficient and elegant solutions, along

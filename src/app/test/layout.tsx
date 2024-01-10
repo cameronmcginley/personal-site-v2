@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { RadialGradientBG } from "@/components/radial-gradient-bg";
 import { BackgroundTwo } from "@/components/background-two";
 import { Navbar } from "@/components/navbar";
+import { CardGrainy } from "@/components/card-grainy";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* <CardGrainy /> */}
           <main className="flex min-h-screen flex-col items-center pt-12 sm:pt-12 sm:p-16">
             {/* <RadialGradientBG /> */}
             <BackgroundTwo />

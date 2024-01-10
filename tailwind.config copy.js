@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // Enable dark mode using 'class' strategy
+  darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-  ],
+	],
   theme: {
     container: {
       center: true,
@@ -17,45 +17,43 @@ module.exports = {
     },
     extend: {
       colors: {
-        // Light theme colors
-        'border': "gray-200",
-        'input': "gray-200",
-        'ring': "blue-600",
-        'background': "white",
-        'foreground': "gray-800",
-        'company-card-bg': "gray-100",
-        'card-sheen': "white",
-        'bg-color-highlight': "purple-200",
-        'card-sheen-hover': "purple-100",
-        'primary': "blue-900",
-        'secondary': "gray-100",
-        'destructive': "red-600",
-        'muted': "gray-300",
-        'accent': "blue-100",
-        'popover': "white",
-        'card': "white",
-
-        // Dark theme colors
-        dark: {
-          'background': 'slate-900',
-          'card': 'slate-900',
-          'popover': 'slate-900',
-          'primary': 'orange-400',
-          'secondary': 'gray-700',
-          'muted': 'gray-700',
-          'accent': 'gray-700',
-          'destructive': 'red-700',
-          'border': 'slate-800',
-          'input': 'gray-700',
-          'ring': 'blue-200',
-          'dot-color': 'slate-800',
-          'company-card-bg': 'slate-900',
-          'card-sheen': 'slate-800',
-          'card-sheen-hover': 'slate-700',
-          'bgcolorhighlight': 'purple-900',
+        border: "var(--border)",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "var(--bg-primary)",
+        foreground: "hsl(var(--foreground))",
+        companycardbg: "var(--company-card-bg)",
+        cardsheen: "var(--card-sheen)",
+        bgcolorhighlight: "var(--bg-color-highlight)",
+        cardsheenhover: "var(--card-sheen-hover)",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        
-        
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
