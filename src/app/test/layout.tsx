@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { RadialGradientBG } from "@/components/radial-gradient-bg";
 import { BackgroundTwo } from "@/components/background-two";
 import { Navbar } from "@/components/navbar";
-import { CardGrainy } from "@/components/card-grainy";
+import { CardGrainy } from "@/components/card-title";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -25,21 +25,25 @@ module.exports = {
         // Light theme colors
 
         // Primary Colors
-        'primary': "#0f172a",
-        'secondary': "F3F4F6",
-        'accent': "#DBEAFE",
+        'primary': "#0f172a", // No match, closest: grey-900
+        'secondary': "F3F4F6", // No match, closest: grey-100
+        'accent': "#DBEAFE", // blue-100
 
         // Background Colors
-        'background': "#ffffff",
-        'companyCardBg': "#f7f7f7",
-        'card': "#ffffff",
-        'popover': "#ffffff",
-        'bgColorSplash': "#ffffff",
+        'background': "#ffffff", // white
+        'companyCardBg': "#f7f7f7", // No match, closest: grey-100
+        'card': "#ffffff", // white
+        'popover': "#ffffff", // white
+
+        'bgPrimary': "#F3F4F6", // white
+        'bgFadeTo': "#93C5FD", // white
+        'bgLineColor': "#D1D5DB", // grey-300
+        'bgColorSplash': "#BFDBFE", // blue-200
 
         // Interactive Element Colors
-        'border': "#e2e8f0",
-        'cardSheen': "#ffffff",
-        'cardSheenHover': "#F3F4F6",
+        'border': "#e2e8f0", // No match, closest: grey-300
+        'cardSheen': "#ffffff", // white
+        'cardSheenHover': "#F3F4F6", // No match, closest: grey-100
 
         // Link Colors
         'link': "#2563EB", // blue-600
@@ -48,12 +52,17 @@ module.exports = {
         'cardLinkOutline': "#3B82F6", // blue-500
         'cardSheenHoverLink': "#DBEAFE", // blue-100
 
+        // Grainy Title Card
+        'titleFrom': "#1E40AF", // blue-800 
+        'titleVia': "#2563EB", // blue-600
+        'titleTo': "#4F46E5", // indigo-600
+
         // Text/Foreground Colors
-        'foreground': "#1F2937",
-        'muted': "#D1D5DB",
+        'foreground': "#1F2937", // No match, closest: grey-800
+        'muted': "#D1D5DB", // No match, closest: grey-300
 
         // Status and Notification Colors
-        'destructive': "#DC2626",
+        'destructive': "#DC2626", // red-600
 
         // Dark theme colors
         // dark: {
@@ -78,9 +87,15 @@ module.exports = {
         
       },
       borderRadius: {
-        lg: "0.5rem",
-        md: "calc(0.5rem - 2px)",
-        sm: "calc(0.5rem - 4px)",
+        // Rounded
+        // lg: "0.5rem",
+        // md: "calc(0.5rem - 2px)",
+        // sm: "calc(0.5rem - 4px)",
+        // Not rounded
+        xl: "0",
+        lg: "0",
+        md: "0",
+        sm: "0",
       },
       keyframes: {
         "accordion-down": {

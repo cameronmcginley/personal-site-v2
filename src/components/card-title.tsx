@@ -3,20 +3,16 @@
 import * as React from "react";
 import { AnimatedName } from "@/components/animated-name";
 
-interface CardContainerProps {
-  children: React.ReactNode;
-}
-
-export function CardGrainy({ children, ...props }: CardContainerProps) {
+export function CardTitle() {
   // https://hypercolor.dev/grainy
   let className = `
     flex items-stretch mb-2 shadow-sm
     w-full
     rounded-md
     bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] 
-    from-blue-800 
-    via-blue-600
-    to-indigo-600
+    from-titleFrom
+    via-titleVia
+    to-titleTo
   `;
 
   // Grainy filter

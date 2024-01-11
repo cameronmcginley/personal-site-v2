@@ -1,39 +1,13 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faGoogleScholar } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
-
 import React from "react";
 import Image from "next/image";
-import { TestCard } from "@/components/test-card";
-import { ModeToggle } from "@/components/mode-toggle";
-import { RadialGradientBG } from "@/components/radial-gradient-bg";
-import { NoiseDots } from "@/components/noise-dots";
-import { Container } from "@/components/container";
-import { Cell } from "@/components/cell";
-import { GridContainer } from "@/components/grid-container";
 import { CardContainer } from "@/components/card-container";
-import { CardContainerImage } from "@/components/card-container-image";
-import { CardCompany } from "@/components/card-company";
-import { CardDots } from "@/components/card-dots";
-import { ExperienceSection } from "@/components/experience-section";
 import { ExperienceSectionAlt } from "@/components/experience-section-alt";
-// import { MainContainer } from "@/components/main-container";
-import { Button } from "@/components/ui/button";
-import { CardSocial } from "@/components/card-social";
 import Tilt from "react-parallax-tilt";
-import My3DTiltComponent from "@/components/3d-component"; // adjust the path as necessary
-
 import { SectionPublications } from "@/components/section-publications";
 import { SectionProjects } from "@/components/section-projects";
-
-import { CardGrainy } from "@/components/card-grainy";
-import { CustomButton } from "@/components/custom-button";
-// import TextAnimate from "@/components/functions/text-animate";
-
+import { CardTitle } from "@/components/card-title";
 import { SectionSocials } from "@/components/section-socials";
 
 export default function Home() {
@@ -41,11 +15,9 @@ export default function Home() {
     <>
       <div className="flex flex-col w-full">
         {/* Name Banner */}
-        <div className="animate-fade-in delay-0">
-          <CardGrainy />
+        <div className="">
+          <CardTitle />
         </div>
-
-        {/* <p className="typewriter w-fit">Cameron</p> */}
 
         {/* Section 1 */}
         {/* Three parts: image has defined width, socials has width fit to buttons, about me takes rest */}
