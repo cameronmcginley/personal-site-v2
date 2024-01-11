@@ -11,7 +11,7 @@ export function CustomButton({ children, ...props }: CardContainerProps) {
     <Link
       href={props.url}
       className="
-      w-full h-full md:mb-2 md:mr-0 mb-0 mr-2 last:mb-0
+      w-fit h-fit md:mb-2 md:mr-0 mb-0 mr-2 last:mb-0
 
       border
       

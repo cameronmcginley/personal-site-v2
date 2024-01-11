@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CardHoverShine } from "./card-hovershine";
 import { CustomLink } from "./custom-link";
+import { CustomButton } from "@/components/custom-button";
 
 export function CardProject(props) {
   const isWebm = props.image.endsWith(".webm");
@@ -48,25 +49,22 @@ export function CardProject(props) {
               <div className="text-lg pb-1 font-bold text-link text-center">
                 <CustomLink url={props.github_link} text={props.title} />
               </div>
+
               {/* Links */}
-              <div className="flex flex-row w-full justify-center">
+              <div className="flex flex-row w-full justify-center gap-2">
                 {/* GitHub */}
-                <Link
-                  href={props.github_link}
-                  className="pr-2 pb-1 last:pr-0 last:pb-0"
-                >
-                  <CardHoverShine isLink={true}>GitHub</CardHoverShine>
-                </Link>
+                <CustomButton url={props.github_link}>
+                  <p>GitHub</p>
+                </CustomButton>
+
                 {/* Public App */}
                 {props.public_link && (
-                  <Link
-                    href={props.public_link}
-                    className="pr-2 pb-1 last:pr-0 last:pb-0"
-                  >
-                    <CardHoverShine isLink={true}>Public App</CardHoverShine>
-                  </Link>
+                  <CustomButton url={props.public_link}>
+                    <p>Public App</p>
+                  </CustomButton>
                 )}
               </div>
+
               {/* Description */}
               <div className="flex text-center pt-1 pb-1 pl-2 pr-2">
                 {props.description}
