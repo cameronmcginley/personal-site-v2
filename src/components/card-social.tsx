@@ -37,9 +37,9 @@ export function CardSocial(props: CardSocialProps) {
         className="
         group
         border flex flex-row p-1 max-w-946 w-full h-full
-        bg-gradient-to-br from-companycardbg from-40% via-cardsheen via-65% to-companycardbg to-90%
-        hover:via-cardsheenhover
-        hover:border-bgcolorhighlight
+        bg-gradient-to-br from-companyCardBg from-40% via-cardSheen via-65% to-companyCardBg to-90%
+        hover:via-cardSheenHover
+        hover:border-bgColorSplash
         hover:drop-shadow
         hover:z-10
         "

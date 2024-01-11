@@ -16,51 +16,71 @@ module.exports = {
       },
     },
     extend: {
+      // https://github.com/tailwindlabs/tailwindcss/discussions/2599#discussioncomment-2965375
+      backgroundImage: {
+        // 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        // 'radial-splash-br': 'radial-gradient(circle 800px at 100% 100%, var(--tw-gradient-stops))'
+      },
       colors: {
         // Light theme colors
-        'border': "gray-200",
-        'input': "gray-200",
-        'ring': "blue-600",
-        'background': "white",
-        'foreground': "gray-800",
-        'company-card-bg': "gray-100",
-        'card-sheen': "white",
-        'bg-color-highlight': "purple-200",
-        'card-sheen-hover': "purple-100",
-        'primary': "blue-900",
-        'secondary': "gray-100",
-        'destructive': "red-600",
-        'muted': "gray-300",
-        'accent': "blue-100",
-        'popover': "white",
-        'card': "white",
+
+        // Primary Colors
+        'primary': "#0f172a",
+        'secondary': "F3F4F6",
+        'accent': "#DBEAFE",
+
+        // Background Colors
+        'background': "#ffffff",
+        'companyCardBg': "#f7f7f7",
+        'card': "#ffffff",
+        'popover': "#ffffff",
+        'bgColorSplash': "#ffffff",
+
+        // Interactive Element Colors
+        'border': "#e2e8f0",
+        'cardSheen': "#ffffff",
+        'cardSheenHover': "#F3F4F6",
+
+        // Link Colors
+        'link': "#2563EB", // blue-600
+        'linkUnderlineStart': "#3B82F6", // blue-500
+        'linkUnderlineEnd': "#93C5FD", // blue-300
+        'cardLinkOutline': "#3B82F6", // blue-500
+        'cardSheenHoverLink': "#DBEAFE", // blue-100
+
+        // Text/Foreground Colors
+        'foreground': "#1F2937",
+        'muted': "#D1D5DB",
+
+        // Status and Notification Colors
+        'destructive': "#DC2626",
 
         // Dark theme colors
-        dark: {
-          'background': 'slate-900',
-          'card': 'slate-900',
-          'popover': 'slate-900',
-          'primary': 'orange-400',
-          'secondary': 'gray-700',
-          'muted': 'gray-700',
-          'accent': 'gray-700',
-          'destructive': 'red-700',
-          'border': 'slate-800',
-          'input': 'gray-700',
-          'ring': 'blue-200',
-          'dot-color': 'slate-800',
-          'company-card-bg': 'slate-900',
-          'card-sheen': 'slate-800',
-          'card-sheen-hover': 'slate-700',
-          'bgcolorhighlight': 'purple-900',
-        },
+        // dark: {
+        //   'background': 'slate-900',
+        //   'card': 'slate-900',
+        //   'popover': 'slate-900',
+        //   'primary': 'orange-400',
+        //   'secondary': 'gray-700',
+        //   'muted': 'gray-700',
+        //   'accent': 'gray-700',
+        //   'destructive': 'red-700',
+        //   'border': 'slate-800',
+        //   'input': 'gray-700',
+        //   'ring': 'blue-200',
+        //   'dot-color': 'slate-800',
+        //   'companyCardBg': 'slate-900',
+        //   'cardSheen': 'slate-800',
+        //   'cardSheenHover': 'slate-700',
+        //   'bgColorSplash': 'purple-900',
+        // },
         
         
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "calc(0.5rem - 2px)",
+        sm: "calc(0.5rem - 4px)",
       },
       keyframes: {
         "accordion-down": {

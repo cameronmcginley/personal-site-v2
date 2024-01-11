@@ -3,15 +3,11 @@
 import * as React from "react";
 import "@/app/globals.css";
 import { useTheme } from "next-themes";
+// import { theme } from "tailwindcss/defaultTheme";
+
+// const bgColorSplash = theme("colors.bgColorSplash", "defaultColor");
 
 // Based on https://twitter.com/Suupercharged/status/1667785486382006272/photo/1
-
-const colors = {
-  border: "#000000", // replace with your desired color
-  tileWidth: "20px", // as an example
-  tileHeight: "20px", // as an example
-  bgColorHighlight: "#yourHighlightColor", // replace with your desired color
-};
 
 export function BackgroundTwo() {
   const { theme } = useTheme();
@@ -34,15 +30,35 @@ export function BackgroundTwo() {
           {/* <div
             className="
           absolute bottom-0 left-0 right-0 top-0 
-          bg-[radial-gradient(circle_800px_at_100%_200px,var(--bg-color-highlight),transparent)]
+          bg-[radial-gradient(circle_800px_at_100%_200px,var(--bgColorSplash),transparent)]
           "
           ></div> */}
+          {/* <div
+            className="
+              absolute bottom-0 left-0 right-0 top-0 
+              bg-[radial-gradient(circle_800px_at_100%_100%,var(--bgColorSplash),transparent)]
+            "
+          /> */}
+
           <div
             className="
-          absolute bottom-0 left-0 right-0 top-0 
-          bg-[radial-gradient(circle_800px_at_100%_100%,var(--bg-color-highlight),transparent)]
-          "
-          ></div>
+              absolute bottom-0 left-0 right-0 top-0 
+              bg-[radial-gradient(circle_800px_at_100%_100%,_var(--tw-gradient-stops))]
+              from-blue-200 
+              to-transparent
+            "
+          />
+
+          {/* <div className="rounded-full h-48 w-48 bg-gradient-radial from-purple-500 via-pink-500 to-red-500"></div>
+
+          <div className="absolute bottom-0 left-0 right-0 top-0 bg-radial-splash-br from-bgColorSplash to-transparent"></div> */}
+
+          {/* <div
+            style={{
+              background: `radial-gradient(circle 800px at 100% 100%,var(--bgColorSplash),transparent)`,
+            }}
+            className="absolute bottom-0 left-0 right-0 top-0"
+          /> */}
         </div>
       </div>
     </>

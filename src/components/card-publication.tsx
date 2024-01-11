@@ -46,7 +46,7 @@ export function CardPublication(props) {
 
         <div>
           {/* Title */}
-          <div className="w-fit pb-1 text-xl font-bold text-blue-600 dark:text-blue-500 ">
+          <div className="w-fit pb-1 text-xl font-bold text-link ">
             <CustomLink url={props.titlelink} text={props.title} />
           </div>
           {/* Authors */}
@@ -64,7 +64,7 @@ export function CardPublication(props) {
           {/* Conference */}
           <div className="text-md">{props.conference}</div>
           {/* Citations */}
-          <div className="text-md w-fit text-blue-600 dark:text-blue-500 ">
+          <div className="text-md w-fit text-link">
             <CustomLink
               url={props.citationslink}
               text={"Citations: " + props.citations}

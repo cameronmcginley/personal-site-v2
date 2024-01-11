@@ -18,16 +18,18 @@ export function CardHoverShine({ children, ...props }: CardContainerProps) {
 
     border flex flex-row p-1 max-w-946 w-full 
     bg-gradient-to-br 
-    from-companycardbg 
+
+    from-companyCardBg 
     from-40% 
-    via-cardsheen 
+    via-cardSheen 
     via-65% 
-    to-companycardbg 
+    to-companyCardBg 
     to-90%
-    hover:from-companycardbg
-    hover:via-cardsheenhover
-    hover:border-bgcolorhighlight
-    hover:to-companycardbg
+
+    hover:from-companyCardBg
+    hover:via-cardSheenHoverLink
+    hover:to-companyCardBg
+    hover:border-bgColorSplash
     hover:drop-shadow
     relative
     `;
@@ -35,16 +37,20 @@ export function CardHoverShine({ children, ...props }: CardContainerProps) {
     className = `
     group/unlinked
     border flex flex-row max-w-946 w-full 
+
     bg-gradient-to-br 
-    from-companycardbg
-    from-40% via-cardsheen 
+
+    from-companyCardBg
+    from-40% 
+    via-cardSheen
     via-65% 
-    to-companycardbg
+    to-companyCardBg
     to-90%
-    hover:from-companycardbg
-    hover:via-gray-100/60
-    hover:border-gray-200/20
-    hover:to-companycardbg
+
+    hover:from-companyCardBg
+    hover:via-cardSheenHover
+    hover:to-companyCardBg
+    hover:border
     hover:drop-shadow
     `;
   }
@@ -56,12 +62,12 @@ export function CardHoverShine({ children, ...props }: CardContainerProps) {
   return (
     <>
       {props.isLink ? (
-        // Linked card (blue highlights)
+        // Linked card (blue outlines)
         <Card className={className}>
-          <div className="rounded-tl-lg ease absolute left-0 top-0 h-0 w-0 border-t-2 border-blue-300 transition-all duration-200 group-hover/linked:w-full"></div>
-          <div className="rounded-tr-lg ease absolute right-0 top-0 h-0 w-0 border-r-2 border-blue-300 transition-all duration-200 group-hover/linked:h-full"></div>
-          <div className="rounded-br-lg ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-blue-300 transition-all duration-200 group-hover/linked:w-full"></div>
-          <div className="rounded-bl-lg ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-blue-300 transition-all duration-200 group-hover/linked:h-full"></div>
+          <div className="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-cardLinkOutline transition-all duration-200 group-hover/linked:w-full"></div>
+          <div className="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-cardLinkOutline transition-all duration-200 group-hover/linked:h-full"></div>
+          <div className="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-cardLinkOutline transition-all duration-200 group-hover/linked:w-full"></div>
+          <div className="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-cardLinkOutline transition-all duration-200 group-hover/linked:h-full"></div>
           {children}
         </Card>
       ) : (

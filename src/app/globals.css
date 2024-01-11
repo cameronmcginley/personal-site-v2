@@ -10,7 +10,7 @@
     --bg-linecolor: #e2e8f0;
     --bg-tilewidth: 6rem;
     --bg-tileheight: 4rem;
-    --bg-color-highlight: #d5c5ff;
+    --bgColorSplash: #d5c5ff;
 
     --card: 0 0% 100%;
     --border: #e2e8f0;
@@ -18,19 +18,19 @@
 
     --dot-color: #c7ccd4;
 
-    --company-card-bg: #f7f7f7;
-    --card-sheen: #ffffff;
-    --card-sheen-hover: #e8e6f5;
+    --companyCardBg: #f7f7f7;
+    --cardSheen: #ffffff;
+    --cardSheenHover: #e8e6f5;
 
     --primary: 222.2 47.4% 11.2%; */
 
     /* Background Two */
-    --bg-primary: #f3f3fb;
+    /* --bg-primary: #f3f3fb;
     --bg-fadeto: #ffffff;
     --bg-linecolor: #d3defa;
     --bg-tilewidth: 3rem;
     --bg-tileheight: 2rem;
-    --bg-color-highlight: #c1d0f9;
+    --bgColorSplash: #c1d0f9;
 
     --card: 0 0% 100%;
     --border: #e2e8f0;
@@ -38,11 +38,11 @@
 
     --dot-color: #d3defa;
 
-    --company-card-bg: #f7f7f7;
-    --card-sheen: #ffffff;
-    --card-sheen-hover: #e6ecfc;
+    --companyCardBg: #f7f7f7;
+    --cardSheen: #ffffff;
+    --cardSheenHover: #e6ecfc;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 222.2 47.4% 11.2%; */
 
     /* --background: 0 0% 100%; */
     /* --background: #ffffff;
@@ -82,53 +82,11 @@
 
     --dot-color: #c7ccd4;
 
-    --company-card-bg: #f7f7f7;
-    --card-sheen: #ffffff;
-    --card-sheen-hover: #e8e6f5;
+    --companyCardBg: #f7f7f7;
+    --cardSheen: #ffffff;
+    --cardSheenHover: #e8e6f5;
 
-    --bg-color-highlight: #d5c5ff; */
-  }
-
-  .dark {
-    /* --background: 222.2 84% 4.9%; */
-    --background: #050608;
-    --foreground: 210 40% 98%;
-
-    /* --card: 222.2 84% 4.9%; */
-    --card: #050608;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    /* --primary: #e87523; */
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    /* --border: 217.2 32.6% 17.5%; */
-    --border: #1e293b;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-
-    --dot-color: #1e293b;
-    /* Also define in tailwindconfigjs to use in classnames */
-    --company-card-bg: #050608;
-    --card-sheen: #020817;
-    --card-sheen-hover: #0a0a22;
-
-    --bg-color-highlight: #120929;
+    --bgColorSplash: #d5c5ff; */
   }
 }
 

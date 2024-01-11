@@ -36,7 +36,7 @@ export function CardProject(props) {
                 />
               )}
               {/* Overlay for fade effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-companycardbg to-transparent z-10"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-companyCardBg to-transparent z-10"></div>
             </div>
           </Link>
 
@@ -45,7 +45,7 @@ export function CardProject(props) {
             {/* Container for Title, Links, and Description */}
             <div className="flex-grow">
               {/* Title */}
-              <div className="text-lg pb-1 font-bold text-blue-600 dark:text-blue-500 text-center">
+              <div className="text-lg pb-1 font-bold text-link text-center">
                 <CustomLink url={props.github_link} text={props.title} />
               </div>
               {/* Links */}

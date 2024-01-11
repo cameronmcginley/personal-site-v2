@@ -13,7 +13,7 @@ export function CustomLink({ children, ...props }: CardContainerProps) {
     <Link
       href={props.url}
       className="
-        bg-gradient-to-r from-blue-500 to-blue-300
+        bg-gradient-to-r from-linkUnderlineStart to-linkUnderlineEnd
         bg-[length:0px_3px]
         bg-left-bottom
         bg-no-repeat
