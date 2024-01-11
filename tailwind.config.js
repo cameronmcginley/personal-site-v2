@@ -86,7 +86,7 @@ module.exports = {
         'cardSheenHover': "#F3F4F6", // No match, closest: grey-100
 
         // Link Colors
-        'link': "#EA580C", // orange-600
+        'link': "#C2410C", // orange-600
         'linkUnderlineStart': "#F97316", // orange-500
         'linkUnderlineEnd': "#FDBA74", // orange-300
         'cardLinkOutline': "#F97316", // orange-500

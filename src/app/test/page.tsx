@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { CardContainer } from "@/components/card-container";
 import { ExperienceSectionAlt } from "@/components/experience-section-alt";
@@ -9,11 +9,39 @@ import { SectionPublications } from "@/components/section-publications";
 import { SectionProjects } from "@/components/section-projects";
 import { CardTitle } from "@/components/card-title";
 import { SectionSocials } from "@/components/section-socials";
+import { CustomLink } from "@/components/custom-link";
 
 export default function Home() {
+  const experienceRef = useRef(null);
+  const publicationsRef = useRef(null);
+  const projectsRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className="flex flex-col w-full">
+        {/* Simple Navbar */}
+        <div className="flex gap-8 justify-center mb-2">
+          <CustomLink
+            onClick={() => scrollToSection(experienceRef)}
+            text="Experience"
+          />
+          <CustomLink
+            onClick={() => scrollToSection(publicationsRef)}
+            text="Publications"
+          />
+          <CustomLink
+            onClick={() => scrollToSection(projectsRef)}
+            text="Projects"
+          />
+        </div>
+
         {/* Name Banner */}
         <div className="">
           <CardTitle />
@@ -21,7 +49,6 @@ export default function Home() {
 
         {/* Section 1 */}
         {/* Three parts: image has defined width, socials has width fit to buttons, about me takes rest */}
-        {/* <div className="grid grid-cols-7 gap-0"> */}
         <div
           className="
           delay-100 opacity-0 fill-forwards animate-fade-in-up 
@@ -29,7 +56,7 @@ export default function Home() {
         "
         >
           {/* Image */}
-          <div className="sm:w-1/2 w-1/2 h-fit">
+          <div className="sm:w-1/2 w-1/2">
             <CardContainer>
               <Tilt
                 className="tilt"
@@ -79,17 +106,26 @@ export default function Home() {
         </div>
 
         {/* Section 2 */}
-        <div className="delay-200 opacity-0 fill-forwards animate-fade-in-up">
+        <div
+          ref={experienceRef}
+          className="delay-200 opacity-0 fill-forwards animate-fade-in-up"
+        >
           <ExperienceSectionAlt />
         </div>
 
         {/* Section 3 */}
-        <div className="delay-200 opacity-0 fill-forwards animate-fade-in-up">
+        <div
+          ref={publicationsRef}
+          className="delay-200 opacity-0 fill-forwards animate-fade-in-up"
+        >
           <SectionPublications />
         </div>
 
         {/* Section 4 */}
-        <div className="delay-200 opacity-0 fill-forwards animate-fade-in-up">
+        <div
+          ref={projectsRef}
+          className="delay-200 opacity-0 fill-forwards animate-fade-in-up"
+        >
           <SectionProjects />
         </div>
       </div>

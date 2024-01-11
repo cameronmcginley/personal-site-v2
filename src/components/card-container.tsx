@@ -39,7 +39,7 @@ export function CardContainer({ children, ...props }: CardContainerProps) {
   } else if (props.bgpattern === "plus") {
     className += ` pattern-plus-blue-300/20`;
   } else if (props.bgpattern === "wood") {
-    className += ` pattern-wood-gray-300/15`;
+    className += ` pattern-wood-neutral-300/30`;
   } else if (props.bgpattern === "signal") {
     className += ` pattern-signal-gray-300/15`;
   }
