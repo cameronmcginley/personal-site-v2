@@ -22,40 +22,80 @@ module.exports = {
         // 'radial-splash-br': 'radial-gradient(circle 800px at 100% 100%, var(--tw-gradient-stops))'
       },
       colors: {
-        // Light theme colors
+        // // Light-Blue Theme
+        // // Primary Colors
+        // 'primary': "#0f172a", // No match, closest: grey-900
+        // 'secondary': "F3F4F6", // No match, closest: grey-100
+        // 'accent': "#DBEAFE", // blue-100
 
+        // // Background Colors
+        // 'background': "#ffffff", // white
+        // 'companyCardBg': "#f7f7f7", // No match, closest: grey-100
+        // 'card': "#ffffff", // white
+        // 'popover': "#ffffff", // white
+
+        // 'bgPrimary': "#F3F4F6", // white
+        // 'bgFadeTo': "#93C5FD", // white
+        // 'bgLineColor': "#D1D5DB", // grey-300
+        // 'bgColorSplash': "#BFDBFE", // blue-200
+
+        // // Interactive Element Colors
+        // 'border': "#e2e8f0", // No match, closest: grey-300
+        // 'cardSheen': "#ffffff", // white
+        // 'cardSheenHover': "#F3F4F6", // No match, closest: grey-100
+
+        // // Link Colors
+        // 'link': "#2563EB", // blue-600
+        // 'linkUnderlineStart': "#3B82F6", // blue-500
+        // 'linkUnderlineEnd': "#93C5FD", // blue-300
+        // 'cardLinkOutline': "#3B82F6", // blue-500
+        // 'cardSheenHoverLink': "#DBEAFE", // blue-100
+
+        // // Grainy Title Card
+        // 'titleFrom': "#1E40AF", // blue-800 
+        // 'titleVia': "#2563EB", // blue-600
+        // 'titleTo': "#4F46E5", // indigo-600
+
+        // // Text/Foreground Colors
+        // 'foreground': "#1F2937", // No match, closest: grey-800
+        // 'muted': "#D1D5DB", // No match, closest: grey-300
+
+        // // Status and Notification Colors
+        // 'destructive': "#DC2626", // red-600
+
+        // Light Orange Theme
         // Primary Colors
         'primary': "#0f172a", // No match, closest: grey-900
         'secondary': "F3F4F6", // No match, closest: grey-100
         'accent': "#DBEAFE", // blue-100
 
         // Background Colors
-        'background': "#ffffff", // white
+        'background': "#D4D4D4", // neutral-300
         'companyCardBg': "#f7f7f7", // No match, closest: grey-100
         'card': "#ffffff", // white
         'popover': "#ffffff", // white
 
-        'bgPrimary': "#F3F4F6", // white
+        'bgPrimary': "#D4D4D4", // neutral-300
         'bgFadeTo': "#93C5FD", // white
-        'bgLineColor': "#D1D5DB", // grey-300
-        'bgColorSplash': "#BFDBFE", // blue-200
+        'bgLineColor': "#A3A3A3", // neutral-400
+        'bgColorSplash': "NULL", // blue-200
 
         // Interactive Element Colors
-        'border': "#e2e8f0", // No match, closest: grey-300
+        'border': "#C2C0BE", // between neutral 300 and 400
         'cardSheen': "#ffffff", // white
         'cardSheenHover': "#F3F4F6", // No match, closest: grey-100
 
         // Link Colors
-        'link': "#2563EB", // blue-600
-        'linkUnderlineStart': "#3B82F6", // blue-500
-        'linkUnderlineEnd': "#93C5FD", // blue-300
-        'cardLinkOutline': "#3B82F6", // blue-500
-        'cardSheenHoverLink': "#DBEAFE", // blue-100
+        'link': "#EA580C", // orange-600
+        'linkUnderlineStart': "#F97316", // orange-500
+        'linkUnderlineEnd': "#FDBA74", // orange-300
+        'cardLinkOutline': "#F97316", // orange-500
+        'cardSheenHoverLink': "#FFEDD5", // orange-100
 
         // Grainy Title Card
-        'titleFrom': "#1E40AF", // blue-800 
-        'titleVia': "#2563EB", // blue-600
-        'titleTo': "#4F46E5", // indigo-600
+        'titleFrom': "#9A3412", // orange-800 
+        'titleVia': "#EA580C", // orange-600
+        'titleTo': "#D97706", // amber-600
 
         // Text/Foreground Colors
         'foreground': "#1F2937", // No match, closest: grey-800

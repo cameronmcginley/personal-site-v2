@@ -8,14 +8,13 @@ interface CardContainerProps {
 
 export function CustomButton({ children, ...props }: CardContainerProps) {
   return (
-    <Link
-      href={props.url}
+    <div
       className="
-      w-fit h-fit md:mb-2 md:mr-0 mb-0 mr-2 last:mb-0
+      h-full md:mb-2 md:mr-0 mb-0 mr-2 last:mb-0
 
       border
       
-      relative rounded px-1 py-1
+      relative rounded-md px-1 py-1
       overflow-hidden 
       group 
       bg-companyCardBg
@@ -48,7 +47,9 @@ export function CustomButton({ children, ...props }: CardContainerProps) {
         group-hover:duration-1000
         ease"
       />
-      <span className="relative">{children}</span>
-    </Link>
+      <span className="relative">
+        <Link href={props.url}>{children}</Link>
+      </span>
+    </div>
   );
 }

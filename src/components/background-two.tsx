@@ -65,11 +65,20 @@ export function BackgroundTwo() {
           "
         />
         {/* Fade out */}
-        <div
+        {/* Light blue */}
+        {/* <div
           className="
           absolute inset-0 -z-10 h-full w-full
           // Percentages: %width, %height, %x, %y
           bg-[radial-gradient(ellipse_30%_5%_at_50%_0%,rgba(255,255,255,1)_100%,transparent_1000%)]
+          "
+        /> */}
+        {/* Light orange */}
+        <div
+          className="
+          absolute inset-0 -z-10 h-full w-full
+          // Percentages: %width, %height, %x, %y
+          bg-[radial-gradient(ellipse_30%_5%_at_50%_0%,rgba(212,212,212,1)_100%,transparent_1000%)]
           "
         />
         {/* Color splash */}

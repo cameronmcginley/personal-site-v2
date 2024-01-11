@@ -19,7 +19,7 @@ export function CardPublication(props) {
       <div className="flex p-4 md:flex-row flex-col justify-center md:items-start items-center">
         {/* Image */}
         <div className="md:w-1/3 w-1/3 md:pr-4 pr-0 md:pb-0 pb-4 flex justify-center">
-          <Tilt
+          {/* <Tilt
             className="tilt"
             tiltReverse={true}
             tiltMaxAngleX={20}
@@ -32,16 +32,17 @@ export function CardPublication(props) {
             glareColor="white" // Optional: adjust glare color
             glarePosition="bottom" // Optional: adjust glare position
             glareBorderRadius="0.75rem" // match rounded-xl on image
-          >
-            <Image
-              src={props.image}
-              width={500}
-              height={500}
-              alt={props.image}
-              className="rounded-md outline outline-1 outline-gray-300 outline-offset-2"
-              // className="rounded-xl border-b-2 border-r-2 border-gray-300"
-            />
-          </Tilt>
+          > */}
+          <Image
+            src={props.image}
+            width={500}
+            height={500}
+            alt={props.image}
+            // className="rounded-md outline outline-1 outline-gray-300 outline-offset-2"
+            className="ounded-md border transition-transform duration-300 ease-in-out transform hover:scale-105"
+            // className="rounded-xl border-b-2 border-r-2 border-gray-300"
+          />
+          {/* </Tilt> */}
         </div>
 
         <div>
