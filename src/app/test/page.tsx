@@ -34,6 +34,8 @@ import { CardGrainy } from "@/components/card-grainy";
 import { CustomButton } from "@/components/custom-button";
 // import TextAnimate from "@/components/functions/text-animate";
 
+import { SectionSocials } from "@/components/section-socials";
+
 export default function Home() {
   return (
     <>
@@ -84,79 +86,7 @@ export default function Home() {
           </div>
 
           {/* Socials */}
-          <div className="flex justify-center">
-            {/* <CardContainer>Socials</CardContainer> */}
-            <CardContainer bgpattern="wood" patterncolor="blue-300/20">
-              <div className="flex md:flex-col flex-row">
-                <CustomButton url="/resume.pdf">
-                  <div className="p-0 m-0 flex flex-col justify-center items-center w-full h-full">
-                    <FontAwesomeIcon
-                      className="h-8 w-8"
-                      icon={faFilePdf}
-                      style={{
-                        color: "#e53935",
-                      }}
-                    />
-                    <p className="p-0 m-0 h-fit w-fit">Resume</p>
-                  </div>
-                </CustomButton>
-
-                <CustomButton url="/resume.pdf">
-                  <div className="p-0 m-0 flex flex-col justify-center items-center w-full h-full">
-                    <FontAwesomeIcon
-                      className="h-8 w-8"
-                      icon={faFilePdf}
-                      style={{
-                        color: "#e53935",
-                      }}
-                    />
-                    <p className="p-0 m-0 h-fit w-fit">Resume</p>
-                  </div>
-                </CustomButton>
-
-                <CustomButton url="/resume.pdf">
-                  <div className="p-0 m-0 flex flex-col justify-center items-center w-full h-full">
-                    <FontAwesomeIcon
-                      className="h-8 w-8"
-                      icon={faFilePdf}
-                      style={{
-                        color: "#e53935",
-                      }}
-                    />
-                    <p className="p-0 m-0 h-fit w-fit">Resume</p>
-                  </div>
-                </CustomButton>
-
-                <CustomButton url="/resume.pdf">
-                  <div className="p-0 m-0 flex flex-col justify-center items-center w-full h-full">
-                    <FontAwesomeIcon
-                      className="h-8 w-8"
-                      icon={faFilePdf}
-                      style={{
-                        color: "#e53935",
-                      }}
-                    />
-                    <p className="p-0 m-0 h-fit w-fit">Resume</p>
-                  </div>
-                </CustomButton>
-
-                {/*                 
-                <CardSocial text="Resume" url="/resume.pdf" />
-                <CardSocial
-                  text="LinkedIn"
-                  url="https://linkedin.com/in/cameronmcginley/"
-                />
-                <CardSocial
-                  text="GitHub"
-                  url="https://github.com/cameronmcginley"
-                />
-                <CardSocial
-                  text="Scholar"
-                  url="https://scholar.google.com/citations?user=3AUzp3MAAAAJ&hl=en"
-                /> */}
-              </div>
-            </CardContainer>
-          </div>
+          <SectionSocials />
 
           {/* About Me */}
           <div className="w-fit">

@@ -4,7 +4,6 @@ import Link from "next/link";
 interface CardContainerProps {
   children: React.ReactNode;
   url: string;
-  text: string;
 }
 
 export function CustomButton({ children, ...props }: CardContainerProps) {
@@ -21,7 +20,7 @@ export function CustomButton({ children, ...props }: CardContainerProps) {
       group 
       bg-companyCardBg
       relative 
-      
+
       hover:bg-gradient-to-r 
       hover:from-companyCardBg 
       hover:to-cardSheenHoverLink 
