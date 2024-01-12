@@ -36,7 +36,7 @@ const socials = [
 
 export function SectionSocials() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center md:h-80">
       <CardContainer bgpattern="wood" patterncolor="blue-300/20">
         <div className="flex md:flex-col flex-row">
           {/* Map all buttons */}

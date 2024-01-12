@@ -42,12 +42,51 @@ export function CardCompany(props) {
     logoWidth = 180;
     logoHeight = 180;
   }
+
   return (
     <CardHoverShine isLink={false}>
+      <div className="flex flex-row h-full items-center">
+        {/* Image */}
+        <div className="min-w-20 max-w-20 h-20 p-1 flex items-center">
+          <Image
+            src={props.logo}
+            alt={props.company + " Logo"}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            className="transition-transform duration-300 ease-in-out transform hover:scale-105"
+          />
+        </div>
+        {/* Text */}
+        <div className="p-1">
+          {/* Company Name */}
+          <div className="text-xl font-bold drop-shadow-[0_1px_1px_#ffffff]">
+            {props.company}
+          </div>
+          {/* Position and Dates */}
+          <div className="text-md">
+            {props.positions.map((position, index) => (
+              <div key={position} className="pb-2 last:pb-0">
+                {position}
+                <div className="text-sm pl-2">{props.dates[index]}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </CardHoverShine>
+  );
+
+  return (
+    <CardHoverShine isLink={false}>
+      {/* Text */}
       <div className="p-2">
+        {/* Company Name */}
         <div className="pb-1 text-xl font-bold drop-shadow-[0_1px_1px_#ffffff]">
           {props.company}
         </div>
+        {/* Position and Dates */}
         <div className="text-md">
           {props.positions.map((position, index) => (
             <div key={position} className="pb-2 last:pb-0">
@@ -57,6 +96,7 @@ export function CardCompany(props) {
           ))}
         </div>
       </div>
+      {/* Image */}
       <div className="">
         <Image
           src={props.logo}

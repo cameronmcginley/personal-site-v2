@@ -30,10 +30,12 @@ export function CardProject(props) {
               ) : (
                 <Image
                   src={props.image}
-                  layout="fill"
-                  objectFit="cover"
                   alt={props.image}
                   className="border-b transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: "100%", height: "auto" }}
                 />
               )}
               {/* Overlay for fade effect */}

@@ -24,7 +24,7 @@ export function AnimatedName(props) {
     return () => clearInterval(timer);
   }, []);
   return (
-    <h1 className="text-white font-bold text-5xl tracking-wide text-center">
+    <h1 className="drop-shadow-md text-white font-bold text-5xl tracking-wide text-center">
       {Array.from(text).map((c, i) => (
         <span
           key={i}

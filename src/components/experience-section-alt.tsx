@@ -8,7 +8,9 @@ const companies = [
     company: "Capital One",
     positions: ["Software Engineer", "Software Engineer Intern"],
     dates: ["Feb 2024 - Current", "Summer 2023"],
-    logo: "/CapitalOneLogo.svg",
+    logo: "/media/companies/square/CapitalOneLogo.jpg",
+    // logo: "/CapitalOneLogo.svg",
+    // logo: "/CapitalOneLogoAlt.jpg",
     logoSize: "extrawide",
   },
   {
@@ -52,7 +54,7 @@ const schools = [
   {
     company: "Wichita State University",
     positions: ["B.S. Computer Science"],
-    dates: ["August 2023"],
+    dates: ["May 2022"],
     logo: "/WSULogo.png",
     logoSize: "wide",
   },
@@ -66,7 +68,7 @@ export function ExperienceSectionAlt() {
       <CardContainer bgpattern="wood" patterncolor="blue-300/20">
         <div className="flex md:flex-row flex-col w-full">
           {/* Education */}
-          <div className="gap-2 pr-1 flex flex-col w-full items-center">
+          <div className="gap-1 pr-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Education</p>
             {schools.map((item, index) => (
               <CardCompany
@@ -80,8 +82,10 @@ export function ExperienceSectionAlt() {
             ))}
           </div>
           {/* Work */}
-          <div className="gap-2 pl-1 flex flex-col w-full items-center">
-            <p className="text-3xl font-bold col-span-2">Professional</p>
+          <div className="gap-1 pl-1 flex flex-col w-full items-center">
+            <p className="pt-2 sm:pt-0 text-3xl font-bold col-span-2">
+              Professional
+            </p>
             {companies.map((item, index) => (
               <CardCompany
                 key={index}

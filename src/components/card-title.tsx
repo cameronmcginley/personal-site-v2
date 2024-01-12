@@ -6,7 +6,7 @@ import { AnimatedName } from "@/components/animated-name";
 export function CardTitle() {
   // https://hypercolor.dev/grainy
   let className = `
-    flex items-stretch mb-2 shadow-sm
+    flex items-stretch shadow-sm
     w-full
     rounded-md
     bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] 

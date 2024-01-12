@@ -134,3 +134,18 @@
   letter-spacing: 0.15em; /* Adjust to your liking */
   animation: typing 3.5s steps(40, end), blinkCursor 0.75s step-end infinite;
 }
+
+.signature-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawSignature 5s forwards linear;
+  animation-delay: 2s;
+  stroke: #1f2937;
+  /* stroke: #c2410c; */
+}
+
+@keyframes drawSignature {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

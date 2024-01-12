@@ -75,9 +75,9 @@ module.exports = {
         'card': "#ffffff", // white
         'popover': "#ffffff", // white
 
-        'bgPrimary': "#D4D4D4", // neutral-300
+        'bgPrimary': "#E5E5E5", // neutral-200
         'bgFadeTo': "#93C5FD", // white
-        'bgLineColor': "#A3A3A3", // neutral-400
+        'bgLineColor': "#D4D4D4", // neutral-300
         'bgColorSplash': "NULL", // blue-200
 
         // Interactive Element Colors
