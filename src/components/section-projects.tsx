@@ -132,13 +132,38 @@ const projects = [
       },
     ],
   },
+  {
+    title: "Personal Website",
+    image: "/media/projects/personal-site.webp",
+    github_link: "https://github.com/cameronmcginley/personal-site-v2",
+    description:
+      "This one! Simple portfolio built with Next.js and deployed with Vercel. Lots of playing around to make the design somewhat decent.",
+    tools: [
+      {
+        name: "Next.js",
+        link: "https://nextjs.org/",
+      },
+      {
+        name: "TypeScript",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Vercel",
+        link: "https://vercel.com/",
+      },
+      {
+        name: "shadcn/ui",
+        link: "https://ui.shadcn.com/",
+      },
+    ],
+  },
 ];
 
 export function SectionProjects() {
   return (
     <>
       <CardContainer>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center w-full">
           <div className="flex flex-col justify-center">
             <p className="text-center text-3xl font-bold pb-2">Projects</p>
             <p className="text-center pb-2">
@@ -146,19 +171,24 @@ export function SectionProjects() {
               more via the GitHub links!
             </p>
           </div>
-          <div className="gap-8 flex flex-row flex-wrap w-full justify-center">
+          <div className="flex justify-center">
             {/* <div className="pr-1 flex flex-col w-full items-center"> */}
-            {projects.map((item, index) => (
-              <CardProject
-                key={index}
-                title={item.title}
-                image={item.image}
-                github_link={item.github_link}
-                public_link={item.public_link}
-                description={item.description}
-                tools={item.tools}
-              />
-            ))}
+            <div className="gap-8 flex flex-row flex-wrap justify-center">
+              {projects.map((item, index) => (
+                <CardProject
+                  key={index}
+                  title={item.title}
+                  image={item.image}
+                  github_link={item.github_link}
+                  public_link={item.public_link}
+                  description={item.description}
+                  tools={item.tools}
+                />
+              ))}
+              {/* Empty spacers to left align bottom */}
+              <div className="w-72"></div>
+              <div className="w-72"></div>
+            </div>
           </div>
         </div>
       </CardContainer>
