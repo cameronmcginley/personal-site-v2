@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { RefObject, useRef } from "react";
 import Image from "next/image";
 import { CardContainer } from "@/components/card-container";
 import { ExperienceSectionAlt } from "@/components/experience-section-alt";
@@ -17,11 +17,13 @@ export default function Home() {
   const publicationsRef = useRef(null);
   const projectsRef = useRef(null);
 
-  const scrollToSection = (ref) => {
-    window.scrollTo({
-      top: ref.current.offsetTop,
-      behavior: "smooth",
-    });
+  const scrollToSection = (ref: RefObject<HTMLElement>) => {
+    if (ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (

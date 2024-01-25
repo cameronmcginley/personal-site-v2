@@ -1,17 +1,10 @@
 import * as React from "react";
-import Image from "next/image";
-// import CapitalOneLogo from "/CapitalOneLogo.svg";
-import { Github, GraduationCap, FileText, Linkedin } from "lucide-react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGoogleScholar } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
-
-import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import Tilt from "react-parallax-tilt";
 import { CardHoverShine } from "./card-hovershine";
 
 interface CardSocialProps {
@@ -25,26 +18,6 @@ export function CardSocial(props: CardSocialProps) {
       href={props.url}
       className="w-full h-full md:mb-2 md:mr-0 mb-0 mr-2 last:mb-0"
     >
-      {/* <Tilt
-        className="max-w-946 w-full"
-        tiltMaxAngleX={0}
-        tiltMaxAngleY={0}
-        perspective={1000}
-        transitionSpeed={1000}
-        scale={1.025}
-      > */}
-      {/* <Card
-        className="
-        group
-        border flex flex-row p-1 max-w-946 w-full h-full
-        bg-gradient-to-br from-companyCardBg from-40% via-cardSheen via-65% to-companyCardBg to-90%
-        hover:via-cardSheenHover
-        hover:border-bgColorSplash
-        hover:drop-shadow
-        hover:z-10
-        "
-      > */}
-
       <CardHoverShine isLink={true}>
         <div className="flex flex-col justify-center items-center w-full h-full">
           {/* Icon */}

@@ -1,19 +1,19 @@
 import * as React from "react";
 import Image from "next/image";
-// import CapitalOneLogo from "/CapitalOneLogo.svg";
-
-import { Card } from "@/components/ui/card";
-import Tilt from "react-parallax-tilt";
-import Link from "next/link";
 import { CardHoverShine } from "./card-hovershine";
 import { CustomLink } from "./custom-link";
 
-// title="Capital One"
-// positions={["Software Engineer", "Software Engineer Inter"]}
-// dates={["Feb 2024 - Current", "Summer 2023"]}
-// logo="/CapitalOneLogo.svg"
+interface CardPublicationProps {
+  image: string;
+  title: string;
+  titlelink: string;
+  authors: string[];
+  conference: string;
+  citations: string;
+  citationslink: string;
+}
 
-export function CardPublication(props) {
+export function CardPublication(props: CardPublicationProps) {
   return (
     <CardHoverShine isLink={false}>
       <div className="flex p-4 md:flex-row flex-col justify-center md:items-start items-center">

@@ -3,13 +3,13 @@
 import * as React from "react";
 import { Card } from "@/components/ui/card";
 
-interface CardContainerProps {
+interface CardHoverShineProps {
   children: React.ReactNode;
   isLink: boolean;
   fullHeight?: boolean;
 }
 
-export function CardHoverShine({ children, ...props }: CardContainerProps) {
+export function CardHoverShine({ children, ...props }: CardHoverShineProps) {
   let className = "";
 
   if (props.isLink) {

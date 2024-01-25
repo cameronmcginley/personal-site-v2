@@ -1,6 +1,5 @@
 import React from "react";
 import { CardCompany } from "@/components/card-company";
-import { CardDots } from "@/components/card-dots";
 import { CardContainer } from "./card-container";
 
 const companies = [
@@ -11,35 +10,30 @@ const companies = [
     logo: "/media/companies/square/CapitalOneLogo.jpg",
     // logo: "/CapitalOneLogo.svg",
     // logo: "/CapitalOneLogoAlt.jpg",
-    logoSize: "extrawide",
   },
   {
     company: "NetApp",
     positions: ["Software Test Engineer Intern"],
     dates: ["May 2019 - May 2022"],
     logo: "/NetAppLogo.svg",
-    logoSize: "small",
   },
   {
     company: "Department of Defense",
     positions: ["Software Engineer Intern"],
     dates: ["Summer 2022"],
     logo: "/DODLogo.svg",
-    logoSize: "small",
   },
   {
     company: "Purdue University",
     positions: ["Machine Learning Intern"],
     dates: ["Summer 2021"],
     logo: "/PurdueLogo.svg",
-    logoSize: "wide",
   },
   {
     company: "Wichita State University",
     positions: ["Machine Learning Intern"],
     dates: ["Summer 2020"],
     logo: "/WSULogo.png",
-    logoSize: "wide",
   },
 ];
 
@@ -49,14 +43,12 @@ const schools = [
     positions: ["M.S. Computer Science"],
     dates: ["December 2023"],
     logo: "/UCSDLogo.png",
-    logoSize: "small",
   },
   {
     company: "Wichita State University",
     positions: ["B.S. Computer Science"],
     dates: ["May 2022"],
     logo: "/WSULogo.png",
-    logoSize: "wide",
   },
 ];
 
@@ -64,8 +56,7 @@ export function ExperienceSectionAlt() {
   return (
     <>
       {/* Education and Work */}
-      {/* <CardDots> */}
-      <CardContainer bgpattern="wood" patterncolor="blue-300/20">
+      <CardContainer>
         <div className="flex md:flex-row flex-col w-full">
           {/* Education */}
           <div className="gap-1 pr-1 flex flex-col w-full items-center">
@@ -77,7 +68,6 @@ export function ExperienceSectionAlt() {
                 positions={item.positions}
                 dates={item.dates}
                 logo={item.logo}
-                logoSize={item.logoSize}
               />
             ))}
           </div>
@@ -93,12 +83,10 @@ export function ExperienceSectionAlt() {
                 positions={item.positions}
                 dates={item.dates}
                 logo={item.logo}
-                logoSize={item.logoSize}
               />
             ))}
           </div>
         </div>
-        {/* </CardDots> */}
       </CardContainer>
     </>
   );

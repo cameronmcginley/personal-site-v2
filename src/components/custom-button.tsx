@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 
-interface CardContainerProps {
+interface CustomButtonProps {
   children: React.ReactNode;
   url: string;
 }
 
-export function CustomButton({ children, ...props }: CardContainerProps) {
+export function CustomButton({ children, ...props }: CustomButtonProps) {
   return (
     <div
       className="

@@ -1,6 +1,6 @@
 import React from "react";
 import { CardCompany } from "@/components/card-company";
-import { CardDots } from "@/components/card-dots";
+import { CardDots } from "@/components/old/card-dots";
 
 const companies = [
   {
@@ -78,7 +78,6 @@ export function ExperienceSection() {
                   positions={item.positions}
                   dates={item.dates}
                   logo={item.logo}
-                  logoSize={item.logoSize}
                 />
               ))}
             </div>
@@ -91,7 +90,6 @@ export function ExperienceSection() {
                   positions={item.positions}
                   dates={item.dates}
                   logo={item.logo}
-                  logoSize={item.logoSize}
                 />
               ))}
             </div>
@@ -112,7 +110,6 @@ export function ExperienceSection() {
                     positions={item.positions}
                     dates={item.dates}
                     logo={item.logo}
-                    logoSize={item.logoSize}
                   />
                 ))}
             </div>
@@ -125,7 +122,6 @@ export function ExperienceSection() {
                   positions={item.positions}
                   dates={item.dates}
                   logo={item.logo}
-                  logoSize={item.logoSize}
                 />
               ))}
             </div>

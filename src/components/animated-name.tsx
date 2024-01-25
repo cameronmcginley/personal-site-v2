@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export function AnimatedName(props) {
+export function AnimatedName() {
   const text = "Cameron McGinley";
   const [char, setChar] = React.useState(-1);
 
@@ -15,14 +15,18 @@ export function AnimatedName(props) {
         }
       });
     }, 50);
+    // Return the interval so we can clear it later
+    return timer;
   };
 
+  // Trigger on mount
   React.useEffect(() => {
     let timer = animate();
 
     // Clean up the interval on component unmount
     return () => clearInterval(timer);
   }, []);
+
   return (
     <h1 className="drop-shadow-md text-white font-bold text-5xl tracking-wide text-center">
       {Array.from(text).map((c, i) => (

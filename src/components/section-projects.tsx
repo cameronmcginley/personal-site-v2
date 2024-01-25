@@ -1,8 +1,5 @@
 import React from "react";
-import { CardCompany } from "@/components/card-company";
-import { CardDots } from "@/components/card-dots";
 import { CardContainer } from "./card-container";
-import { CardPublication } from "./card-publication";
 import { CardProject } from "./card-project";
 
 const projects = [
@@ -140,7 +137,7 @@ const projects = [
 export function SectionProjects() {
   return (
     <>
-      <CardContainer bgpattern="wood" patterncolor="blue-300/20">
+      <CardContainer>
         <div className="flex flex-col justify-center">
           <div className="flex flex-col justify-center">
             <p className="text-center text-3xl font-bold pb-2">Projects</p>

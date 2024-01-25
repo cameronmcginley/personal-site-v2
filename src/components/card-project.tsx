@@ -5,7 +5,16 @@ import { CardHoverShine } from "./card-hovershine";
 import { CustomLink } from "./custom-link";
 import { CustomButton } from "@/components/custom-button";
 
-export function CardProject(props) {
+interface CardProjectProps {
+  image: string;
+  title: string;
+  github_link: string;
+  public_link?: string;
+  description: string;
+  tools: { name: string; link: string }[];
+}
+
+export function CardProject(props: CardProjectProps) {
   const isWebm = props.image.endsWith(".webm");
 
   return (

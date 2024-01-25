@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { RadialGradientBG } from "@/components/radial-gradient-bg";
-import { BackgroundTwo } from "@/components/background-two";
-import { Navbar } from "@/components/navbar";
+import { BackgroundTwo } from "@/components/background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +18,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* {/* <body className={inter.className}>{children}</body> */}
       <body>
         <ThemeProvider
           attribute="class"
@@ -28,12 +25,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <CardGrainy /> */}
           <main className="flex min-h-screen flex-col items-center pt-6 sm:pt-6 sm:p-16">
-            {/* <RadialGradientBG /> */}
             <BackgroundTwo />
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm">
-              {/* <Navbar /> */}
               {children}
             </div>
           </main>

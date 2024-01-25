@@ -2,7 +2,14 @@ import * as React from "react";
 import Image from "next/image";
 import { CardHoverShine } from "./card-hovershine";
 
-export function CardCompany(props) {
+interface CardCompanyProps {
+  logo: string;
+  company: string;
+  positions: string[];
+  dates: string[];
+}
+
+export function CardCompany(props: CardCompanyProps) {
   return (
     <CardHoverShine isLink={false}>
       <div className="flex flex-row h-full items-center">

@@ -18,9 +18,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CardContainer } from "./card-container";
+import { CardContainer } from "../card-container";
 
-export function CardDots({ children }) {
+export function CardDots({ children }: { children: React.ReactNode }) {
   // Inline styles for dynamic/customizable parts of the pattern
   //   const patternStyle = {
   //     backgroundColor: "var(--border, transparent)",
