@@ -145,8 +145,8 @@ export function SectionProjects() {
           <div className="flex flex-col justify-center">
             <p className="text-center text-3xl font-bold pb-2">Projects</p>
             <p className="text-center pb-2">
-              Here are some of my favorite projects I've worked on. Read more
-              via the GitHub links!
+              Here are some of my favorite projects I&apos;ve worked on. Read
+              more via the GitHub links!
             </p>
           </div>
           <div className="gap-8 flex flex-row flex-wrap w-full justify-center">
