@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Card } from "@/components/ui/card";
+import { featureFlag } from "@/app/utils";
 
 interface CardHoverShineProps {
   children: React.ReactNode;
@@ -15,44 +16,49 @@ export function CardHoverShine({ children, ...props }: CardHoverShineProps) {
   if (props.isLink) {
     className = `
     group/linked
-
+  
     border flex flex-row p-1 max-w-946 w-full 
     bg-gradient-to-br 
-
+  
     from-companyCardBg 
     from-40% 
     via-cardSheen 
     via-65% 
     to-companyCardBg 
     to-90%
-
-    hover:from-companyCardBg
-    hover:via-cardSheenHoverLink
-    hover:to-companyCardBg
-    hover:border-bgColorSplash
-    hover:drop-shadow
-    relative
-    `;
+  
+    ${
+      featureFlag.shineOnHover &&
+      `
+      hover:from-companyCardBg
+      hover:via-cardSheenHoverLink
+      hover:to-companyCardBg
+      hover:border-bgColorSplash
+      hover:drop-shadow
+      relative
+      `
+    }`;
   } else {
     className = `
     group/unlinked
     border flex flex-row max-w-946 w-full 
-
     bg-gradient-to-br 
-
-    from-companyCardBg
+    from-companyCardBg 
     from-40% 
-    via-cardSheen
+    via-cardSheen 
     via-65% 
-    to-companyCardBg
+    to-companyCardBg 
     to-90%
-
-    hover:from-companyCardBg
-    hover:via-cardSheenHover
-    hover:to-companyCardBg
-    hover:border
-    hover:drop-shadow
-    `;
+    ${
+      featureFlag.shineOnHover &&
+      `
+      hover:from-companyCardBg
+      hover:via-cardSheenHover
+      hover:to-companyCardBg
+      hover:border
+      hover:drop-shadow
+    `
+    }`;
   }
 
   if (props.fullHeight) {
