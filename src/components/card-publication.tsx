@@ -2,6 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import { CardHoverShine } from "./card-hovershine";
 import { CustomLink } from "./custom-link";
+import { featureFlag } from "@/app/utils";
 
 interface CardPublicationProps {
   image: string;
@@ -39,7 +40,10 @@ export function CardPublication(props: CardPublicationProps) {
             height={500}
             alt={props.image}
             // className="rounded-md outline outline-1 outline-gray-300 outline-offset-2"
-            className="ounded-md border transition-transform duration-300 ease-in-out transform hover:scale-105"
+            className={`border ${
+              featureFlag.animations &&
+              "transition-transform duration-300 ease-in-out transform hover:scale-105"
+            }`}
             // className="rounded-xl border-b-2 border-r-2 border-gray-300"
           />
           {/* </Tilt> */}
