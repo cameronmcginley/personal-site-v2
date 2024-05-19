@@ -12,16 +12,16 @@ const companies = [
     // logo: "/CapitalOneLogoAlt.jpg",
   },
   {
-    company: "NetApp",
-    positions: ["Software Test Engineer Intern"],
-    dates: ["May 2019 - May 2022"],
-    logo: "/NetAppLogo.svg",
-  },
-  {
     company: "Department of Defense",
     positions: ["Software Engineer Intern"],
     dates: ["Summer 2022"],
     logo: "/DODLogo.svg",
+  },
+  {
+    company: "NetApp",
+    positions: ["Software Test Engineer Intern"],
+    dates: ["May 2019 - May 2022"],
+    logo: "/NetAppLogo.svg",
   },
   {
     company: "Purdue University",
