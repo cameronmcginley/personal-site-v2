@@ -1,7 +1,7 @@
 import * as React from "react";
 import { featureFlag } from "@/app/utils";
 
-export function AnimatedName() {
+export function PageTitle() {
   const text = "Cameron McGinley";
   const [char, setChar] = React.useState(-1);
 

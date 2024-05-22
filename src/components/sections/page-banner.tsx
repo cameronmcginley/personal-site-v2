@@ -1,14 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { AnimatedName } from "@/components/animated-name";
+import { PageTitle } from "@/components/section-ui/page-title";
 
-export function CardTitle() {
+export function PageBanner() {
   // https://hypercolor.dev/grainy
-  let className = `
+  let bannerClass = `
     flex items-stretch shadow-sm
     w-full
-    rounded-md
     bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] 
     from-titleFrom
     via-titleVia
@@ -17,7 +16,7 @@ export function CardTitle() {
 
   // Grainy filter
   // https://stackoverflow.com/questions/4011113/can-you-add-noise-to-a-css-gradient
-  let className2 = `
+  let grainyFilterClass = `
     p-4
     w-full
     h-full
@@ -26,10 +25,10 @@ export function CardTitle() {
 
   return (
     // Main card & gradient
-    <div className={className}>
+    <div className={bannerClass}>
       {/* Grainy filter */}
-      <div className={className2}>
-        <AnimatedName />
+      <div className={grainyFilterClass}>
+        <PageTitle />
       </div>
     </div>
   );

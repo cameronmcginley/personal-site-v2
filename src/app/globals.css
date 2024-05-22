@@ -4,89 +4,45 @@
 
 @layer base {
   :root {
-    /* Background One */
-    /* --bg-primary: #ffffff;
-    --bg-fadeto: #ffffff;
-    --bg-linecolor: #e2e8f0;
-    --bg-tilewidth: 6rem;
-    --bg-tileheight: 4rem;
-    --bgColorSplash: #d5c5ff;
+    /* Light Theme Variables */
+    --color-card-bg: #ffffff; /* white */
 
-    --card: 0 0% 100%;
-    --border: #e2e8f0;
-    --radius: 0.5rem;
+    --color-bg-primary: #e5e5e5; /* neutral-200 */
+    --color-bg-line: #d4d4d4; /* neutral-300 */
 
-    --dot-color: #c7ccd4;
+    --color-border: #c2c0be; /* between neutral 300 and 400 */
+    --color-card-sheen: #f7f7f7; /* white */
 
-    --companyCardBg: #f7f7f7;
-    --cardSheen: #ffffff;
-    --cardSheenHover: #e8e6f5;
+    --color-link: #c2410c; /* orange-600 */
+    --color-link-underline-start: #f97316; /* orange-500 */
+    --color-link-underline-end: #fdba74; /* orange-300 */
 
-    --primary: 222.2 47.4% 11.2%; */
+    --color-title-from: #9a3412; /* orange-800 */
+    --color-title-via: #ea580c; /* orange-600 */
+    --color-title-to: #d97706; /* amber-600 */
 
-    /* Background Two */
-    /* --bg-primary: #f3f3fb;
-    --bg-fadeto: #ffffff;
-    --bg-linecolor: #d3defa;
-    --bg-tilewidth: 3rem;
-    --bg-tileheight: 2rem;
-    --bgColorSplash: #c1d0f9;
+    --color-foreground: #1f2937; /* No match, closest: grey-800 */
+  }
 
-    --card: 0 0% 100%;
-    --border: #e2e8f0;
-    --radius: 0.5rem;
+  .dark {
+    /* Dark Theme Variables */
+    --color-card-bg: #0f0f0f; /* Darker to stand out on top of bg-primary */
 
-    --dot-color: #d3defa;
+    --color-bg-primary: #1a1a1a; /* Considerably darker */
+    --color-bg-line: #262626; /* Considerably darker */
 
-    --companyCardBg: #f7f7f7;
-    --cardSheen: #ffffff;
-    --cardSheenHover: #e6ecfc;
+    --color-border: #2d2d2d; /* Darker than previous slate-800 */
+    --color-card-sheen: #121212; /* Matching card-bg for minimal difference */
 
-    --primary: 222.2 47.4% 11.2%; */
+    --color-link: #f97316; /* orange-600 */
+    --color-link-underline-start: #ea580c; /* orange-500 */
+    --color-link-underline-end: #d97706; /* amber-600 */
 
-    /* --background: 0 0% 100%; */
-    /* --background: #ffffff;
-    --foreground: 222.2 84% 4.9%; */
+    --color-title-from: #9a3412; /* orange-800 */
+    --color-title-via: #ea580c; /* orange-600 */
+    --color-title-to: #d97706; /* amber-600 */
 
-    /* --card: 0 0% 100%; */
-    /* --card: #ffffff;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%; */
-
-    /* --border: 214.3 31.8% 91.4%; */
-    /* --border: #e2e8f0;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%; */
-
-    /* --radius: 0.5rem;
-
-    --tile-width: 6rem;
-    --tile-height: 4rem;
-
-    --dot-color: #c7ccd4;
-
-    --companyCardBg: #f7f7f7;
-    --cardSheen: #ffffff;
-    --cardSheenHover: #e8e6f5;
-
-    --bgColorSplash: #d5c5ff; */
+    --color-foreground: #f9fafb; /* slate-50 */
   }
 }
 
@@ -95,7 +51,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bgPrimary text-foreground;
   }
 }
 

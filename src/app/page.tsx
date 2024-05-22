@@ -2,14 +2,14 @@
 
 import React, { RefObject, useRef } from "react";
 import Image from "next/image";
-import { CardContainer } from "@/components/card-container";
-import { ExperienceSectionAlt } from "@/components/experience-section-alt";
+import { CardContainer } from "@/components/ui/card-container";
+import { ExperienceSection } from "@/components/sections/experience-section";
 import Tilt from "react-parallax-tilt";
-import { SectionPublications } from "@/components/section-publications";
-import { SectionProjects } from "@/components/section-projects";
-import { CardTitle } from "@/components/card-title";
-import { SectionSocials } from "@/components/section-socials";
-import { CustomLink } from "@/components/custom-link";
+import { SectionPublications } from "@/components/sections/section-publications";
+import { SectionProjects } from "@/components/sections/section-projects";
+import { PageBanner } from "@/components/sections/page-banner";
+import { SectionSocials } from "@/components/sections/section-socials";
+import { CustomLink } from "@/components/ui/custom-link";
 import { featureFlag } from "./utils";
 
 export default function Home() {
@@ -46,9 +46,7 @@ export default function Home() {
         </div>
 
         {/* Name Banner */}
-        <div className="">
-          <CardTitle />
-        </div>
+        <PageBanner />
 
         {/* Section 1 */}
         <div
@@ -81,7 +79,7 @@ export default function Home() {
                       width={500}
                       height={500}
                       alt="Picture of me"
-                      className="w-full rounded-xl outline-border outline outline-1 outline-offset-[-4px]"
+                      className="w-full outline-border outline outline-1 outline-offset-[-4px]"
                     />
                   </div>
                 </Tilt>
@@ -91,7 +89,7 @@ export default function Home() {
                   width={500}
                   height={500}
                   alt="Picture of me"
-                  className="w-full rounded-xl outline-border outline outline-1 outline-offset-[-4px]"
+                  className="w-full outline-border outline outline-1 outline-offset-[-4px]"
                 />
               )}
             </CardContainer>
@@ -158,7 +156,7 @@ export default function Home() {
             "animate-fade-in-up opacity-0 delay-200 fill-forwards"
           }`}
         >
-          <ExperienceSectionAlt />
+          <ExperienceSection />
         </div>
 
         {/* Section 3 */}

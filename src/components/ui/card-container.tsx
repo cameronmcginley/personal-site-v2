@@ -9,6 +9,8 @@ interface CardContainerProps {
 
 export function CardContainer({ children }: CardContainerProps) {
   return (
-    <Card className="flex items-stretch p-4 shadow-sm h-full">{children}</Card>
+    <div className="flex items-stretch p-4 shadow-sm h-full border bg-cardBg">
+      {children}
+    </div>
   );
 }

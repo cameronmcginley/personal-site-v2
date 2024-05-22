@@ -1,6 +1,6 @@
 import React from "react";
-import { CardCompany } from "@/components/card-company";
-import { CardContainer } from "./card-container";
+import { CardCompany } from "@/components/section-ui/card-company";
+import { CardContainer } from "@/components/ui/card-container";
 
 const companies = [
   {
@@ -8,8 +8,6 @@ const companies = [
     positions: ["Software Engineer", "Software Engineer Intern"],
     dates: ["Feb 2024 - Current", "Summer 2023"],
     logo: "/media/companies/square/CapitalOneLogo.jpg",
-    // logo: "/CapitalOneLogo.svg",
-    // logo: "/CapitalOneLogoAlt.jpg",
   },
   {
     company: "Department of Defense",
@@ -52,7 +50,7 @@ const schools = [
   },
 ];
 
-export function ExperienceSectionAlt() {
+export function ExperienceSection() {
   return (
     <>
       {/* Education and Work */}

@@ -12,20 +12,17 @@ export function CustomButton({ children, ...props }: CustomButtonProps) {
       <div
         className="
         h-full
-
         border
-
-        relative rounded-md px-1 py-1
+        relative px-1 py-1
         overflow-hidden 
         group 
-        bg-companyCardBg
+        bg-cardBg
         relative 
 
         hover:bg-gradient-to-r 
-        hover:from-companyCardBg 
-        hover:to-cardSheenHoverLink 
         hover:ring-2 
-        hover:ring-offset-2 
+        hover:ring-offset-transparent
+        hover:ring-offset-0 
         hover:ring-linkUnderlineStart
         hover:border-linkUnderlineStart
 
@@ -41,8 +38,8 @@ export function CustomButton({ children, ...props }: CustomButtonProps) {
           duration-0 
           transform 
           translate-x-12 
-          bg-link
-          opacity-10 
+          bg-linkUnderlineStart
+          opacity-15 
           rotate-12 
           group-hover:-translate-x-40 
           group-hover:duration-1000

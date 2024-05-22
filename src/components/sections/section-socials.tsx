@@ -1,6 +1,6 @@
 import React from "react";
-import { CustomButton } from "./custom-button";
-import { CardContainer } from "./card-container";
+import { CustomButton } from "../ui/custom-button";
+import { CardContainer } from "../ui/card-container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";

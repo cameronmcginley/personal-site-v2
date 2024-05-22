@@ -1,9 +1,9 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CardHoverShine } from "./card-hovershine";
-import { CustomLink } from "./custom-link";
-import { CustomButton } from "@/components/custom-button";
+import { Card } from "@/components/ui/card";
+import { CustomLink } from "@/components/ui/custom-link";
+import { CustomButton } from "@/components/ui/custom-button";
 
 interface CardProjectProps {
   image: string;
@@ -19,13 +19,13 @@ export function CardProject(props: CardProjectProps) {
 
   return (
     <div className="w-72">
-      <CardHoverShine isLink={false} fullHeight={true}>
+      <Card fullHeight={true}>
         {/* Flex container for the whole card */}
         <div className="flex flex-col">
           {/* Image container with Link and hover effect */}
           <Link href={props.github_link}>
             {/* Replace with your link destination */}
-            <div className="relative w-full aspect-[16/9] overflow-hidden rounded-t-lg cursor-pointer group">
+            <div className="relative w-full aspect-[16/9] overflow-hidden cursor-pointer group">
               {/* Render video if webm file */}
               {isWebm ? (
                 // Render video if the media file is a WebM
@@ -48,7 +48,7 @@ export function CardProject(props: CardProjectProps) {
                 />
               )}
               {/* Overlay for fade effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-companyCardBg to-transparent z-10"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-cardBg to-transparent z-10"></div>
             </div>
           </Link>
 
@@ -95,7 +95,7 @@ export function CardProject(props: CardProjectProps) {
             </div>
           </div>
         </div>
-      </CardHoverShine>
+      </Card>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { CardHoverShine } from "./card-hovershine";
+import { Card } from "@/components/ui/card";
 
 interface CardCompanyProps {
   logo: string;
@@ -11,7 +11,7 @@ interface CardCompanyProps {
 
 export function CardCompany(props: CardCompanyProps) {
   return (
-    <CardHoverShine isLink={false}>
+    <Card>
       <div className="flex flex-row h-full items-center">
         {/* Image */}
         <div className="min-w-14 max-w-14 h-full pt-2 pl-2 pr-1 flex items-start">
@@ -28,9 +28,7 @@ export function CardCompany(props: CardCompanyProps) {
         {/* Text */}
         <div className="p-1">
           {/* Company Name */}
-          <div className="text-xl font-bold drop-shadow-[0_1px_1px_#ffffff]">
-            {props.company}
-          </div>
+          <div className="text-xl font-bold">{props.company}</div>
           {/* Position and Dates */}
           <div className="text-md">
             {props.positions.map((position, index) => (
@@ -42,6 +40,6 @@ export function CardCompany(props: CardCompanyProps) {
           </div>
         </div>
       </div>
-    </CardHoverShine>
+    </Card>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { CardContainer } from "./card-container";
-import { CardProject } from "./card-project";
+import { CardContainer } from "@/components/ui/card-container";
+import { CardProject } from "@/components/section-ui/card-project";
 
 const projects = [
   {
