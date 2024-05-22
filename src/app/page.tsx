@@ -1,6 +1,6 @@
 "use client";
 
-import React, { RefObject, useRef } from "react";
+import React, { RefObject, useRef, useState } from "react";
 import Image from "next/image";
 import { CardContainer } from "@/components/ui/card-container";
 import { ExperienceSection } from "@/components/sections/experience-section";
@@ -12,10 +12,22 @@ import { SectionSocials } from "@/components/sections/section-socials";
 import { CustomLink } from "@/components/ui/custom-link";
 import { featureFlag } from "./utils";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMoon as faSolidMoon,
+  faSun as faSolidSun,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon as faRegularMoon,
+  faSun as faRegularSun,
+} from "@fortawesome/free-regular-svg-icons";
+
 export default function Home() {
   const experienceRef = useRef(null);
   const publicationsRef = useRef(null);
   const projectsRef = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkModeHovered, setIsDarkModeHovered] = useState(false);
 
   const scrollToSection = (ref: RefObject<HTMLElement>) => {
     if (ref.current) {
@@ -26,23 +38,60 @@ export default function Home() {
     }
   };
 
+  const toggleDarkMode = () => {
+    const elements = document.querySelectorAll(".transition-all, .transition");
+    elements.forEach((el) => {
+      el.classList.add("transition-none");
+    });
+
+    document.documentElement.classList.toggle("dark");
+    setIsDarkMode(!isDarkMode);
+
+    setTimeout(() => {
+      elements.forEach((el) => {
+        el.classList.remove("transition-none");
+      });
+    }, 0);
+  };
+
   return (
     <>
       <div className="flex flex-col w-full gap-2">
         {/* Simple Navbar */}
-        <div className="flex gap-8 justify-center">
-          <CustomLink
-            onClick={() => scrollToSection(experienceRef)}
-            text="Experience"
-          />
-          <CustomLink
-            onClick={() => scrollToSection(publicationsRef)}
-            text="Publications"
-          />
-          <CustomLink
-            onClick={() => scrollToSection(projectsRef)}
-            text="Projects"
-          />
+        <div className="relative flex items-center justify-center h-12">
+          <div className="absolute flex gap-8">
+            <CustomLink
+              onClick={() => scrollToSection(experienceRef)}
+              text="Experience"
+            />
+            <CustomLink
+              onClick={() => scrollToSection(publicationsRef)}
+              text="Publications"
+            />
+            <CustomLink
+              onClick={() => scrollToSection(projectsRef)}
+              text="Projects"
+            />
+          </div>
+          <div className="absolute right-0 mr-4">
+            <button
+              onClick={toggleDarkMode}
+              onMouseEnter={() => setIsDarkModeHovered(true)}
+              onMouseLeave={() => setIsDarkModeHovered(false)}
+            >
+              {isDarkMode ? (
+                <FontAwesomeIcon
+                  icon={isDarkModeHovered ? faSolidSun : faRegularSun}
+                  className="h-5 w-5"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={isDarkModeHovered ? faSolidMoon : faRegularMoon}
+                  className="h-5 w-5"
+                />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Name Banner */}

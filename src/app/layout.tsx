@@ -4,8 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Background } from "@/components/background";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Cameron McGinley",
   description: "Hi! I'm Cameron McGinley, a software engineer.",
@@ -17,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html class="dark" lang="en">
+    <html lang="en">
       <body>
         <ThemeProvider
           attribute="class"
