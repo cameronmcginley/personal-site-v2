@@ -77,14 +77,14 @@ export function CardProject(props: CardProjectProps) {
               </div>
 
               {/* Description */}
-              <div className="flex text-center pt-1 pb-1 pl-2 pr-2">
+              <div className="flex text-center pt-2 pb-1 pl-2 pr-2">
                 {props.description}
               </div>
             </div>
 
             {/* Badges - aligned to bottom */}
             {props.badges && (
-              <div className="gap-2 pt-2 flex flex-row w-full flex-wrap justify-center">
+              <div className="gap-2 pt-4 flex flex-row w-full flex-wrap justify-center">
                 {props.badges.map((badge, index) => (
                   <div key={index} className="">
                     {badge}
