@@ -1,6 +1,9 @@
 import React from "react";
 import { CardContainer } from "@/components/ui/card-container";
 import { CardProject } from "@/components/section-ui/card-project";
+import { generateBadgeComponents } from "@/app/utils";
+
+const badges = generateBadgeComponents();
 
 const projects = [
   {
@@ -10,24 +13,7 @@ const projects = [
     public_link: "https://coursedashboard.web.app/",
     description:
       "Manage courses and attendees with QR code sign-ins, tracking, and data handling, supporting efficient administration with data export and querying.",
-    tools: [
-      {
-        name: "JavaScript",
-        link: "https://www.javascript.com/",
-      },
-      {
-        name: "React",
-        link: "https://reactjs.org/",
-      },
-      {
-        name: "Node.js",
-        link: "https://nodejs.org/en/",
-      },
-      {
-        name: "Firebase",
-        link: "https://firebase.google.com/",
-      },
-    ],
+    badges: [badges.javascript, badges.react, badges.nodejs, badges.firebase],
   },
   {
     title: "Brainf**k Interpreter",
@@ -36,16 +22,7 @@ const projects = [
       "https://github.com/cameronmcginley/optimized-brainfk-interpreter",
     description:
       "Interpreter for the brainf**k programming language, enhanced with instruction condensing and peephole optimization for improved execution efficiency.",
-    tools: [
-      {
-        name: "C++",
-        link: "https://www.cplusplus.com/",
-      },
-      {
-        name: "Brainf**k",
-        link: "https://esolangs.org/wiki/Brainfuck",
-      },
-    ],
+    badges: [badges.cpp, badges.brainfuck],
   },
   {
     title: "Projectile Points Database",
@@ -55,24 +32,7 @@ const projects = [
     public_link: "http://projectile-points-database.vercel.app/",
     description:
       "Web app serving as a dynamic database for archaelogical projectile point data. Inspired by projectilepoints.net and designed with greater structure and maintainability.",
-    tools: [
-      {
-        name: "TypeScript",
-        link: "https://www.typescriptlang.org/",
-      },
-      {
-        name: "Next.js",
-        link: "https://nextjs.org/",
-      },
-      {
-        name: "GraphQL",
-        link: "https://graphql.org/",
-      },
-      {
-        name: "PostgreSQL",
-        link: "https://www.postgresql.org/",
-      },
-    ],
+    badges: [badges.typescript, badges.next, badges.graphql, badges.postgres],
   },
   {
     title: "Sorting Visualizer",
@@ -81,16 +41,7 @@ const projects = [
     public_link: "https://cameronmcginley.com/sorting-visualizer/",
     description:
       "Interactive visualizer for sorting algorithms including bubble, merge, radix, and bogo sort, with customizable delay, array size, and sound settings.",
-    tools: [
-      {
-        name: "JavaScript",
-        link: "https://www.javascript.com/",
-      },
-      {
-        name: "React",
-        link: "https://reactjs.org/",
-      },
-    ],
+    badges: [badges.react, badges.javascript],
   },
   {
     title: "ML Algorithm Tester",
@@ -98,16 +49,7 @@ const projects = [
     github_link: "https://github.com/cameronmcginley/ml-algorithm-testing",
     description:
       "Tool for assessing and visualizing machine learning algorithm performance, featuring easy integration of new models and automatic hyperparameter optimization.",
-    tools: [
-      {
-        name: "Python",
-        link: "https://www.python.org/",
-      },
-      {
-        name: "scikit-learn",
-        link: "https://scikit-learn.org/",
-      },
-    ],
+    badges: [badges.python, badges.scikitlearn],
   },
   {
     title: "Roblox Object Placement",
@@ -117,20 +59,7 @@ const projects = [
       "https://www.roblox.com/games/7619626087/Placement-System-Demo",
     description:
       "Roblox project featuring an object placement system with raycasting, client-server communication, customizable object design, per-account saving, and Rojo Git integration.",
-    tools: [
-      {
-        name: "Lua",
-        link: "https://www.lua.org/",
-      },
-      {
-        name: "Roblox",
-        link: "https://www.roblox.com/",
-      },
-      {
-        name: "Rojo",
-        link: "https://rojo.space/",
-      },
-    ],
+    badges: [badges.lua, badges.robloxstudio, badges.rojo],
   },
   {
     title: "Personal Website",
@@ -138,24 +67,7 @@ const projects = [
     github_link: "https://github.com/cameronmcginley/personal-site-v2",
     description:
       "This one! Simple portfolio built with Next.js and deployed with Vercel. Lots of playing around to make the design somewhat decent.",
-    tools: [
-      {
-        name: "Next.js",
-        link: "https://nextjs.org/",
-      },
-      {
-        name: "TypeScript",
-        link: "https://www.typescriptlang.org/",
-      },
-      {
-        name: "Vercel",
-        link: "https://vercel.com/",
-      },
-      {
-        name: "shadcn/ui",
-        link: "https://ui.shadcn.com/",
-      },
-    ],
+    badges: [badges.next, badges.typescript, badges.vercel],
   },
 ];
 
@@ -182,7 +94,7 @@ export function SectionProjects() {
                   github_link={item.github_link}
                   public_link={item.public_link}
                   description={item.description}
-                  tools={item.tools}
+                  badges={item.badges}
                 />
               ))}
               {/* Empty spacers to left align bottom */}

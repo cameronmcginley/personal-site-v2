@@ -11,7 +11,7 @@ interface CardProjectProps {
   github_link: string;
   public_link?: string;
   description: string;
-  tools: { name: string; link: string }[];
+  badges?: JSX.Element[];
 }
 
 export function CardProject(props: CardProjectProps) {
@@ -53,7 +53,7 @@ export function CardProject(props: CardProjectProps) {
           </Link>
 
           {/* Content container with flex-grow to take up all available space */}
-          <div className="p-2 flex flex-col flex-grow">
+          <div className="p-2 flex flex-col h-full">
             {/* Container for Title, Links, and Description */}
             <div className="flex-grow">
               {/* Title */}
@@ -82,17 +82,16 @@ export function CardProject(props: CardProjectProps) {
               </div>
             </div>
 
-            {/* Tools - aligned to bottom */}
-            <div className="pt-2 flex flex-row w-full flex-wrap justify-center">
-              {props.tools.map((item, index) => (
-                <div
-                  key={index}
-                  className="pr-4 pb-1 last:pr-0 last:pb-0 text-xs"
-                >
-                  <CustomLink url={item.link} text={item.name} />
-                </div>
-              ))}
-            </div>
+            {/* Badges - aligned to bottom */}
+            {props.badges && (
+              <div className="gap-2 pt-2 flex flex-row w-full flex-wrap justify-center">
+                {props.badges.map((badge, index) => (
+                  <div key={index} className="">
+                    {badge}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </Card>
