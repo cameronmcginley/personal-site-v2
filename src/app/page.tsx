@@ -58,8 +58,27 @@ export default function Home() {
     <>
       <div className="flex flex-col w-full gap-2">
         {/* Simple Navbar */}
-        <div className="relative flex items-center justify-center h-12">
-          <div className="absolute flex gap-8">
+        <div className="relative flex flex-col items-center h-24 sm:h-12">
+          <div className="absolute top-0 right-0 mr-4 mt-2 sm:mt-0">
+            <button
+              onClick={toggleDarkMode}
+              onMouseEnter={() => setIsDarkModeHovered(true)}
+              onMouseLeave={() => setIsDarkModeHovered(false)}
+            >
+              {isDarkMode ? (
+                <FontAwesomeIcon
+                  icon={isDarkModeHovered ? faSolidMoon : faRegularMoon}
+                  className="h-5 w-5"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={isDarkModeHovered ? faSolidSun : faRegularSun}
+                  className="h-5 w-5"
+                />
+              )}
+            </button>
+          </div>
+          <div className="absolute top-10 sm:top-0 flex gap-8">
             <CustomLink
               onClick={() => scrollToSection(experienceRef)}
               text="Experience"
@@ -72,25 +91,6 @@ export default function Home() {
               onClick={() => scrollToSection(projectsRef)}
               text="Projects"
             />
-          </div>
-          <div className="absolute right-0 mr-4">
-            <button
-              onClick={toggleDarkMode}
-              onMouseEnter={() => setIsDarkModeHovered(true)}
-              onMouseLeave={() => setIsDarkModeHovered(false)}
-            >
-              {isDarkMode ? (
-                <FontAwesomeIcon
-                  icon={isDarkModeHovered ? faSolidSun : faRegularSun}
-                  className="h-5 w-5"
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={isDarkModeHovered ? faSolidMoon : faRegularMoon}
-                  className="h-5 w-5"
-                />
-              )}
-            </button>
           </div>
         </div>
 
