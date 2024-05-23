@@ -58,8 +58,8 @@ export default function Home() {
     <>
       <div className="flex flex-col w-full gap-2">
         {/* Simple Navbar */}
-        <div className="relative flex flex-col items-center h-24 sm:h-12">
-          <div className="absolute top-0 right-0 mr-4 mt-2 sm:mt-0">
+        <div className="relative flex flex-col items-center h-14 sm:h-10">
+          <div className="absolute top-0 right-0 mr-4">
             <button
               onClick={toggleDarkMode}
               onMouseEnter={() => setIsDarkModeHovered(true)}
@@ -78,7 +78,7 @@ export default function Home() {
               )}
             </button>
           </div>
-          <div className="absolute top-10 sm:top-0 flex gap-8">
+          <div className="absolute top-8 sm:top-0 flex gap-8">
             <CustomLink
               onClick={() => scrollToSection(experienceRef)}
               text="Experience"
