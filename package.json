@@ -15,6 +15,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "next": "14.0.4",
     "next-images": "^1.8.5",
@@ -24,7 +27,8 @@
     "react-parallax-tilt": "^1.7.180",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-patterns": "^0.1.2"
+    "tailwindcss-patterns": "^0.1.2",
+    "vaul": "^0.9.1"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",

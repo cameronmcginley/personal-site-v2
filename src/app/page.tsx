@@ -11,88 +11,21 @@ import { PageBanner } from "@/components/sections/page-banner";
 import { SectionSocials } from "@/components/sections/section-socials";
 import { CustomLink } from "@/components/ui/custom-link";
 import { featureFlag } from "./utils";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMoon as faSolidMoon,
-  faSun as faSolidSun,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faMoon as faRegularMoon,
-  faSun as faRegularSun,
-} from "@fortawesome/free-regular-svg-icons";
+import { Navbar } from "@/components/sections/navbar";
+import { useRefs } from "@/hooks/useRefs";
 
 export default function Home() {
-  const experienceRef = useRef(null);
-  const publicationsRef = useRef(null);
-  const projectsRef = useRef(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isDarkModeHovered, setIsDarkModeHovered] = useState(false);
-
-  const scrollToSection = (ref: RefObject<HTMLElement>) => {
-    if (ref.current) {
-      window.scrollTo({
-        top: ref.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const toggleDarkMode = () => {
-    const elements = document.querySelectorAll(".transition-all, .transition");
-    elements.forEach((el) => {
-      el.classList.add("transition-none");
-    });
-
-    document.documentElement.classList.toggle("dark");
-    setIsDarkMode(!isDarkMode);
-
-    setTimeout(() => {
-      elements.forEach((el) => {
-        el.classList.remove("transition-none");
-      });
-    }, 0);
-  };
+  const { experienceRef, publicationsRef, projectsRef } = useRefs();
 
   return (
     <>
       <div className="flex flex-col w-full gap-2">
         {/* Simple Navbar */}
-        <div className="relative flex flex-col items-center h-14 sm:h-10">
-          <div className="absolute top-0 right-0 mr-4">
-            <button
-              onClick={toggleDarkMode}
-              onMouseEnter={() => setIsDarkModeHovered(true)}
-              onMouseLeave={() => setIsDarkModeHovered(false)}
-            >
-              {isDarkMode ? (
-                <FontAwesomeIcon
-                  icon={isDarkModeHovered ? faSolidMoon : faRegularMoon}
-                  className="h-5 w-5"
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={isDarkModeHovered ? faSolidSun : faRegularSun}
-                  className="h-5 w-5"
-                />
-              )}
-            </button>
-          </div>
-          <div className="absolute top-8 sm:top-0 flex gap-8">
-            <CustomLink
-              onClick={() => scrollToSection(experienceRef)}
-              text="Experience"
-            />
-            <CustomLink
-              onClick={() => scrollToSection(publicationsRef)}
-              text="Publications"
-            />
-            <CustomLink
-              onClick={() => scrollToSection(projectsRef)}
-              text="Projects"
-            />
-          </div>
-        </div>
+        <Navbar
+          experienceRef={experienceRef}
+          publicationsRef={publicationsRef}
+          projectsRef={projectsRef}
+        />
 
         {/* Name Banner */}
         <PageBanner />
