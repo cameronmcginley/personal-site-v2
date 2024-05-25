@@ -89,14 +89,19 @@ export default function Home() {
                 <div className="flex flex-col gap-2">
                   <div className="text-3xl font-bold">Hi!</div>
                   <div>
-                    I am a Software Engineer located in San Francisco with a
+                    {/* I am a Software Engineer located in San Francisco with a
                     passion for back-end development. My expertise is in
                     building scalable, efficient systems and managing complex
-                    databases.
+                    databases. */}
+                    I am a Software Engineer located in San Francisco. Currently
+                    at Capital One Software helping build Slingshot, a Snowflake
+                    optimization platform.
                   </div>
                   <div>
-                    I enjoy creating elegant solutions and exploring new
-                    technologies to tackle new problems.
+                    {/* I enjoy creating elegant solutions and exploring new
+                    technologies to tackle new problems. */}
+                    I enjoy creating elegant solutions to complex problems, and
+                    I am especially interested in backend development.
                   </div>
                   <div className="flex flex-row">
                     Reach out to me at
