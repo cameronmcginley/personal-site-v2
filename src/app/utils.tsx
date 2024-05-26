@@ -1,21 +1,19 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-
-interface BadgeData {
-  key: string;
-  url: string;
-  imgSrc: string;
-}
-
-interface BadgeComponents {
-  [key: string]: JSX.Element;
-}
 
 export const featureFlag = {
   animations: false,
   shineOnHover: false,
 };
+
+export interface BadgeData {
+  key: string;
+  url: string;
+  imgSrc: string;
+}
+
+export interface BadgeComponents {
+  [key: string]: JSX.Element;
+}
 
 const badgeData: BadgeData[] = [
   {
@@ -113,6 +111,78 @@ const badgeData: BadgeData[] = [
     url: "https://esolangs.org/wiki/Brainfuck",
     imgSrc:
       "https://img.shields.io/badge/brainf**k---?style=for-the-badge&color=%236da55f",
+  },
+  {
+    key: "keras",
+    url: "https://keras.io/",
+    imgSrc:
+      "https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white",
+  },
+  {
+    key: "tensorflow",
+    url: "https://www.tensorflow.org/",
+    imgSrc:
+      "https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white",
+  },
+  {
+    key: "databricks",
+    url: "https://databricks.com/",
+    imgSrc:
+      "https://img.shields.io/badge/databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white",
+  },
+  {
+    key: "snowflake",
+    url: "https://www.snowflake.com/",
+    imgSrc:
+      "https://img.shields.io/badge/snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white",
+  },
+  {
+    key: "pytest",
+    url: "https://docs.pytest.org/",
+    imgSrc:
+      "https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white",
+  },
+  {
+    key: "aws",
+    url: "https://aws.amazon.com/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white",
+  },
+  {
+    key: "windowsserver",
+    url: "https://www.microsoft.com/en-us/windows-server",
+    imgSrc:
+      "https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=windows&logoColor=white",
+  },
+  {
+    key: "netappontap",
+    url: "https://www.netapp.com/data-management/ontap-data-management-software/",
+    imgSrc:
+      "https://img.shields.io/badge/NetApp_ONTAP-0067C5?style=for-the-badge&logo=netapp&logoColor=white",
+  },
+  {
+    key: "rhel",
+    url: "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+    imgSrc:
+      "https://img.shields.io/badge/RHEL-EE0000?style=for-the-badge&logo=redhat&logoColor=white",
+  },
+  {
+    key: "suse",
+    url: "https://www.suse.com/",
+    imgSrc:
+      "https://img.shields.io/badge/SUSE-34b676?style=for-the-badge&logo=suse&logoColor=white",
+  },
+  {
+    key: "pyg",
+    url: "https://www.pyg.org/",
+    imgSrc:
+      "https://img.shields.io/badge/PyG-%23EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white",
+  },
+  {
+    key: "pytorch",
+    url: "https://pytorch.org/",
+    imgSrc:
+      "https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white",
   },
 ];
 export const generateBadgeComponents = (): BadgeComponents => {
