@@ -1,6 +1,6 @@
 "use client";
 
-import React, { RefObject, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { CardContainer } from "@/components/ui/card-container";
 import { ExperienceSection } from "@/components/sections/experience-section";
@@ -9,7 +9,6 @@ import { SectionPublications } from "@/components/sections/section-publications"
 import { SectionProjects } from "@/components/sections/section-projects";
 import { PageBanner } from "@/components/sections/page-banner";
 import { SectionSocials } from "@/components/sections/section-socials";
-import { CustomLink } from "@/components/ui/custom-link";
 import { featureFlag } from "./utils";
 import { Navbar } from "@/components/sections/navbar";
 import { useRefs } from "@/hooks/useRefs";
@@ -20,7 +19,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col w-full gap-2">
-        {/* Simple Navbar */}
+        {/* Navbar */}
         <Navbar
           experienceRef={experienceRef}
           publicationsRef={publicationsRef}

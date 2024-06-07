@@ -26,14 +26,17 @@ export const Navbar = ({
   const scrollToSection = (ref: RefObject<HTMLElement>) => {
     setIsDrawerOpen(false);
 
-    setTimeout(() => {
-      if (ref.current) {
-        window.scrollTo({
-          top: ref.current.offsetTop,
-          behavior: "smooth",
-        });
-      }
-    }, 350); // Delay of 350 milliseconds before scrolling
+    setTimeout(
+      () => {
+        if (ref.current) {
+          window.scrollTo({
+            top: ref.current.offsetTop,
+            behavior: "smooth",
+          });
+        }
+      },
+      isDrawerOpen ? 350 : 0
+    );
   };
 
   return (
