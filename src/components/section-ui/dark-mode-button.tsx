@@ -7,41 +7,38 @@ import {
   faSun as faSolidSun,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export const DarkModeButton = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isDarkModeHovered, setIsDarkModeHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [isThemeIconHovered, setIsThemeIconHovered] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   const toggleDarkMode = () => {
-    const elements = document.querySelectorAll(".transition-all, .transition");
-    elements.forEach((el) => {
-      el.classList.add("transition-none");
-    });
-
-    document.documentElement.classList.toggle("dark");
-    setIsDarkMode(!isDarkMode);
-
-    setTimeout(() => {
-      elements.forEach((el) => {
-        el.classList.remove("transition-none");
-      });
-    }, 0);
+    setTheme(theme === "dark" ? "light" : "dark");
   };
+
   return (
     <button
       onClick={toggleDarkMode}
-      onMouseEnter={() => setIsDarkModeHovered(true)}
-      onMouseLeave={() => setIsDarkModeHovered(false)}
+      onMouseEnter={() => setIsThemeIconHovered(true)}
+      onMouseLeave={() => setIsThemeIconHovered(false)}
     >
-      {isDarkMode ? (
+      {theme === "light" ? (
         <FontAwesomeIcon
-          icon={isDarkModeHovered ? faSolidMoon : faRegularMoon}
+          icon={isThemeIconHovered ? faSolidMoon : faRegularMoon}
           className="h-5 w-5"
         />
       ) : (
         <FontAwesomeIcon
-          icon={isDarkModeHovered ? faSolidSun : faRegularSun}
+          icon={isThemeIconHovered ? faSolidSun : faRegularSun}
           className="h-5 w-5"
         />
       )}
