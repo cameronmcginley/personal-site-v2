@@ -152,7 +152,7 @@ const badgeData: BadgeData[] = [
     key: "windowsserver",
     url: "https://www.microsoft.com/en-us/windows-server",
     imgSrc:
-      "https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=windows&logoColor=white",
+      "https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgc3R5bGU9ImZpbGw6bm9uZTsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyIDIySDZWNkgxNnYxNnpNMjIgNDJINlYyNkgxNnYxNnpNNDIgMjJIMjZWNkg0NnYxNnpNNDIgNDJIMjZWMjZoMTZ2MTZ6Ii8+PC9zdmc+",
   },
   {
     key: "netappontap",
@@ -176,7 +176,7 @@ const badgeData: BadgeData[] = [
     key: "pyg",
     url: "https://www.pyg.org/",
     imgSrc:
-      "https://img.shields.io/badge/PyG-%23EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white",
+      "https://img.shields.io/badge/PyG-%23EE4C2C.svg?style=for-the-badge&logo=pyg&logoColor=white",
   },
   {
     key: "pytorch",
