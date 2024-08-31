@@ -82,11 +82,11 @@ export function CardProject(props: CardProjectProps) {
               </div>
             </div>
 
-            {/* Badges - aligned to bottom */}
+            {/* Badges */}
             {props.badges && (
               <div className="gap-2 pt-4 flex flex-row w-full flex-wrap justify-center">
                 {props.badges.map((badge, index) => (
-                  <div key={index} className="">
+                  <div key={index} className="flex-grow basis-[100px]">
                     {badge}
                   </div>
                 ))}

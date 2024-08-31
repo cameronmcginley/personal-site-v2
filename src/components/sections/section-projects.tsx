@@ -12,7 +12,7 @@ const projects = [
     github_link: "https://github.com/cameronmcginley/sitewatch",
     public_link: "https://sitewatchapp.com/",
     description:
-      "Automates website monitoring - lets users upload URLs and configure customizable checks and email alerts. Built with TypeScript, Next.js, and a serverless backend using AWS Lambda, DynamoDB, and Redis.",
+      "Automates website monitoring - users upload URLs and configure checks functions and email alerts. Built with TypeScript, Next.js, and a serverless backend using AWS Lambda, DynamoDB, and Redis, hosted on a VPS.",
     badges: [
       badges.typescript,
       badges.next,
@@ -24,12 +24,12 @@ const projects = [
     ],
   },
   {
-    title: "Brainf**k Interpreter",
+    title: "Brainf**k Compiler",
     image: "/media/projects/brainfk.webp",
     github_link:
       "https://github.com/cameronmcginley/optimized-brainfk-interpreter",
     description:
-      "Interpreter for the brainf**k programming language, enhanced with instruction condensing and peephole optimization for improved execution efficiency.",
+      "Compiler for the Brainf**k language, incorporating instruction folding and pattern recognition optimizations which typically results in a  decrease in instructions executed and runtime by over 99%.",
     badges: [badges.cpp, badges.brainfuck],
   },
   {
