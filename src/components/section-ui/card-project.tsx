@@ -84,9 +84,9 @@ export function CardProject(props: CardProjectProps) {
 
             {/* Badges */}
             {props.badges && (
-              <div className="gap-2 pt-4 flex flex-row w-full flex-wrap justify-center">
+              <div className="gap-1 pt-4 flex flex-row w-full flex-wrap justify-center">
                 {props.badges.map((badge, index) => (
-                  <div key={index} className="flex-grow basis-[100px]">
+                  <div key={index} className="flex-grow">
                     {badge}
                   </div>
                 ))}
