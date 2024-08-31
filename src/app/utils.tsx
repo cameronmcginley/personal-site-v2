@@ -56,8 +56,8 @@ const badgeData: BadgeData[] = [
     key: "firebase",
     url: "https://firebase.google.com/",
     imgSrc:
-      "https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase",
-    bgColor: "#039BE5",
+      "https://img.shields.io/badge/firebase-%23FF9100.svg?style=for-the-badge&logo=firebase",
+    bgColor: "#FF9100",
   },
   {
     key: "cpp",
