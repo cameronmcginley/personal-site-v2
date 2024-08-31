@@ -12,7 +12,7 @@ const projects = [
     github_link: "https://github.com/cameronmcginley/sitewatch",
     public_link: "https://sitewatchapp.com/",
     description:
-      "Automates website monitoring - users upload URLs and configure checks functions and email alerts. Built with TypeScript, Next.js, and a serverless backend using AWS Lambda, DynamoDB, and Redis, hosted on a VPS.",
+      'Automates website monitoring - users upload URLs and configure "check" functions, run intervals, and alerts. Built with TypeScript, Next.js, and a serverless backend using AWS Lambda, DynamoDB, and Redis, hosted on a VPS.',
     badges: [
       badges.typescript,
       badges.next,
