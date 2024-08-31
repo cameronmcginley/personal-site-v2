@@ -7,14 +7,21 @@ const badges = generateBadgeComponents();
 
 const projects = [
   {
-    title: "Projectile Points Database",
-    image: "/media/projects/projectile-points.webp",
-    github_link:
-      "https://github.com/cameronmcginley/projectile-points-web-database",
-    public_link: "http://projectile-points-database.vercel.app/",
+    title: "SiteWatch",
+    image: "/media/projects/sitewatch.webp",
+    github_link: "https://github.com/cameronmcginley/sitewatch",
+    public_link: "https://sitewatchapp.com/",
     description:
-      "Web app serving as a dynamic database for archaelogical projectile point data. Inspired by projectilepoints.net and designed with greater structure and maintainability.",
-    badges: [badges.typescript, badges.next, badges.graphql, badges.postgres],
+      "Automates website monitoring - lets users upload URLs and configure customizable checks and email alerts. Built with TypeScript, Next.js, and a serverless backend using AWS Lambda, DynamoDB, and Redis.",
+    badges: [
+      badges.typescript,
+      badges.next,
+      badges.lambda,
+      badges.dynamodb,
+      badges.redis,
+      badges.apigw,
+      badges.digitalocean,
+    ],
   },
   {
     title: "Brainf**k Interpreter",
@@ -24,6 +31,16 @@ const projects = [
     description:
       "Interpreter for the brainf**k programming language, enhanced with instruction condensing and peephole optimization for improved execution efficiency.",
     badges: [badges.cpp, badges.brainfuck],
+  },
+  {
+    title: "Projectile Points Database",
+    image: "/media/projects/projectile-points.webp",
+    github_link:
+      "https://github.com/cameronmcginley/projectile-points-web-database",
+    public_link: "http://projectile-points-database.vercel.app/",
+    description:
+      "Web app serving as a dynamic database for archaelogical projectile point data. Inspired by projectilepoints.net and designed with greater structure and maintainability.",
+    badges: [badges.typescript, badges.next, badges.graphql, badges.postgres],
   },
   {
     title: "Course Sign-In Dashboard",

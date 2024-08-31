@@ -184,6 +184,36 @@ const badgeData: BadgeData[] = [
     imgSrc:
       "https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white",
   },
+  {
+    key: "lambda",
+    url: "https://aws.amazon.com/lambda/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS_Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white",
+  },
+  {
+    key: "dynamodb",
+    url: "https://aws.amazon.com/dynamodb/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS_DynamoDB-4053D6?style=for-the-badge&logo=amazon-dynamodb&logoColor=white",
+  },
+  {
+    key: "redis",
+    url: "https://redis.io/",
+    imgSrc:
+      "https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white",
+  },
+  {
+    key: "apigw",
+    url: "https://aws.amazon.com/api-gateway/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS_API_Gateway-FF4F00?style=for-the-badge&logo=amazonapigateway&logoColor=white",
+  },
+  {
+    key: "digitalocean",
+    url: "https://www.digitalocean.com/",
+    imgSrc:
+      "https://img.shields.io/badge/DigitalOcean VPS-%230167ff.svg?style=for-the-badge&logo=digitalocean&logoColor=white",
+  },
 ];
 export const generateBadgeComponents = (): BadgeComponents => {
   return badgeData.reduce<BadgeComponents>((acc, { key, url, imgSrc }) => {

@@ -102,9 +102,11 @@ export default function Home() {
                     I enjoy creating elegant solutions to complex problems, and
                     I am especially interested in backend development.
                   </div>
-                  <div className="flex flex-row">
-                    Reach out to me at
-                    <span className="text-link ml-2">camcginley@ucsd.edu</span>
+                  <div>
+                    Reach out to me at{" "}
+                    <span className="text-link">
+                      cameronmcginley2@gmail.com
+                    </span>
                   </div>
                 </div>
 
