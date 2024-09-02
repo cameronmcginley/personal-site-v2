@@ -3,11 +3,6 @@
 import * as React from "react";
 import "@/app/globals.css";
 import { useTheme } from "next-themes";
-// import { theme } from "tailwindcss/defaultTheme";
-
-// const bgColorSplash = theme("colors.bgColorSplash", "defaultColor");
-
-// Based on https://twitter.com/Suupercharged/status/1667785486382006272/photo/1
 
 export function Background() {
   const { theme } = useTheme();
@@ -16,28 +11,7 @@ export function Background() {
   return (
     <>
       <div className="fixed inset-0">
-        {/* https://bg.ibelick.com/ */}
-        {/* <div
-          // mask image: %width, %height, %x, %y
-          // className="
-          //   absolute inset-0 -z-10 h-full w-full
-          //   bg-[var(--bg-primary)]
-          //   bg-[linear-gradient(to_right,var(--bg-linecolor)_1px,transparent_1px),linear-gradient(to_bottom,var(--bg-linecolor)_1px,transparent_1px)]
-          //   bg-[size:var(--bg-tilewidth)_var(--bg-tileheight)]
-          //   [mask-image:radial-gradient(ellipse_200%_9%_at_50%_100%,var(--bg-fadeto)_100%,transparent_1000%)]
-          // "
-          className="
-          absolute inset-0 -z-10 h-full w-full 
-          bg-bgPrimary 
-          bg-[
-            linear-gradient(to_right,_var(--tw-gradient-stops)_1px,transparent_1px),
-            linear-gradient(to_bottom,_var(--tw-gradient-stops)_1px,transparent_1px)
-          ]
-          bg-[length:200px_100px]
-          [mask-image:radial-gradient(ellipse_200%_9%_at_50%_100%,var(--bg-fadeto)_100%,transparent_1000%)]
-        "
-        /> */}
-        {/* Main color */}
+        {/* Background */}
         <div
           className="
           absolute inset-0 -z-10 h-full w-full

@@ -8,8 +8,8 @@ import { CustomButton } from "@/components/ui/custom-button";
 interface CardProjectProps {
   image: string;
   title: string;
-  github_link: string;
-  public_link?: string;
+  githubLink: string;
+  publicLink?: string;
   description: string;
   badges?: JSX.Element[];
 }
@@ -20,13 +20,9 @@ export function CardProject(props: CardProjectProps) {
   return (
     <div className="w-72">
       <Card fullHeight={true}>
-        {/* Flex container for the whole card */}
         <div className="flex flex-col">
-          {/* Image container with Link and hover effect */}
-          <Link href={props.github_link}>
-            {/* Replace with your link destination */}
+          <Link href={props.githubLink}>
             <div className="relative w-full aspect-[16/9] overflow-hidden cursor-pointer group">
-              {/* Render video if webm file */}
               {isWebm ? (
                 // Render video if the media file is a WebM
                 <video
@@ -47,42 +43,33 @@ export function CardProject(props: CardProjectProps) {
                   style={{ width: "100%", height: "auto" }}
                 />
               )}
-              {/* Overlay for fade effect */}
               <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-cardBg to-transparent z-10"></div>
             </div>
           </Link>
 
-          {/* Content container with flex-grow to take up all available space */}
           <div className="p-2 flex flex-col h-full">
-            {/* Container for Title, Links, and Description */}
-            <div className="flex-grow">
-              {/* Title */}
+            <div className="flex-grow space-y-1">
               <div className="text-lg pb-1 font-bold text-link text-center">
-                <CustomLink url={props.github_link} text={props.title} />
+                <CustomLink url={props.githubLink} text={props.title} />
               </div>
 
-              {/* Links */}
               <div className="flex flex-row w-full justify-center gap-2">
-                {/* GitHub */}
-                <CustomButton url={props.github_link}>
+                <CustomButton url={props.githubLink}>
                   <p>GitHub</p>
                 </CustomButton>
 
-                {/* Public App */}
-                {props.public_link && (
-                  <CustomButton url={props.public_link}>
+                {props.publicLink && (
+                  <CustomButton url={props.publicLink}>
                     <p>Public App</p>
                   </CustomButton>
                 )}
               </div>
 
-              {/* Description */}
               <div className="flex text-center pt-2 pb-1 pl-2 pr-2">
                 {props.description}
               </div>
             </div>
 
-            {/* Badges */}
             {props.badges && (
               <div className="gap-1 pt-4 flex flex-row w-full flex-wrap justify-center">
                 {props.badges.map((badge, index) => (

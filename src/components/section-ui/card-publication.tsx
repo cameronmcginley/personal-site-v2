@@ -18,7 +18,6 @@ export function CardPublication(props: CardPublicationProps) {
   return (
     <Card>
       <div className="flex p-4 md:flex-row flex-col justify-center md:items-start items-center">
-        {/* Image */}
         <div className="md:w-1/3 w-1/3 md:pr-4 pr-0 md:pb-0 pb-4 flex justify-center">
           <Image
             src={props.image}
@@ -30,17 +29,13 @@ export function CardPublication(props: CardPublicationProps) {
               "transition-transform duration-300 ease-in-out transform hover:scale-105"
             }`}
           />
-          {/* </Tilt> */}
         </div>
 
         <div>
-          {/* Title */}
           <div className="w-fit pb-1 text-xl font-bold text-link ">
             <CustomLink url={props.titlelink} text={props.title} />
           </div>
-          {/* Authors */}
           <div className="text-md">
-            {/* Map authors, seperate by comma */}
             <div>
               {props.authors.map((author, index) => (
                 <span key={author}>
@@ -50,9 +45,7 @@ export function CardPublication(props: CardPublicationProps) {
               ))}
             </div>
           </div>
-          {/* Conference */}
           <div className="text-md">{props.conference}</div>
-          {/* Citations */}
           <div className="text-md w-fit text-link">
             <CustomLink
               url={props.citationslink}

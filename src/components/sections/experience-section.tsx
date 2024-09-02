@@ -88,10 +88,8 @@ const schools: CompanyCardData[] = [
 export function ExperienceSection() {
   return (
     <>
-      {/* Education and Work */}
       <CardContainer>
         <div className="flex md:flex-row flex-col w-full">
-          {/* Education */}
           <div className="gap-1 pr-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Education</p>
             {schools.map((item, index) => (
@@ -105,7 +103,6 @@ export function ExperienceSection() {
               />
             ))}
           </div>
-          {/* Work */}
           <div className="gap-1 pl-1 flex flex-col w-full items-center">
             <p className="pt-2 sm:pt-0 text-3xl font-bold col-span-2">
               Professional

@@ -6,7 +6,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-// import chevron up and down from fontawesome
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -26,7 +25,6 @@ export function CardCompany(props: CardCompanyProps) {
       <div className="w-full">
         <Collapsible>
           <div className="flex flex-row h-full items-start w-full">
-            {/* Image */}
             <div className="min-w-14 max-w-14 h-full pt-2 pl-2 pr-1 flex items-start">
               <Image
                 src={props.logo}
@@ -39,11 +37,8 @@ export function CardCompany(props: CardCompanyProps) {
               />
             </div>
 
-            {/* Text */}
             <div className="p-1 flex-grow">
-              {/* Company Name */}
               <div className="text-xl font-bold">{props.company}</div>
-              {/* Position and Dates */}
               <div className="text-md">
                 {props.positions.map((position, index) => (
                   <div key={position} className="pb-2 last:pb-0">
@@ -54,7 +49,6 @@ export function CardCompany(props: CardCompanyProps) {
               </div>
             </div>
 
-            {/* Align to bottom */}
             <div className="flex flex-col justify-end self-end ml-auto pr-2 h-full">
               {props.badges && (
                 <CollapsibleTrigger asChild>
@@ -71,7 +65,6 @@ export function CardCompany(props: CardCompanyProps) {
           <CollapsibleContent>
             <div className="p-2 pt-0">
               <div className="border-b border-border mb-2 mx-8" />
-              {/* Map badges */}
               {props.badges && (
                 <div className="gap-2 flex flex-row w-full flex-wrap justify-center">
                   {props.badges.map((badge, index) => (

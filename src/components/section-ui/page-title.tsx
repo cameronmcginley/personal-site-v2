@@ -20,7 +20,6 @@ export function PageTitle() {
     return timer;
   };
 
-  // Trigger on mount
   React.useEffect(() => {
     let timer = animate();
 

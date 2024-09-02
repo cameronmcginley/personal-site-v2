@@ -19,24 +19,20 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col w-full gap-2">
-        {/* Navbar */}
         <Navbar
           experienceRef={experienceRef}
           publicationsRef={publicationsRef}
           projectsRef={projectsRef}
         />
 
-        {/* Name Banner */}
         <PageBanner />
 
-        {/* Section 1 */}
         <div
           className={`gap-2 flex w-full h-full flex-col md:flex-row items-center justify-center ${
             featureFlag.animations &&
             "animate-fade-in-up opacity-0 delay-100 fill-forwards"
           }`}
         >
-          {/* Image */}
           <div className="flex-grow min-w-64 max-w-64 md:h-80 ">
             <CardContainer>
               {featureFlag.animations ? (
@@ -76,29 +72,21 @@ export default function Home() {
             </CardContainer>
           </div>
 
-          {/* Socials */}
           <div className="flex-grow md:h-80">
             <SectionSocials />
           </div>
 
-          {/* About Me */}
           <div className="flex-grow flex items-start md:h-80">
             <CardContainer>
               <div className="flex flex-col justify-between">
                 <div className="flex flex-col gap-2">
                   <div className="text-3xl font-bold">Hi!</div>
                   <div>
-                    {/* I am a Software Engineer located in San Francisco with a
-                    passion for back-end development. My expertise is in
-                    building scalable, efficient systems and managing complex
-                    databases. */}
                     I am a Software Engineer located in San Francisco. Currently
                     at Capital One Software helping build Slingshot, a Snowflake
                     optimization platform.
                   </div>
                   <div>
-                    {/* I enjoy creating elegant solutions and exploring new
-                    technologies to tackle new problems. */}
                     I enjoy creating elegant solutions to complex problems, and
                     I am especially interested in backend development.
                   </div>
@@ -110,7 +98,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Signature */}
                 {featureFlag.animations && (
                   <div className="signature-container delay-1000 mt-4">
                     <svg
@@ -136,7 +123,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Section 2 */}
         <div
           ref={experienceRef}
           className={`${
@@ -147,7 +133,6 @@ export default function Home() {
           <ExperienceSection />
         </div>
 
-        {/* Section 3 */}
         <div
           ref={publicationsRef}
           className={`${
@@ -158,7 +143,6 @@ export default function Home() {
           <SectionPublications />
         </div>
 
-        {/* Section 4 */}
         <div
           ref={projectsRef}
           className={`${
