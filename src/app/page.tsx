@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col w-full gap-2">
+      <div className="flex flex-col w-full gap-4">
         <Navbar
           experienceRef={experienceRef}
           publicationsRef={publicationsRef}
@@ -34,7 +34,7 @@ export default function Home() {
           }`}
         >
           <div className="flex-grow min-w-64 max-w-64 md:h-80 ">
-            <CardContainer>
+            <CardContainer includeBg={true}>
               {featureFlag.animations ? (
                 <Tilt
                   className="tilt"
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
 
           <div className="flex-grow flex items-start md:h-80">
-            <CardContainer>
+            <CardContainer includeBg={true}>
               <div className="flex flex-col justify-between">
                 <div className="flex flex-col gap-2">
                   <div className="text-3xl font-bold">Hi!</div>

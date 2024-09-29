@@ -1,18 +1,30 @@
 import React from "react";
 import { CardContainer } from "@/components/ui/card-container";
-import { CardPublication } from "@/components/section-ui/card-publication";
+import { CardProject } from "../section-ui/card-project";
+import { CustomLink } from "../ui/custom-link";
 
 const publications = [
   {
+    image: "/layers.webp",
     title:
       "Convolutional Neural Network Optimization for Phishing Email Classification",
-    authors: ["Cameron McGinley", "Sergio A. Salinas Monroy"],
-    conference: "2021 IEEE Interational Conference on Big Data",
-    citations: "8",
-    image: "/layers.webp",
-    titlelink: "https://ieeexplore.ieee.org/abstract/document/9671531",
-    citationslink:
-      "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=12860478389443421757",
+    titleLink: "https://ieeexplore.ieee.org/abstract/document/9671531",
+    description: (
+      <>
+        <p>
+          <strong>Authors:</strong> Cameron McGinley, Sergio A. Salinas Monroy
+        </p>
+        <p>
+          <strong>Conference:</strong> 2021 IEEE Interational Conference on Big
+          Data
+        </p>
+        <CustomLink url="https://scholar.google.com/scholar?oi=bibs&hl=en&cites=12860478389443421757">
+          <p>
+            <strong>Citations:</strong> 8
+          </p>
+        </CustomLink>
+      </>
+    ),
   },
 ];
 
@@ -24,15 +36,12 @@ export function SectionPublications() {
           <div className="pr-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Publications</p>
             {publications.map((item, index) => (
-              <CardPublication
+              <CardProject
                 key={index}
-                title={item.title}
-                authors={item.authors}
-                conference={item.conference}
-                citations={item.citations}
                 image={item.image}
-                titlelink={item.titlelink}
-                citationslink={item.citationslink}
+                title={item.title}
+                titleLink={item.titleLink}
+                description={item.description}
               />
             ))}
           </div>

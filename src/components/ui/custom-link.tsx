@@ -2,12 +2,13 @@ import React from "react";
 import Link from "next/link";
 
 interface CustomLinkProps {
-  text: string;
+  text?: string; // shouldnt be a prop.....
   url?: string;
   onClick?: () => void; // Optional onClick for scrolling
+  children?: React.ReactNode;
 }
 
-export function CustomLink({ text, url, onClick }: CustomLinkProps) {
+export function CustomLink({ text, url, onClick, children }: CustomLinkProps) {
   const className = `
     bg-gradient-to-r from-linkUnderlineStart to-linkUnderlineEnd
     bg-[length:0px_3px]
@@ -23,6 +24,7 @@ export function CustomLink({ text, url, onClick }: CustomLinkProps) {
     return (
       <Link href={url} className={className}>
         {text}
+        {children}
       </Link>
     );
   }
