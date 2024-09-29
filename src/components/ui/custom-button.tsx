@@ -13,7 +13,7 @@ export function CustomButton({ children, ...props }: CustomButtonProps) {
         className="
         h-full
         border
-        relative px-1 py-1
+        relative p-1
         overflow-hidden 
         group 
         bg-cardBg
@@ -30,7 +30,6 @@ export function CustomButton({ children, ...props }: CustomButtonProps) {
         ease-out 
         duration-300"
       >
-        {/* Highlight */}
         <span
           className="
           absolute right-0 w-8 h-32 -mt-12 

@@ -37,7 +37,7 @@ const socials = [
 export function SectionSocials() {
   return (
     <div className="flex justify-center md:h-80">
-      <CardContainer>
+      <CardContainer includeBg={true}>
         <div className="flex md:flex-col flex-row gap-2 justify-between">
           {socials.map((item, index) => (
             <CustomButton url={item.url} key={index}>

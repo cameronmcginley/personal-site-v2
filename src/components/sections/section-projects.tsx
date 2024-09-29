@@ -1,6 +1,6 @@
 import React from "react";
 import { CardContainer } from "@/components/ui/card-container";
-import { CardProject } from "@/components/section-ui/card-project";
+import { CardProject } from "../section-ui/card-project";
 import { generateBadgeComponents } from "@/app/utils";
 
 const badges = generateBadgeComponents();
@@ -50,6 +50,9 @@ const projects = [
       "Manage courses and attendees with QR code sign-ins, tracking, and data handling, supporting efficient administration with data export and querying.",
     badges: [badges.javascript, badges.react, badges.nodejs, badges.firebase],
   },
+];
+
+const oldProjects = [
   {
     title: "Sorting Visualizer",
     image: "/media/projects/sorting-vis.webm",
@@ -85,7 +88,7 @@ export function SectionProjects() {
         <div className="flex flex-col justify-center w-full">
           <div className="flex flex-col justify-center">
             <p className="text-center text-3xl font-bold pb-2">Projects</p>
-            <p className="text-center pb-2">
+            <p className="text-center pb-2 text-md font-semibold">
               Here are some of my favorite projects I&apos;ve worked on. Read
               more via the GitHub links!
             </p>
@@ -103,9 +106,28 @@ export function SectionProjects() {
                   badges={item.badges}
                 />
               ))}
-              {/* Empty spacers to left align bottom */}
-              <div className="w-72"></div>
-              <div className="w-72"></div>
+
+              {/* Dropdown for old projects */}
+              <div className="flex flex-col justify-center">
+                <details>
+                  <summary className="text-center text-lg font-bold pb-2 cursor-pointer">
+                    Older Projects
+                  </summary>
+                  <div className="gap-8 flex flex-row flex-wrap justify-center">
+                    {oldProjects.map((item, index) => (
+                      <CardProject
+                        key={index}
+                        title={item.title}
+                        image={item.image}
+                        githubLink={item.githubLink}
+                        publicLink={item.publicLink}
+                        description={item.description}
+                        badges={item.badges}
+                      />
+                    ))}
+                  </div>
+                </details>
+              </div>
             </div>
           </div>
         </div>

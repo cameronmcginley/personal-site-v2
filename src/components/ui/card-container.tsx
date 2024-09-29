@@ -5,11 +5,16 @@ import { Card } from "@/components/ui/card";
 
 interface CardContainerProps {
   children: React.ReactNode;
+  includeBg?: boolean;
 }
 
-export function CardContainer({ children }: CardContainerProps) {
+export function CardContainer({ children, includeBg }: CardContainerProps) {
   return (
-    <div className="flex items-stretch p-4 shadow-sm h-full border bg-cardBg">
+    <div
+      className={`flex items-stretch p-4 h-full ${
+        includeBg && "border bg-cardBg"
+      }`}
+    >
       {children}
     </div>
   );

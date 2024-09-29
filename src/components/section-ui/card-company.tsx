@@ -66,7 +66,7 @@ export function CardCompany(props: CardCompanyProps) {
             <div className="p-2 pt-0">
               <div className="border-b border-border mb-2 mx-8" />
               {props.badges && (
-                <div className="gap-2 flex flex-row w-full flex-wrap justify-center">
+                <div className="pl-12 gap-1 flex flex-row w-full flex-wrap justify-start">
                   {props.badges.map((badge, index) => (
                     <div key={index} className="">
                       {badge}

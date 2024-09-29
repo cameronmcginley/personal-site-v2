@@ -250,8 +250,245 @@ const badgeData: BadgeData[] = [
   },
 ];
 
+const badgeDataBlack: BadgeData[] = [
+  {
+    key: "robloxstudio",
+    url: "https://www.roblox.com/create",
+    imgSrc:
+      "https://img.shields.io/badge/roblox_studio-%23000000?style=for-the-badge&logo=roblox&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "react",
+    url: "https://reactjs.org/",
+    imgSrc:
+      "https://img.shields.io/badge/react-%23000000.svg?style=for-the-badge&logo=react&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "next",
+    url: "https://nextjs.org/",
+    imgSrc:
+      "https://img.shields.io/badge/Next-%23000000?style=for-the-badge&logo=next.js&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "javascript",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    imgSrc:
+      "https://img.shields.io/badge/javascript-%23000000.svg?style=for-the-badge&logo=javascript&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "nodejs",
+    url: "https://nodejs.org/",
+    imgSrc:
+      "https://img.shields.io/badge/node.js-%23000000?style=for-the-badge&logo=node.js&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "firebase",
+    url: "https://firebase.google.com/",
+    imgSrc:
+      "https://img.shields.io/badge/firebase-%23000000.svg?style=for-the-badge&logo=firebase&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "cpp",
+    url: "https://isocpp.org/",
+    imgSrc:
+      "https://img.shields.io/badge/c++-%23000000.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "typescript",
+    url: "https://www.typescriptlang.org/",
+    imgSrc:
+      "https://img.shields.io/badge/typescript-%23000000.svg?style=for-the-badge&logo=typescript&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "graphql",
+    url: "https://graphql.org/",
+    imgSrc:
+      "https://img.shields.io/badge/-GraphQL-%23000000?style=for-the-badge&logo=graphql&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "postgres",
+    url: "https://www.postgresql.org/",
+    imgSrc:
+      "https://img.shields.io/badge/postgres-%23000000.svg?style=for-the-badge&logo=postgresql&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "python",
+    url: "https://www.python.org/",
+    imgSrc:
+      "https://img.shields.io/badge/python-%23000000?style=for-the-badge&logo=python&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "scikitlearn",
+    url: "https://scikit-learn.org/",
+    imgSrc:
+      "https://img.shields.io/badge/scikit--learn-%23000000.svg?style=for-the-badge&logo=scikit-learn&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "lua",
+    url: "https://www.lua.org/",
+    imgSrc:
+      "https://img.shields.io/badge/lua-%23000000.svg?style=for-the-badge&logo=lua&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "vercel",
+    url: "https://vercel.com/",
+    imgSrc:
+      "https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "rojo",
+    url: "https://rojo.space/",
+    imgSrc:
+      "https://img.shields.io/badge/rojo-%23000000?style=for-the-badge&color=%23000000&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "brainfuck",
+    url: "https://esolangs.org/wiki/Brainfuck",
+    imgSrc:
+      "https://img.shields.io/badge/brainf**k-%23000000?style=for-the-badge&color=%23000000&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "keras",
+    url: "https://keras.io/",
+    imgSrc:
+      "https://img.shields.io/badge/Keras-%23000000?style=for-the-badge&logo=keras&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "tensorflow",
+    url: "https://www.tensorflow.org/",
+    imgSrc:
+      "https://img.shields.io/badge/TensorFlow-%23000000?style=for-the-badge&logo=tensorflow&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "databricks",
+    url: "https://databricks.com/",
+    imgSrc:
+      "https://img.shields.io/badge/databricks-%23000000?style=for-the-badge&logo=databricks&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "snowflake",
+    url: "https://www.snowflake.com/",
+    imgSrc:
+      "https://img.shields.io/badge/snowflake-%23000000?style=for-the-badge&logo=snowflake&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "pytest",
+    url: "https://docs.pytest.org/",
+    imgSrc:
+      "https://img.shields.io/badge/pytest-%23000000?style=for-the-badge&logo=pytest&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "aws",
+    url: "https://aws.amazon.com/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS-%23000000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "windowsserver",
+    url: "https://www.microsoft.com/en-us/windows-server",
+    imgSrc:
+      "https://img.shields.io/badge/Windows_Server-%23000000?style=for-the-badge&logo=windowsserver&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "netappontap",
+    url: "https://www.netapp.com/data-management/ontap-data-management-software/",
+    imgSrc:
+      "https://img.shields.io/badge/NetApp_ONTAP-%23000000?style=for-the-badge&logo=netapp&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "rhel",
+    url: "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+    imgSrc:
+      "https://img.shields.io/badge/RHEL-%23000000?style=for-the-badge&logo=redhat&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "suse",
+    url: "https://www.suse.com/",
+    imgSrc:
+      "https://img.shields.io/badge/SUSE-%23000000?style=for-the-badge&logo=suse&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "pyg",
+    url: "https://www.pyg.org/",
+    imgSrc:
+      "https://img.shields.io/badge/PyG-%23000000.svg?style=for-the-badge&logo=pyg&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "pytorch",
+    url: "https://pytorch.org/",
+    imgSrc:
+      "https://img.shields.io/badge/PyTorch-%23000000?style=for-the-badge&logo=pytorch&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "lambda",
+    url: "https://aws.amazon.com/lambda/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS_Lambda-%23000000?style=for-the-badge&logo=awslambda&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "dynamodb",
+    url: "https://aws.amazon.com/dynamodb/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS_DynamoDB-%23000000?style=for-the-badge&logo=amazon-dynamodb&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "redis",
+    url: "https://redis.io/",
+    imgSrc:
+      "https://img.shields.io/badge/Redis-%23000000?style=for-the-badge&logo=redis&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "apigw",
+    url: "https://aws.amazon.com/api-gateway/",
+    imgSrc:
+      "https://img.shields.io/badge/AWS_API_Gateway-%23000000?style=for-the-badge&logo=amazonapigateway&logoColor=white",
+    bgColor: "#000000",
+  },
+  {
+    key: "digitalocean",
+    url: "https://www.digitalocean.com/",
+    imgSrc:
+      "https://img.shields.io/badge/DigitalOcean_VPS-%23000000.svg?style=for-the-badge&logo=digitalocean&logoColor=white",
+    bgColor: "#000000",
+  },
+];
+
 export const generateBadgeComponents = (): BadgeComponents => {
-  return badgeData.reduce<BadgeComponents>(
+  const useColor = false;
+  const activeBadgeData = useColor ? badgeData : badgeDataBlack;
+
+  return activeBadgeData.reduce<BadgeComponents>(
     (acc, { key, url, imgSrc, bgColor }) => {
       acc[key] = (
         <a
