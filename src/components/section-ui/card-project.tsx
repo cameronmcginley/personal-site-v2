@@ -14,6 +14,7 @@ interface CardProjectProps {
   titleLink?: string;
   description: string | JSX.Element;
   badges?: JSX.Element[];
+  scaleImg?: boolean;
 }
 
 export function CardProject({
@@ -24,27 +25,34 @@ export function CardProject({
   titleLink,
   description,
   badges,
+  scaleImg = false,
 }: CardProjectProps) {
   const isWebm = image.endsWith(".webm");
 
   return (
-    <Card className="flex flex-col w-full md:flex-row overflow-hidden">
-      <div className="md:w-72 h-64 relative justify-center">
+    <Card className="flex flex-col w-full md:flex-row overflow-hidden justify-items-center overflow-visible">
+      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-r relative group">
         {isWebm ? (
           <video
             src={image}
             loop
             autoPlay
             muted
-            className="object-contain w-full h-full"
+            className={`${
+              scaleImg && "md:object-cover"
+            } object-contain w-full h-full`}
           />
         ) : (
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-contain w-full h-full"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={image}
+              alt={title}
+              className={`${
+                scaleImg && "md:object-cover"
+              } object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-150 group-hover:absolute group-hover:top-0 group-hover:left-0 group-hover:z-50`}
+              layout="fill"
+            />
+          </div>
         )}
       </div>
 

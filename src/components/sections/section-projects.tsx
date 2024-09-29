@@ -30,6 +30,7 @@ const projects = [
     description:
       "Compiler for the Brainf**k language, incorporating instruction folding and pattern recognition optimizations which typically results in a  decrease in instructions executed and runtime by over 99%.",
     badges: [badges.cpp, badges.brainfuck],
+    scaleImg: true,
   },
   {
     title: "Projectile Points Database",
@@ -40,6 +41,7 @@ const projects = [
     description:
       "Web app serving as a dynamic database for archaelogical projectile point data. Inspired by projectilepoints.net and designed with greater structure and maintainability.",
     badges: [badges.typescript, badges.next, badges.graphql, badges.postgres],
+    scaleImg: true,
   },
   {
     title: "Course Sign-In Dashboard",
@@ -78,6 +80,7 @@ const oldProjects = [
     description:
       "Roblox project featuring an object placement system with raycasting, client-server communication, customizable object design, per-account saving, and Rojo Git integration.",
     badges: [badges.lua, badges.robloxstudio, badges.rojo],
+    scaleImg: true,
   },
 ];
 
@@ -104,6 +107,7 @@ export function SectionProjects() {
                   publicLink={item.publicLink}
                   description={item.description}
                   badges={item.badges}
+                  scaleImg={item.scaleImg}
                 />
               ))}
 
