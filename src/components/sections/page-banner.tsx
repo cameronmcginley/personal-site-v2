@@ -24,9 +24,7 @@ export function PageBanner() {
   `;
 
   return (
-    // Main card & gradient
     <div className={bannerClass}>
-      {/* Grainy filter */}
       <div className={grainyFilterClass}>
         <PageTitle />
       </div>

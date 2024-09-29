@@ -8,7 +8,7 @@ const publications = [
       "Convolutional Neural Network Optimization for Phishing Email Classification",
     authors: ["Cameron McGinley", "Sergio A. Salinas Monroy"],
     conference: "2021 IEEE Interational Conference on Big Data",
-    citations: "6",
+    citations: "8",
     image: "/layers.webp",
     titlelink: "https://ieeexplore.ieee.org/abstract/document/9671531",
     citationslink:
@@ -19,10 +19,8 @@ const publications = [
 export function SectionPublications() {
   return (
     <>
-      {/* Education and Work */}
       <CardContainer>
         <div className="flex flex-row w-full">
-          {/* Education */}
           <div className="pr-1 flex flex-col w-full items-center">
             <p className="text-3xl font-bold col-span-2">Publications</p>
             {publications.map((item, index) => (
