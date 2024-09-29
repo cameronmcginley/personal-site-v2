@@ -28,68 +28,63 @@ export function CardProject({
   const isWebm = image.endsWith(".webm");
 
   return (
-    <Card>
-      <div className="h-[260px] flex flex-col md:flex-row">
-        <div className="md:w-1/3 relative max-h-[260px] overflow-hidden border-r">
-          {isWebm ? (
-            <video
-              src={image}
-              loop
-              autoPlay
-              muted
-              className=" transition-transform duration-300 ease-in-out transform group-hover:scale-105 w-full h-full object-cover"
-            />
-          ) : (
-            <Image
-              src={image}
-              alt={image}
-              className="transition-transform duration-300 ease-in-out transform group-hover:scale-105"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          )}
-        </div>
+    <Card className="flex flex-col w-full md:flex-row overflow-hidden">
+      <div className="md:w-72 h-64 relative justify-center">
+        {isWebm ? (
+          <video
+            src={image}
+            loop
+            autoPlay
+            muted
+            className="object-contain w-full h-full"
+          />
+        ) : (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-contain w-full h-full"
+          />
+        )}
+      </div>
 
-        <div className="flex flex-col md:w-2/3 p-6 justify-between h-full">
-          <div>
-            <div className="flex flex-row gap-8 items-center mb-4 ">
-              <h3 className="text-2xl font-bold items-center">
-                <CustomLink url={titleLink ?? githubLink} text={title} />
-              </h3>
-              <div className="flex flex-wrap gap-4 mt-auto">
-                {githubLink && (
-                  <CustomButton url={githubLink}>
-                    <div className="flex flex-row gap-2 items-center justify-center h-full">
-                      <Github className="w-4 h-4 mr-2" />
-                      <p>GitHub</p>
-                    </div>
-                  </CustomButton>
-                )}
-                {publicLink && (
-                  <CustomButton url={publicLink}>
-                    <div className="flex flex-row gap-2 items-center justify-center h-full">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      <p>Public App</p>
-                    </div>
-                  </CustomButton>
-                )}
-              </div>
+      <div className="w-full flex flex-col p-4 md:p-6 justify-between overflow-y-auto">
+        <div>
+          <div className="flex flex-row gap-4 mb-4 justify-between">
+            <h3 className="text-xl md:text-2xl font-bold">
+              <CustomLink url={titleLink ?? githubLink} text={title} />
+            </h3>
+            <div className="flex flex-wrap gap-2 h-full justify-end">
+              {githubLink && (
+                <CustomButton url={githubLink}>
+                  <div className="flex flex-row gap-2 items-center justify-center w-full">
+                    <Github className="w-4 h-4" />
+                    <p>GitHub</p>
+                  </div>
+                </CustomButton>
+              )}
+              {publicLink && (
+                <CustomButton url={publicLink}>
+                  <div className="flex flex-row gap-2 items-center justify-center w-full">
+                    <ExternalLink className="w-4 h-4" />
+                    <p>Public App</p>
+                  </div>
+                </CustomButton>
+              )}
             </div>
-            <div className="text-muted-foreground mb-4">{description}</div>
           </div>
-
-          {badges && (
-            <div className="flex flex-wrap gap-2">
-              <div className="gap-1 pt-4 flex flex-row flex-wrap justify-start">
-                {badges.map((badge, index) => (
-                  <div key={index}>{badge}</div>
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="text-sm text-muted-foreground mb-4">
+            {description}
+          </div>
         </div>
+
+        {badges && (
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {badges.map((badge, index) => (
+              <div key={index}>{badge}</div>
+            ))}
+          </div>
+        )}
       </div>
     </Card>
   );
