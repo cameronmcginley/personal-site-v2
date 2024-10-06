@@ -49,7 +49,7 @@ export function CardProject({
               alt={title}
               className={`${
                 scaleImg && "md:object-cover"
-              } object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-150 group-hover:absolute group-hover:top-0 group-hover:left-0 group-hover:z-50`}
+              } object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-125 group-hover:absolute group-hover:top-0 group-hover:left-0 group-hover:z-50`}
               layout="fill"
             />
           </div>

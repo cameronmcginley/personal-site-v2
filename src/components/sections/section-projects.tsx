@@ -20,6 +20,7 @@ const projects = [
       badges.dynamodb,
       badges.redis,
       badges.apigw,
+      badges.digitalocean,
     ],
   },
   {
