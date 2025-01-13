@@ -5,12 +5,16 @@ import { CustomLink } from "../ui/custom-link";
 import { Button } from "../ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import { CustomButton } from "../ui/custom-button";
+import { faGoogleScholar } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface CardProjectProps {
   image: string;
   title: string;
   githubLink?: string;
   publicLink?: string;
+  ieeeLink?: string;
+  scholarLink?: string;
   titleLink?: string;
   description: string | JSX.Element;
   badges?: JSX.Element[];
@@ -22,6 +26,8 @@ export function CardProject({
   title,
   githubLink,
   publicLink,
+  ieeeLink,
+  scholarLink,
   titleLink,
   description,
   badges,
@@ -76,6 +82,22 @@ export function CardProject({
                   <div className="flex flex-row gap-2 items-center justify-center w-full">
                     <ExternalLink className="w-4 h-4" />
                     <p>Public App</p>
+                  </div>
+                </CustomButton>
+              )}
+              {ieeeLink && (
+                <CustomButton url={ieeeLink}>
+                  <div className="flex flex-row gap-2 items-center justify-center w-full">
+                    <ExternalLink className="w-4 h-4" />
+                    <p>IEEE</p>
+                  </div>
+                </CustomButton>
+              )}
+              {scholarLink && (
+                <CustomButton url={scholarLink}>
+                  <div className="flex flex-row gap-2 items-center justify-center w-full">
+                    <FontAwesomeIcon icon={faGoogleScholar} />
+                    <p>Scholar</p>
                   </div>
                 </CustomButton>
               )}
