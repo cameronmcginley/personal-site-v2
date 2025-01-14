@@ -49,7 +49,7 @@ export function SectionSocials() {
                     color: item.color,
                   }}
                 />
-                <p className="p-0 m-0 h-fit w-fit">{item.name}</p>
+                <p className="p-0 pt-1 m-0 h-fit w-fit">{item.name}</p>
               </div>
             </CustomButton>
           ))}

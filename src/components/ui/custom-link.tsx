@@ -19,17 +19,13 @@ export function CustomLink({
   gradient = true,
 }: CustomLinkProps) {
   const className = `
-    ${
-      gradient
-        ? "bg-gradient-to-r from-linkUnderlineStart to-linkUnderlineEnd"
-        : "bg-gradient-to-r from-linkUnderlineStart to-linkUnderlineStart"
-    }
+    bg-gradient-to-r from-linkUnderlineStart to-linkUnderlineEnd
     bg-[length:0px_3px]
     bg-left-bottom
     bg-no-repeat
     transition-[background-size]
     duration-300
-    ${underlineAlwaysVisible ? "" : "hover:"}bg-[length:100%_3px]
+    hover:bg-[length:100%_3px]
   `;
 
   // If url is provided, use Next.js Link for navigation
