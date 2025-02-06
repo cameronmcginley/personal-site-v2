@@ -235,8 +235,8 @@ export function SectionProjects() {
   return (
     <div className="flex flex-col justify-center w-full p-4">
       <div className="flex flex-col justify-center">
-        <p className="text-center text-3xl font-bold pb-2">Projects</p>
-        <p className="text-center pb-2 text-md">
+        <p className="text-3xl font-bold pb-2 pl-2">Projects</p>
+        <p className="w-full pl-2 pb-6 text-md">
           Here are some of my favorite projects I&apos;ve worked on. Check out
           the GitHub links for more details!
         </p>
