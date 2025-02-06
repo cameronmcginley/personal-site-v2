@@ -75,7 +75,7 @@ export function CardProject({
               </>
             ))}
           </div>
-          <div className="text-sm text-muted-foreground mb-4 text-justify">
+          <div className="text-sm text-muted-foreground mb-4">
             {description}
           </div>
         </div>
