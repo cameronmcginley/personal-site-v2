@@ -258,12 +258,12 @@ export function SectionProjects() {
           ))}
 
           {/* Dropdown for old projects */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col w-full">
             <details>
-              <summary className="text-center text-lg font-bold pb-2 cursor-pointer">
+              <summary className="text-start text-xl font-bold ml-2 pb-6 cursor-pointer">
                 Older Projects
               </summary>
-              <div className="gap-8 flex flex-row flex-wrap justify-center">
+              <div className="gap-8 flex flex-row flex-wrap">
                 {oldProjects.map((item, index) => (
                   <CardProject
                     key={index}
