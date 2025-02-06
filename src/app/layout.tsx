@@ -25,7 +25,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex min-h-screen flex-col items-center pt-6 sm:pt-6 sm:p-16">
+          <main className="flex min-h-screen flex-col items-center sm:pt-6 sm:p-16">
             <Background />
             <div className="z-10 max-w-5xl w-full items-center justify-between">
               {children}
