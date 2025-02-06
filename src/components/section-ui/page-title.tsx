@@ -1,5 +1,4 @@
 import * as React from "react";
-import { featureFlag } from "@/app/utils";
 
 export function PageTitle() {
   const text = "Cameron McGinley";
@@ -29,20 +28,7 @@ export function PageTitle() {
 
   return (
     <h1 className="drop-shadow-md text-white font-bold text-5xl tracking-wide text-center">
-      {featureFlag.animations ? (
-        Array.from(text).map((c, i) => (
-          <span
-            key={i}
-            className={`transition delay-0 ease-in ${
-              char >= i ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {c}
-          </span>
-        ))
-      ) : (
-        <div>Cameron McGinley</div>
-      )}
+      <div>Cameron McGinley</div>
     </h1>
   );
 }

@@ -1,43 +1,30 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { CustomLink } from "../ui/custom-link";
-import { Button } from "../ui/button";
-import { Github, ExternalLink } from "lucide-react";
-import { CustomButton } from "../ui/custom-button";
-import { faGoogleScholar } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, Tool } from "../sections/section-projects";
 
 interface CardProjectProps {
   image: string;
   title: string;
-  githubLink?: string;
-  publicLink?: string;
-  ieeeLink?: string;
-  scholarLink?: string;
-  titleLink?: string;
   description: string | JSX.Element;
-  badges?: JSX.Element[];
+  tools?: Tool[];
+  links?: Link[];
   scaleImg?: boolean;
 }
 
 export function CardProject({
   image,
   title,
-  githubLink,
-  publicLink,
-  ieeeLink,
-  scholarLink,
-  titleLink,
   description,
-  badges,
+  tools,
+  links,
   scaleImg = false,
 }: CardProjectProps) {
   const isWebm = image.endsWith(".webm");
+  const gitHubLink = links?.find((link) => link.title === "GitHub");
+  const ieeeLink = links?.find((link) => link.title === "IEEE");
 
   return (
-    <Card className="flex flex-col w-full md:flex-row overflow-hidden justify-items-center overflow-visible">
-      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-r relative group">
+    <div className="border flex flex-col w-full md:flex-row overflow-hidden justify-items-center overflow-visible">
+      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-b-0 md:border-r relative group">
         {isWebm ? (
           <video
             src={image}
@@ -55,7 +42,7 @@ export function CardProject({
               alt={title}
               className={`${
                 scaleImg && "md:object-cover"
-              } object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-125 group-hover:absolute group-hover:top-0 group-hover:left-0 group-hover:z-50`}
+              } object-contain w-full h-full`}
               layout="fill"
             />
           </div>
@@ -64,58 +51,54 @@ export function CardProject({
 
       <div className="w-full flex flex-col p-4 md:p-6 justify-between overflow-y-auto">
         <div>
-          <div className="flex flex-row gap-4 mb-4 justify-between">
+          <div className="flex flex-row gap-4 mb-1 justify-between">
             <h3 className="text-xl md:text-2xl font-bold">
-              <CustomLink url={titleLink ?? githubLink} text={title} />
+              <a
+                href={gitHubLink ? gitHubLink.url : ieeeLink?.url}
+                className="hover:underline decoration-link"
+              >
+                {title}
+              </a>
             </h3>
-            <div className="flex flex-wrap gap-2 h-full justify-end">
-              {githubLink && (
-                <CustomButton url={githubLink}>
-                  <div className="flex flex-row gap-2 items-center justify-center w-full">
-                    <Github className="w-4 h-4" />
-                    <p>GitHub</p>
-                  </div>
-                </CustomButton>
-              )}
-              {publicLink && (
-                <CustomButton url={publicLink}>
-                  <div className="flex flex-row gap-2 items-center justify-center w-full">
-                    <ExternalLink className="w-4 h-4" />
-                    <p>Public App</p>
-                  </div>
-                </CustomButton>
-              )}
-              {ieeeLink && (
-                <CustomButton url={ieeeLink}>
-                  <div className="flex flex-row gap-2 items-center justify-center w-full">
-                    <ExternalLink className="w-4 h-4" />
-                    <p>IEEE</p>
-                  </div>
-                </CustomButton>
-              )}
-              {scholarLink && (
-                <CustomButton url={scholarLink}>
-                  <div className="flex flex-row gap-2 items-center justify-center w-full">
-                    <FontAwesomeIcon icon={faGoogleScholar} />
-                    <p>Scholar</p>
-                  </div>
-                </CustomButton>
-              )}
-            </div>
+          </div>
+          <div className="flex flex-wrap gap-x-1 mb-3">
+            {links?.map((link, index) => (
+              <>
+                <a
+                  key={index}
+                  href={link.url}
+                  className="text-link hover:underline"
+                >
+                  {link.title}
+                </a>
+                {index !== links.length - 1 && " | "}
+              </>
+            ))}
           </div>
           <div className="text-sm text-muted-foreground mb-4">
             {description}
           </div>
         </div>
-
-        {badges && (
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {badges.map((badge, index) => (
-              <div key={index}>{badge}</div>
-            ))}
-          </div>
+        {tools && (
+          <>
+            <hr className="mb-2 opacity-50" />
+            <span>
+              <span className="text-xs">Built with </span>
+              {tools.map((tool, index) => (
+                <>
+                  <a
+                    href={tool.link}
+                    className="hover:underline decoration-link text-xs"
+                  >
+                    {tool.name}
+                  </a>
+                  {index !== tools.length - 1 && ", "}
+                </>
+              ))}
+            </span>
+          </>
         )}
       </div>
-    </Card>
+    </div>
   );
 }

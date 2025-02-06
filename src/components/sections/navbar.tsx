@@ -1,12 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CustomLink } from "@/components/ui/custom-link";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import { DarkModeButton } from "@/components/section-ui/dark-mode-button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RefObject, useState } from "react";
 
@@ -31,7 +29,6 @@ export const Navbar = ({
         if (ref.current) {
           window.scrollTo({
             top: ref.current.offsetTop,
-            behavior: "smooth",
           });
         }
       },
@@ -43,22 +40,25 @@ export const Navbar = ({
     <>
       <div className="max-sm:hidden">
         <div className="relative flex flex-col items-center h-8">
-          <div className="absolute top-0 right-0 mr-4">
-            <DarkModeButton />
-          </div>
           <div className="absolute top-8 sm:top-0 flex gap-8">
-            <CustomLink
-              onClick={() => scrollToSection(experienceRef)}
-              text="Experience"
-            />
-            <CustomLink
-              onClick={() => scrollToSection(publicationsRef)}
-              text="Publications"
-            />
-            <CustomLink
-              onClick={() => scrollToSection(projectsRef)}
-              text="Projects"
-            />
+            <a
+              href="#experience"
+              className="text-primary hover:underline decoration-link"
+            >
+              Experience
+            </a>
+            <a
+              href="#publications"
+              className="text-primary hover:underline decoration-link"
+            >
+              Publications
+            </a>
+            <a
+              href="#projects"
+              className="text-primary hover:underline decoration-link"
+            >
+              Projects
+            </a>
           </div>
         </div>
       </div>
@@ -77,23 +77,30 @@ export const Navbar = ({
           </DrawerTrigger>
           <DrawerContent className="fixed top-0 h-auto bg-cardBg p-4">
             <div className="flex flex-col gap-4">
-              <CustomLink
+              <a
+                href="#experience"
+                className="text-primary hover:underline decoration-link"
                 onClick={() => scrollToSection(experienceRef)}
-                text="Experience"
-              />
-              <CustomLink
+              >
+                Experience
+              </a>
+              <a
+                href="#publications"
+                className="text-primary hover:underline decoration-link"
                 onClick={() => scrollToSection(publicationsRef)}
-                text="Publications"
-              />
-              <CustomLink
+              >
+                Publications
+              </a>
+              <a
+                href="#projects"
+                className="text-primary hover:underline decoration-link"
                 onClick={() => scrollToSection(projectsRef)}
-                text="Projects"
-              />
+              >
+                Projects
+              </a>
             </div>
           </DrawerContent>
         </Drawer>
-
-        <DarkModeButton />
       </div>
     </>
   );

@@ -2,14 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import { CardContainer } from "@/components/ui/card-container";
 import { ExperienceSection } from "@/components/sections/experience-section";
-import Tilt from "react-parallax-tilt";
 import { SectionPublications } from "@/components/sections/section-publications";
 import { SectionProjects } from "@/components/sections/section-projects";
 import { PageBanner } from "@/components/sections/page-banner";
-import { SectionSocials } from "@/components/sections/section-socials";
-import { featureFlag } from "./utils";
 import { Navbar } from "@/components/sections/navbar";
 import { useRefs } from "@/hooks/useRefs";
 
@@ -18,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col w-full gap-4">
+      <div className="border bg-white p-2 pt-4 flex flex-col w-full gap-4">
         <Navbar
           experienceRef={experienceRef}
           publicationsRef={publicationsRef}
@@ -28,128 +24,75 @@ export default function Home() {
         <PageBanner />
 
         <div
-          className={`gap-2 flex w-full h-full flex-col md:flex-row items-center justify-center ${
-            featureFlag.animations &&
-            "animate-fade-in-up opacity-0 delay-100 fill-forwards"
-          }`}
+          className={`gap-2 flex w-full h-full flex-col md:flex-row items-center justify-center`}
         >
-          <div className="flex-grow min-w-64 max-w-64 md:h-80 ">
-            <CardContainer includeBg={true}>
-              {featureFlag.animations ? (
-                <Tilt
-                  className="tilt"
-                  tiltReverse={true}
-                  tiltMaxAngleX={20}
-                  tiltMaxAngleY={20}
-                  perspective={1000}
-                  transitionSpeed={1000}
-                  gyroscope={false}
-                  glareEnable={true}
-                  glareMaxOpacity={0.45}
-                  glareColor="white"
-                  glarePosition="bottom"
-                  glareBorderRadius="0.75rem"
-                >
-                  <div className="flex h-full items-center">
-                    <Image
-                      src="/headshot.webp"
-                      width={500}
-                      height={500}
-                      alt="Picture of me"
-                      className="w-full outline-border outline outline-1 outline-offset-[-4px]"
-                    />
-                  </div>
-                </Tilt>
-              ) : (
-                <Image
-                  src="/headshot.webp"
-                  width={500}
-                  height={500}
-                  alt="Picture of me"
-                  className="w-full outline-border outline outline-1 outline-offset-[-4px]"
-                />
-              )}
-            </CardContainer>
-          </div>
-
-          <div className="flex-grow md:h-80">
-            <SectionSocials />
+          <div className="flex-grow p-4 min-w-64 max-w-64 md:h-80 ">
+            <Image
+              src="/headshot.webp"
+              width={500}
+              height={500}
+              alt="Picture of me"
+              className="w-full"
+            />
           </div>
 
           <div className="flex-grow flex items-start md:h-80">
-            <CardContainer includeBg={true}>
-              <div className="flex flex-col justify-between">
-                <div className="flex flex-col gap-2">
-                  <div className="text-3xl font-bold">Hi!</div>
-                  <div>
-                    I am a Software Engineer located in San Francisco. Currently
-                    at Capital One Software helping build Slingshot, a Snowflake
-                    optimization platform.
-                  </div>
-                  <div>
-                    I enjoy creating elegant solutions to complex problems, and
-                    I am especially interested in backend development.
-                  </div>
-                  <div>
-                    Reach out to me at{" "}
-                    <span className="text-link">
-                      cameronmcginley2@gmail.com
-                    </span>
-                  </div>
+            <div className="p-4 flex flex-col justify-between">
+              <div className="flex flex-col gap-2">
+                <div className="text-3xl font-bold">Hi!</div>
+                <div>
+                  I am a Software Engineer located in San Francisco. Currently
+                  at Capital One Software helping build Slingshot, a Snowflake
+                  optimization platform.
                 </div>
-
-                {featureFlag.animations && (
-                  <div className="signature-container delay-1000 mt-4">
-                    <svg
-                      width="89"
-                      height="31"
-                      viewBox="0 0 89 31"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M48.3279 2.05302C-11.1721 0.0530217 -15.6721 55.553 48.3279 13.053C39.1279 32.253 47.8279 23.7197 53.3279 17.053C52.1279 30.253 56.5 20.3333 60 14C60.5 20.5 62.5 23.5 67 23C70.5 22.5 77.2279 21.653 86.8279 14.053"
-                        stroke="black"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="signature-path"
-                      />
-                    </svg>
-                  </div>
-                )}
+                <div>
+                  I enjoy creating elegant solutions to complex problems, and I
+                  am especially interested in backend development.
+                </div>
+                <div>
+                  Reach out to me at{" "}
+                  <span className="text-link">cameronmcginley2@gmail.com</span>
+                </div>
+                {/* Links */}
+                <div className="mt-8 flex flex-row gap-2">
+                  <a
+                    href="https://github.com/cameronmcginley"
+                    className="text-link hover:underline"
+                  >
+                    GitHub
+                  </a>
+                  |
+                  <a
+                    href="https://www.linkedin.com/in/cameronmcginley/"
+                    className="text-link hover:underline"
+                  >
+                    LinkedIn
+                  </a>
+                  |
+                  <a href="/resume.pdf" className="text-link hover:underline">
+                    Resume
+                  </a>
+                </div>
               </div>
-            </CardContainer>
+            </div>
           </div>
         </div>
 
-        <div
-          ref={experienceRef}
-          className={`${
-            featureFlag.animations &&
-            "animate-fade-in-up opacity-0 delay-200 fill-forwards"
-          }`}
-        >
+        <hr className="my-4" />
+
+        <div ref={experienceRef} id={"experience"}>
           <ExperienceSection />
         </div>
 
-        <div
-          ref={publicationsRef}
-          className={`${
-            featureFlag.animations &&
-            "animate-fade-in-up opacity-0 delay-200 fill-forwards"
-          }`}
-        >
+        <hr className="my-4" />
+
+        <div ref={publicationsRef} id={"publications"}>
           <SectionPublications />
         </div>
 
-        <div
-          ref={projectsRef}
-          className={`${
-            featureFlag.animations &&
-            "animate-fade-in-up opacity-0 delay-200 fill-forwards"
-          }`}
-        >
+        <hr className="my-4" />
+
+        <div ref={projectsRef} id={"projects"}>
           <SectionProjects />
         </div>
       </div>
