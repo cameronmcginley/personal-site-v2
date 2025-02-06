@@ -36,7 +36,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex-grow flex items-start md:h-80">
+          <div className="flex-grow flex items-start md:min-h-80">
             <div className="p-4 flex flex-col justify-between">
               <div className="flex flex-col gap-2">
                 <div className="text-3xl font-bold">Hi!</div>

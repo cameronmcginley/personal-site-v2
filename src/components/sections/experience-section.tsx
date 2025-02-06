@@ -67,7 +67,7 @@ const schools: CompanyCardData[] = [
 
 export function ExperienceSection() {
   return (
-    <div className="flex md:flex-row flex-col w-full px-32 gap-x-16">
+    <div className="flex md:flex-row flex-col w-full md:px-16 md:gap-x-12 lg:px-32 lg:gap-x-16">
       <div className="gap-1 pr-1 flex flex-col w-full">
         <p className="text-3xl font-bold border-b">Education</p>
         {schools.map((item, index) => (
