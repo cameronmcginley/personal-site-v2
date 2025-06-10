@@ -87,6 +87,14 @@ const tools = {
     name: "Brainf**k",
     link: "https://esolangs.org/wiki/Brainfuck",
   },
+  openai: {
+    name: "OpenAI",
+    link: "https://openai.com/",
+  },
+  supabase: {
+    name: "Supabase",
+    link: "https://supabase.com/",
+  },
 };
 
 export type Link = {
@@ -125,8 +133,6 @@ const projects: Project[] = [
       tools.lambda,
       tools.dynamodb,
       tools.redis,
-      tools.apigw,
-      tools.digitalocean,
     ],
   },
   {
@@ -143,6 +149,27 @@ const projects: Project[] = [
     tools: [tools.cpp, tools.brainfuck],
     scaleImg: true,
   },
+  {
+    title: "Flashcard App w/ AI Grading",
+    image: "/media/projects/flashcard.webp",
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/cameronmcginley/flashcardswithaigrading",
+      },
+      {
+        title: "Public Site",
+        url: "https://flashcardswithaigrading.com/",
+      },
+    ],
+    description:
+      "Wanted a flashcard app that supported bulk JSON import, markdown/LaTeX, and AI grading but couldn't find what I was looking for so I made one. In this app, AI-generated scores are used to drive the spaced repetition algorithm. Other features include user customizable AI prompts, analytics, AI deck generation, and deck/category organization.",
+    tools: [tools.typescript, tools.next, tools.supabase, tools.openai],
+    scaleImg: true,
+  },
+];
+
+const oldProjects: Project[] = [
   {
     title: "Projectile Points Database",
     image: "/media/projects/projectile-points.webp",
@@ -178,9 +205,6 @@ const projects: Project[] = [
       "Manage courses and attendees with QR code sign-ins, tracking, and data handling, supporting efficient administration with data export and querying.",
     tools: [tools.javascript, tools.react, tools.nodejs, tools.firebase],
   },
-];
-
-const oldProjects: Project[] = [
   {
     title: "Sorting Visualizer",
     image: "/media/projects/sorting-vis.webm",
