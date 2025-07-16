@@ -13,7 +13,7 @@ const companies: CompanyCardData[] = [
     company: "Capital One",
     position: "Software Engineer",
     dates: "Feb 2024 - Current",
-    logo: "/media/companies/square/CapitalOneLogo.jpg",
+    logo: "/media/companies/CapitalOneLogo.jpg",
   },
 ];
 
@@ -22,31 +22,31 @@ const internships: CompanyCardData[] = [
     company: "Capital One",
     position: "Software Engineer Intern",
     dates: "Summer 2023",
-    logo: "/media/companies/square/CapitalOneLogo.jpg",
+    logo: "/media/companies/CapitalOneLogo.jpg",
   },
   {
-    company: "Department of Defense",
+    company: "U.S. Government",
     position: "Software Engineer Intern",
     dates: "Summer 2022",
-    logo: "/DODLogo.svg",
+    logo: "/media/companies/USGLogo.jpg",
   },
   {
     company: "NetApp",
     position: "Software Test Engineer Intern",
     dates: "May 2019 - May 2022",
-    logo: "/NetAppLogo.svg",
+    logo: "/media/companies/NetAppLogo.svg",
   },
   {
     company: "Purdue University",
     position: "Machine Learning Intern",
     dates: "Summer 2021",
-    logo: "/PurdueLogo.svg",
+    logo: "/media/schools/PurdueLogo.svg",
   },
   {
     company: "Wichita State University",
     position: "Machine Learning Intern",
     dates: "Summer 2020",
-    logo: "/WSULogo.png",
+    logo: "/media/schools/WSULogo.png",
   },
 ];
 
@@ -55,13 +55,13 @@ const schools: CompanyCardData[] = [
     company: "University of California San Diego",
     position: "M.S. Computer Science",
     dates: "December 2023",
-    logo: "/UCSDLogo.png",
+    logo: "/media/schools/UCSDLogo.png",
   },
   {
     company: "Wichita State University",
     position: "B.S. Computer Science",
     dates: "May 2022",
-    logo: "/WSULogo.png",
+    logo: "/media/schools/WSULogo.png",
   },
 ];
 

@@ -40,17 +40,7 @@ const publications = [
             href={"https://bigdataieee.org/"}
             className="hover:underline decoration-link"
           >
-            2021 IEEE Interational Conference on Big Data
-          </a>
-        </p>
-
-        <p>
-          <strong>Citations:</strong>{" "}
-          <a
-            href="https://scholar.google.com/scholar?oi=bibs&hl=en&cites=12860478389443421757"
-            className="hover:underline decoration-link"
-          >
-            11
+            2021 IEEE International Conference on Big Data
           </a>
         </p>
       </>
