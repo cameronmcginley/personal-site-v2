@@ -8,6 +8,7 @@ interface CardProjectProps {
   tools?: Tool[];
   links?: Link[];
   scaleImg?: boolean;
+  date?: string;
 }
 
 export function CardProject({
@@ -17,6 +18,7 @@ export function CardProject({
   tools,
   links,
   scaleImg = false,
+  date,
 }: CardProjectProps) {
   const isWebm = image.endsWith(".webm");
   const gitHubLink = links?.find((link) => link.title === "GitHub");
@@ -24,7 +26,7 @@ export function CardProject({
 
   return (
     <div className="border flex flex-col w-full md:flex-row overflow-hidden justify-items-center overflow-visible">
-      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-b-0 md:border-r relative group">
+      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-b-0 md:border-r relative group overflow-visible hover:z-10">
         {isWebm ? (
           <video
             src={image}
@@ -33,7 +35,7 @@ export function CardProject({
             muted
             className={`${
               scaleImg && "md:object-cover"
-            } object-contain w-full h-full`}
+            } object-contain w-full h-full transition-transform duration-300 group-hover:scale-150`}
           />
         ) : (
           <div className="relative w-full h-full">
@@ -42,8 +44,9 @@ export function CardProject({
               alt={title}
               className={`${
                 scaleImg && "md:object-cover"
-              } object-contain w-full h-full`}
-              layout="fill"
+              } object-contain transition-transform duration-300 group-hover:scale-150`}
+              fill
+              unoptimized
             />
           </div>
         )}
@@ -51,7 +54,7 @@ export function CardProject({
 
       <div className="w-full flex flex-col p-4 md:p-6 justify-between overflow-y-auto">
         <div>
-          <div className="flex flex-row gap-4 mb-1 justify-between">
+          <div className="flex flex-row gap-4 mb-1 justify-between items-start">
             <h3 className="text-xl md:text-2xl font-bold">
               <a
                 href={gitHubLink ? gitHubLink.url : ieeeLink?.url}
@@ -60,6 +63,11 @@ export function CardProject({
                 {title}
               </a>
             </h3>
+            {date && (
+              <span className="text-xs text-muted-foreground whitespace-nowrap mt-1">
+                {date}
+              </span>
+            )}
           </div>
           <div className="flex flex-wrap gap-x-1 mb-3">
             {links?.map((link, index) => (

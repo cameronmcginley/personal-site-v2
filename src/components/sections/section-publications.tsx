@@ -3,7 +3,7 @@ import { CardProject } from "../section-ui/card-project";
 
 const publications = [
   {
-    image: "/layers.webp",
+    image: "/media/projects/layers.webp",
     title:
       "Convolutional Neural Network Optimization for Phishing Email Classification",
     links: [

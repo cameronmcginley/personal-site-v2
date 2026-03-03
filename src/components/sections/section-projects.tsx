@@ -109,11 +109,13 @@ export type Project = {
   description: string;
   tools: Tool[];
   scaleImg?: boolean;
+  date?: string;
 };
 
 const projects: Project[] = [
   {
     title: "SiteWatch",
+    date: "Jun. - Sep. 2024",
     image: "/media/projects/sitewatch.webp",
     links: [
       {
@@ -137,6 +139,7 @@ const projects: Project[] = [
   },
   {
     title: "Brainf**k Compiler",
+    date: "Jun. 2022",
     image: "/media/projects/brainfk.webp",
     links: [
       {
@@ -151,6 +154,7 @@ const projects: Project[] = [
   },
   {
     title: "Flashcard App w/ AI Grading",
+    date: "May - Jun. 2025",
     image: "/media/projects/flashcard.webp",
     links: [
       {
@@ -172,6 +176,7 @@ const projects: Project[] = [
 const oldProjects: Project[] = [
   {
     title: "Projectile Points Database",
+    date: "Jul. - Sep. 2022",
     image: "/media/projects/projectile-points.webp",
     links: [
       {
@@ -190,6 +195,7 @@ const oldProjects: Project[] = [
   },
   {
     title: "Course Sign-In Dashboard",
+    date: "Feb. - May 2022",
     image: "/media/projects/course-signin-dashboard.webp",
     links: [
       {
@@ -207,6 +213,7 @@ const oldProjects: Project[] = [
   },
   {
     title: "Sorting Visualizer",
+    date: "Jun. 2022",
     image: "/media/projects/sorting-vis.webm",
     links: [
       {
@@ -224,6 +231,7 @@ const oldProjects: Project[] = [
   },
   {
     title: "ML Algorithm Tester",
+    date: "Jun. 2022",
     image: "/media/projects/ml-test.webp",
     links: [
       {
@@ -236,7 +244,8 @@ const oldProjects: Project[] = [
     tools: [tools.python, tools.scikitlearn],
   },
   {
-    title: "Roblox Object Placement",
+    title: "Roblox Object Placement System",
+    date: "Sep. 2021",
     image: "/media/projects/rblx-placement.webm",
     links: [
       {
@@ -272,6 +281,7 @@ export function SectionProjects() {
               <CardProject
                 key={index}
                 title={item.title}
+                date={item.date}
                 image={item.image}
                 links={item.links}
                 description={item.description}
@@ -292,6 +302,7 @@ export function SectionProjects() {
                   <CardProject
                     key={index}
                     title={item.title}
+                    date={item.date}
                     image={item.image}
                     links={item.links}
                     description={item.description}
