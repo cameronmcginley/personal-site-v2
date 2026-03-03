@@ -17,7 +17,7 @@ const schools: CompanyCardData[] = [
     dates: "Dec. 2023",
     logo: "/media/schools/UCSDLogo.png",
     location: "La Jolla, CA",
-    bullets: ["Systems Specialization | GPA: 3.95 / 4.00"],
+    bullets: ["Systems Specialization"],
   },
   {
     company: "Wichita State University",
@@ -25,7 +25,7 @@ const schools: CompanyCardData[] = [
     dates: "May 2022",
     logo: "/media/schools/WSULogo.png",
     location: "Wichita, KS",
-    bullets: ["Minor in Mathematics | GPA: 3.99 / 4.00"],
+    bullets: ["Minor in Mathematics"],
   },
 ];
 
