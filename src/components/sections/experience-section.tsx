@@ -16,7 +16,7 @@ const schools: CompanyCardData[] = [
     position: "M.S. Computer Science",
     dates: "Dec. 2023",
     logo: "/media/schools/UCSDLogo.png",
-    location: "La Jolla, CA",
+    // location: "La Jolla, CA",
     bullets: ["Systems Specialization"],
   },
   {
@@ -24,7 +24,7 @@ const schools: CompanyCardData[] = [
     position: "B.S. Computer Science",
     dates: "May 2022",
     logo: "/media/schools/WSULogo.png",
-    location: "Wichita, KS",
+    // location: "Wichita, KS",
     bullets: ["Minor in Mathematics"],
   },
 ];
