@@ -7,8 +7,8 @@
     /* Light Theme Variables */
     --color-card-bg: #ffffff; /* white */
 
-    --color-bg-primary: #e5e5e5; /* neutral-200 */
-    --color-bg-line: #d4d4d4; /* neutral-300 */
+    --color-bg-primary: #f9f9f9;
+    --color-bg-line: #f9f9f9;
 
     --color-border: #c2c0be; /* between neutral 300 and 400 */
     --color-card-sheen: #f7f7f7; /* white */
@@ -28,8 +28,8 @@
     /* Dark Theme Variables */
     --color-card-bg: #0f0f0f; /* Darker to stand out on top of bg-primary */
 
-    --color-bg-primary: #1a1a1a; /* Considerably darker */
-    --color-bg-line: #262626; /* Considerably darker */
+    --color-bg-primary: #0f0f0f; /* Match card bg */
+    --color-bg-line: #0f0f0f; /* Match card bg */
 
     --color-border: #2d2d2d; /* Darker than previous slate-800 */
     --color-card-sheen: #121212; /* Matching card-bg for minimal difference */

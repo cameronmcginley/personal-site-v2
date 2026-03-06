@@ -26,7 +26,7 @@ export function CardProject({
 
   return (
     <div className="border flex flex-col w-full md:flex-row overflow-hidden justify-items-center overflow-visible">
-      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-b-0 md:border-r relative group overflow-visible hover:z-10">
+      <div className="flex h-48 md:h-64 md:h-auto w-full md:w-64 lg:w-96 border-b md:border-b-0 md:border-r relative group overflow-visible hover:z-10 bg-white">
         {isWebm ? (
           <video
             src={image}
@@ -52,7 +52,7 @@ export function CardProject({
         )}
       </div>
 
-      <div className="w-full flex flex-col p-4 md:p-6 justify-between overflow-y-auto">
+      <div className="w-full flex flex-col p-3 md:p-4 justify-between overflow-y-auto">
         <div>
           <div className="flex flex-row gap-4 mb-1 justify-between items-start">
             <h3 className="text-xl md:text-2xl font-bold">
@@ -83,7 +83,7 @@ export function CardProject({
               </>
             ))}
           </div>
-          <div className="text-sm text-muted-foreground mb-4">
+          <div className="text-sm text-muted-foreground mb-2">
             {description}
           </div>
         </div>

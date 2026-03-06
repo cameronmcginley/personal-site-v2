@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="border bg-cardBg p-2 pt-4 flex flex-col w-full gap-4">
+      <div className="p-2 pt-6 flex flex-col w-full gap-4">
         <Navbar
           experienceRef={experienceRef}
           publicationsRef={publicationsRef}
@@ -24,7 +24,7 @@ export default function Home() {
         <div
           className={`gap-2 flex w-full h-full flex-col md:flex-row items-center justify-center`}
         >
-          <div className="flex-grow p-4 min-w-64 max-w-64 md:h-80 ">
+          <div className="flex-grow p-4 min-w-52 max-w-52 md:h-68 ">
             <Image
               src="/headshot.webp"
               width={500}
@@ -34,10 +34,10 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex-grow flex items-start md:min-h-80">
-            <div className="p-4 flex flex-col gap-4">
+          <div className="flex-grow flex items-start md:min-h-68">
+            <div className="p-4 flex flex-col gap-3">
               <div>
-                <h1 className="text-3xl font-bold">Cameron McGinley</h1>
+                <h1 className="text-2xl font-bold">Cameron McGinley</h1>
                 <p className="text-muted-foreground mt-1">
                   Software Engineer @ Capital One &nbsp;|&nbsp; San Francisco
                 </p>

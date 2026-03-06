@@ -50,9 +50,9 @@ const publications = [
 
 export function SectionPublications() {
   return (
-    <div className="flex flex-row w-full p-4">
+    <div className="flex flex-row w-full p-4 pt-2">
       <div className="pr-1 flex flex-col w-full">
-        <p className="text-3xl font-bold ml-2 mb-6">Publications</p>
+        <p className="text-2xl font-semibold ml-2 mb-3">Publications</p>
         {publications.map((item, index) => (
           <CardProject
             key={index}

@@ -93,15 +93,15 @@ const experience: CompanyCardData[] = [
 
 export function ExperienceSection() {
   return (
-    <div className="flex flex-col w-full p-4">
+    <div className="flex flex-col w-full p-4 pt-2">
       <div className="flex flex-col">
-        <p className="text-3xl font-bold ml-2 mb-4">Education</p>
+        <p className="text-2xl font-semibold ml-2 mb-2">Education</p>
         {schools.map((item, index) => (
           <CardCompany key={index} {...item} />
         ))}
       </div>
-      <div className="flex flex-col mt-4">
-        <p className="text-3xl font-bold ml-2 mb-4">Experience</p>
+      <div className="flex flex-col mt-2">
+        <p className="text-2xl font-semibold ml-2 mb-2">Experience</p>
         {experience.map((item, index) => (
           <CardCompany key={index} {...item} />
         ))}

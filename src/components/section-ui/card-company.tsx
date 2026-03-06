@@ -4,8 +4,8 @@ import { CompanyCardData } from "../sections/experience-section";
 
 export function CardCompany(props: CompanyCardData) {
   return (
-    <div className={`flex flex-row items-start w-full ${props.bullets && props.bullets.length > 0 ? "mb-4" : "mb-2"}`}>
-      <div className="min-w-14 max-w-14 h-full pt-2 pl-2 pr-1 flex items-start">
+    <div className={`flex flex-row items-start w-full ${props.bullets && props.bullets.length > 0 ? "mb-2" : "mb-1"}`}>
+      <div className="min-w-10 max-w-10 h-full pt-2 pl-2 pr-1 flex items-start">
         <Image
           src={props.logo}
           alt={props.company + " Logo"}

@@ -289,16 +289,16 @@ const oldProjects: Project[] = [
 
 export function SectionProjects() {
   return (
-    <div className="flex flex-col justify-center w-full p-4">
+    <div className="flex flex-col justify-center w-full p-4 pt-2">
       <div className="flex flex-col justify-center">
-        <p className="text-3xl font-bold pb-2 pl-2">Projects</p>
-        <p className="w-full pl-2 pb-6 text-md">
+        <p className="text-2xl font-semibold pb-1 pl-2">Projects</p>
+        <p className="w-full pl-2 pb-4 text-md">
           Here are some of my favorite projects I&apos;ve worked on. Check out
           the GitHub links for more details!
         </p>
       </div>
       <div className="flex justify-center">
-        <div className="gap-8 flex flex-row flex-wrap justify-center">
+        <div className="gap-4 flex flex-row flex-wrap justify-center">
           {projects.map((item, index) => (
             <>
               <CardProject
@@ -317,10 +317,10 @@ export function SectionProjects() {
           {/* Dropdown for old projects */}
           <div className="flex flex-col w-full">
             <details>
-              <summary className="text-start text-xl font-bold ml-2 pb-6 cursor-pointer">
+              <summary className="text-start text-xl font-bold ml-2 pb-4 cursor-pointer">
                 Older Projects
               </summary>
-              <div className="gap-8 flex flex-row flex-wrap">
+              <div className="gap-4 flex flex-row flex-wrap">
                 {oldProjects.map((item, index) => (
                   <CardProject
                     key={index}
