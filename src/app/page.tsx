@@ -43,11 +43,10 @@ export default function Home() {
                 </p>
               </div>
               <p>
-                I specialize in distributed systems and backend infrastructure.
+                I enjoy working on large-scale, high-performance systems.
                 Currently at Capital One building Slingshot, a Snowflake/Databricks
                 compute optimization platform. Previously at NetApp and the U.S.
-                Government, with ML research experience at Purdue and WSU. M.S. in
-                CS (Systems Specialization) from UCSD.
+                Government, with ML research experience at Purdue and WSU.
               </p>
               <div className="flex flex-col gap-1">
                 <a href="mailto:cameronmcginley2@gmail.com" className="text-link hover:underline">

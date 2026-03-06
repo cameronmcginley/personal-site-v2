@@ -95,6 +95,10 @@ const tools = {
     name: "Supabase",
     link: "https://supabase.com/",
   },
+  supabaseDbAuth: {
+    name: "Supabase DB & Auth",
+    link: "https://supabase.com/",
+  },
 };
 
 export type Link = {
@@ -153,8 +157,30 @@ const projects: Project[] = [
     scaleImg: true,
   },
   {
+    title: "ai-srs",
+    date: "Jan. 2026",
+    image: "/media/projects/ai-srs.png",
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/cameronmcginley/ai-srs",
+      },
+      {
+        title: "Public Site",
+        url: "https://ai-srs.vercel.app/",
+      },
+    ],
+    description:
+      "Building a lot of projects with agentic tooling lately, figured I'd post one. Built this mostly for myself to use for studying, it's a spaced repetition flashcard app where AI grades your answers to drive the spaced repitition algorithm. Also has rich media cards, import/export, and a stats dashboard.",
+    tools: [tools.typescript, tools.next, tools.supabaseDbAuth],
+    scaleImg: true,
+  },
+];
+
+const oldProjects: Project[] = [
+  {
     title: "Flashcard App w/ AI Grading",
-    date: "May - Jun. 2025",
+    date: "May 2025",
     image: "/media/projects/flashcard.webp",
     links: [
       {
@@ -167,13 +193,10 @@ const projects: Project[] = [
       },
     ],
     description:
-      "Wanted a flashcard app that supported bulk JSON import, markdown/LaTeX, and AI grading but couldn't find what I was looking for so I made one. In this app, AI-generated scores are used to drive the spaced repetition algorithm. Other features include user customizable AI prompts, analytics, AI deck generation, and deck/category organization.",
+      "Basically an older, not quite as good version as the 'ai-srs' project above.",
     tools: [tools.typescript, tools.next, tools.supabase, tools.openai],
     scaleImg: true,
   },
-];
-
-const oldProjects: Project[] = [
   {
     title: "Projectile Points Database",
     date: "Jul. - Sep. 2022",
