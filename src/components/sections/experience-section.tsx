@@ -33,11 +33,11 @@ const experience: CompanyCardData[] = [
   {
     company: "Capital One",
     position: "Software Engineer",
-    dates: "Feb. 2024 – Present",
+    dates: "Feb. 2024 - May 2026",
     logo: "/media/companies/CapitalOneLogo.jpg",
     location: "San Francisco, CA",
     bullets: [
-      "Building Slingshot, a Snowflake/Databricks compute optimization platform.",
+      "Building Slingshot, a multi-tenant Snowflake/Databricks compute optimization platform.",
     ],
   },
   {
@@ -62,7 +62,7 @@ const experience: CompanyCardData[] = [
   {
     company: "NetApp",
     position: "Software Test Automation Engineer Intern",
-    dates: "May 2019 – May 2022",
+    dates: "May 2019 - May 2022",
     logo: "/media/companies/NetAppLogo.svg",
     location: "Wichita, KS",
     bullets: [

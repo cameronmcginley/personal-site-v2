@@ -142,7 +142,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Brainf**k Compiler",
+    title: "Optimized Brainf**k Interpreter",
     date: "Jun. 2022",
     image: "/media/projects/brainfk.webp",
     links: [
@@ -152,7 +152,7 @@ const projects: Project[] = [
       },
     ],
     description:
-      "Compiler for the Brainf**k language, incorporating instruction folding and pattern recognition optimizations which typically results in a  decrease in instructions executed and runtime by over 99%.",
+      "Interpreter for the Brainf**k language. Compiles programs to a bytecode IR, applying instruction folding and pattern recognition optimizations that typically reduce instructions executed and runtime by over 99%.",
     tools: [tools.cpp, tools.brainfuck],
     scaleImg: true,
   },

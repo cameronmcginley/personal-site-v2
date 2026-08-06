@@ -39,14 +39,16 @@ export default function Home() {
               <div>
                 <h1 className="text-2xl font-bold">Cameron McGinley</h1>
                 <p className="text-muted-foreground mt-1">
-                  Software Engineer @ Capital One &nbsp;|&nbsp; San Francisco
+                  Software Engineer &nbsp;|&nbsp; San Francisco Bay Area
                 </p>
               </div>
               <p>
                 I enjoy working on large-scale, high-performance systems.
-                Currently at Capital One building Slingshot, a Snowflake/Databricks
-                compute optimization platform. Previously at NetApp and the U.S.
-                Government, with ML research experience at Purdue and WSU.
+                Previously at Capital One on the Slingshot team, a multi-tenant
+                Snowflake/Databricks compute optimization platform, where I
+                worked on fine-grained authorization, data ingestion, and
+                analytics. Earlier at NetApp and the U.S. Government, with
+                AI/ML research experience at Purdue and WSU.
               </p>
               <div className="flex flex-col gap-1">
                 <a href="mailto:cameronmcginley2@gmail.com" className="text-link hover:underline">
@@ -57,7 +59,7 @@ export default function Home() {
                   {" | "}
                   <a href="https://www.linkedin.com/in/cameronmcginley/" className="text-link hover:underline">LinkedIn</a>
                   {" | "}
-                  <a href="/resume.pdf" className="text-link hover:underline">Resume</a>
+                  <a href="/Cameron_McGinley_Resume.pdf" className="text-link hover:underline">Resume</a>
                 </span>
               </div>
             </div>
