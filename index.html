@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cameron McGinley</title>
+<meta name="description" content="Cameron McGinley is a backend engineer in the Washington, D.C. area who builds large-scale, high-performance systems.">
+<link rel="icon" href="favicon.ico">
+<style>
+  /* Charis SIL, cut down to the page's plain ASCII, for devices without Charter (Windows, Android, Linux).
+     Apple devices have Charter built in and never download it. While it loads, text is set in Georgia,
+     or Noto Serif on Android, scaled to Charis's widths and line metrics so nothing moves when it swaps in. */
+  @font-face { font-family: "Charis SIL"; src: local("Charis SIL"), local("CharisSIL"), url(assets/charis-400.woff2) format("woff2"); font-weight: 400; font-display: swap; unicode-range: U+0020-007E; }
+  @font-face { font-family: "Charis SIL"; src: local("Charis SIL Bold"), local("CharisSIL-Bold"), url(assets/charis-700.woff2) format("woff2"); font-weight: 700; font-display: swap; unicode-range: U+0020-007E; }
+  @font-face { font-family: "Charis fallback"; src: local("Georgia"); font-weight: 400; size-adjust: 100.65%; ascent-override: 118.85%; descent-override: 43.66%; line-gap-override: 0%; }
+  @font-face { font-family: "Charis fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-weight: 700; size-adjust: 92.37%; ascent-override: 129.51%; descent-override: 47.57%; line-gap-override: 0%; }
+  @font-face { font-family: "Charis fallback noto"; src: local("Noto Serif"), local("NotoSerif-Regular"); font-weight: 400; size-adjust: 93.99%; ascent-override: 127.27%; descent-override: 46.75%; line-gap-override: 0%; }
+  @font-face { font-family: "Charis fallback noto"; src: local("Noto Serif Bold"), local("NotoSerif-Bold"); font-weight: 700; size-adjust: 94.1%; ascent-override: 127.13%; descent-override: 46.7%; line-gap-override: 0%; }
+
+  :root {
+    color-scheme: light;
+    --paper: #ffffff;
+    --ink: #1a1a1a;
+    --frame: #e2e0dd;
+    --gutter: 8rem;
+    --gap: 3rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Charter, "Bitstream Charter", "Charis SIL", "Charis fallback", "Charis fallback noto", Georgia, serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    font-variant-numeric: lining-nums;
+  }
+  p { margin: 0; }
+  ol, ul { list-style: none; margin: 0; padding: 0; }
+  b, strong { font-weight: 700; }
+  img { display: block; max-width: 100%; }
+  /* a picture only offers formats; its img does the layout */
+  picture { display: contents; }
+
+  a { color: inherit; }
+  /* links turn the divider's burnt orange under the pointer */
+  a:hover, .plate .close:hover { color: #cc5500; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+  .page { max-width: calc(var(--gutter) + var(--gap) + 40rem + 4rem); margin: 0 auto; padding: 6rem 2rem 5rem; }
+
+  /* Text hangs off one vertical axis, with a margin column on the left for the years and pictures */
+  .axis { margin-left: calc(var(--gutter) + var(--gap)); }
+  .entry { display: grid; grid-template-columns: var(--gutter) minmax(0, 1fr); column-gap: var(--gap); }
+  .when { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+  .year { white-space: nowrap; }
+
+  .head {
+    display: grid;
+    grid-template-columns: var(--gutter) minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto 1fr;
+    grid-template-areas: "photo name" "photo sub" "photo bio" "photo contact" "photo .";
+    column-gap: var(--gap);
+  }
+  .portrait { grid-area: photo; width: 100%; height: auto; margin-top: 0.45rem; border-radius: 2px; }
+  h1 { grid-area: name; margin: 0; font-size: 2.375rem; line-height: 1.1; font-weight: 400; letter-spacing: -0.012em; }
+  .sub { grid-area: sub; margin-top: 0.45rem; font-size: 1.125rem; }
+  .bio { grid-area: bio; margin-top: 1.6rem; }
+  .bio p { text-wrap: pretty; }
+  .bio p + p { margin-top: 0.75rem; }
+  .contact { grid-area: contact; margin-top: 1.1rem; }
+  .sep { padding: 0 0.45em; }
+  .nw { white-space: nowrap; }
+
+  section { margin-top: 3.75rem; }
+  /* one bar of color between the header and the CV: when NASA's Deep Space Network sites
+     (Goldstone, Madrid and Canberra, top to bottom) can see Voyager 1, from six hours ago
+     to 42 hours ahead, printed in navy, burnt orange and sky blue */
+  .divider { margin-top: 3rem; }
+  .dsn { display: block; width: 100%; height: 26px; }
+  .divider + main > section:first-child { margin-top: 3rem; }
+  h2 { margin: 0 0 1.15rem; font-size: 1.25rem; line-height: 1.3; font-weight: 700; }
+
+  .entry + .entry { margin-top: 1.05rem; }
+  .projects .entry + .entry { margin-top: 1.6rem; }
+  .history .entry + .entry { margin-top: 1.35rem; }
+  .what { position: relative; text-wrap: pretty; }
+  /* Projects: the title with its links in brackets, the old academic habit, then the description and the technologies */
+  .projects .top { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.85rem; }
+  .brackets { font-size: 0.9375rem; white-space: nowrap; }
+  .desc { text-wrap: pretty; }
+  .projects .top + .desc { margin-top: 0.15rem; }
+  /* the technologies sit under a short rule, like the line above a footnote, a size smaller */
+  .projects .detail { position: relative; margin-top: 0.55rem; padding-top: 0.4rem; font-size: 0.9375rem; }
+  .projects .detail::before { content: ""; position: absolute; left: 0; top: 0; width: 2.5rem; height: 1px; background: var(--ink); }
+  .detail { text-wrap: pretty; }
+  /* In Experience and Education the work sits behind a thin sky-blue rule from the divider, like a note in the margin,
+     so it never blends into the company and title lines above it */
+  .history .detail { margin-top: 0.35rem; padding: 0.05rem 0 0.05rem 0.8rem; border-left: 2px solid #9ab7d8; }
+  /* Organization logos hang just left of the text axis, next to the name they belong to */
+  .logo { position: absolute; top: 0.2em; left: calc(-1 * (1.25rem + 0.8rem)); width: 1.25rem; height: 1.25rem; object-fit: contain; }
+
+  /* Thumbnails sit in the margin under the year */
+  .thumb { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; margin: 0.5rem 0 0 auto; overflow: hidden; border: 1px solid var(--frame); border-radius: 2px; background: #fff; }
+  .thumb img, .thumb video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+  /* The two video projects loop in their thumbnails over a still frame; with reduced motion only the still shows */
+  .thumb video { position: absolute; inset: 0; }
+  @media (prefers-reduced-motion: reduce) { .thumb video { display: none; } }
+  .thumb img.contain { object-fit: contain; object-position: center; padding: 0.3rem; }
+  .older .thumb { width: 6rem; }
+  button.thumb { padding: 0; font: inherit; color: inherit; cursor: zoom-in; }
+  button.thumb:hover { border-color: #b3afa9; }
+  button.thumb:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  /* Enlarged images open as a plate: the picture on a sheet of paper over the faded page */
+  .plate { margin: auto; padding: 1.25rem 1.25rem 0.85rem; border: 1px solid var(--frame); border-radius: 2px; background: var(--paper); color: var(--ink); max-width: min(94vw, 72rem); max-height: 94vh; overflow: auto; box-shadow: 0 1.25rem 3.5rem rgb(0 0 0 / 0.08); }
+  .plate::backdrop { background: rgb(255 255 255 / 0.95); }
+  .plate figure { margin: 0; }
+  .plate img, .plate video { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(94vh - 5.5rem); margin: 0 auto; }
+  .plate figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; column-gap: 2rem; margin-top: 0.8rem; }
+  .plate .close { padding: 0; border: 0; background: none; font: inherit; font-style: normal; color: var(--ink); text-decoration: underline; cursor: pointer; }
+  .plate .close:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .plate, .plate::backdrop { opacity: 0; transition: opacity 0.18s ease, display 0.18s allow-discrete, overlay 0.18s allow-discrete; }
+    .plate:popover-open, .plate:popover-open::backdrop { opacity: 1; }
+    @starting-style { .plate:popover-open, .plate:popover-open::backdrop { opacity: 0; } }
+  }
+
+  .older { margin-top: 1.9rem; }
+  .older summary { cursor: pointer; width: fit-content; margin-left: calc(var(--gutter) + var(--gap)); }
+  .older ol { margin-top: 1.1rem; }
+  .older .entry + .entry { margin-top: 1.25rem; }
+
+
+  @media (max-width: 40rem) {
+    .page { padding: 3.25rem 1.25rem 3.5rem; }
+    .axis, .older summary { margin-left: 0; }
+    .head {
+      grid-template-columns: minmax(0, 1fr) 5.25rem;
+      grid-template-rows: auto auto 1fr auto auto;
+      grid-template-areas: "name photo" "sub photo" ". photo" "bio bio" "contact contact";
+      column-gap: 1.25rem;
+    }
+    .portrait { margin-top: 0.2rem; }
+    h1 { font-size: 2rem; }
+    section { margin-top: 3rem; }
+    .entry { display: flow-root; }
+    .when { display: block; text-align: left; font-size: 0.9375rem; }
+    .thumb, .older .thumb { float: right; position: relative; z-index: 1; width: 5.75rem; margin: 0.3rem 0 0.5rem 1rem; }
+    .what { position: static; }
+    .logo { position: static; display: inline-block; width: 1.05em; height: 1.05em; margin-right: 0.4em; vertical-align: -0.17em; }
+  }
+
+  @media print {
+    @page { margin: 0.6in 0.7in; }
+    :root { --ink: #000; --gutter: 6rem; --gap: 2rem; }
+    .sep { color: transparent; }
+    body { font-size: 10.5pt; }
+    .page { padding: 0; max-width: none; }
+    section { margin-top: 1.6rem; break-inside: avoid-page; }
+    .entry { break-inside: avoid; }
+    .thumb, .older { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="head">
+    <picture><source type="image/avif" srcset="assets/headshot-128.avif 128w, assets/headshot-192.avif 192w, assets/headshot-256.avif 256w" sizes="(max-width: 40rem) 5.25rem, 8rem"><img class="portrait" src="assets/headshot-256.webp" srcset="assets/headshot-128.webp 128w, assets/headshot-192.webp 192w, assets/headshot-256.webp 256w" sizes="(max-width: 40rem) 5.25rem, 8rem" width="256" height="317" alt="Portrait of Cameron McGinley" fetchpriority="high"></picture>
+    <h1>Cameron McGinley</h1>
+    <p class="sub">Software Engineer, <span class="nw">Washington, D.C. Area</span></p>
+    <div class="bio">
+      <p>I'm a backend engineer who enjoys building large-scale, high-performance systems. I'm currently building satellite software at Northrop Grumman Space Systems. Before that I spent over two years at Capital One on Slingshot, a platform for Snowflake and Databricks cost optimization, working on fine-grained authorization, data ingestion, and analytics.</p>
+    </div>
+    <p class="contact"><a href="mailto:cameronmcginley2@gmail.com">cameronmcginley2@gmail.com</a><span class="sep">|</span><wbr><a href="https://github.com/cameronmcginley">GitHub</a><span class="sep">|</span><wbr><a href="https://www.linkedin.com/in/cameronmcginley/">LinkedIn</a><span class="sep">|</span><wbr><a class="nw" href="Cameron_McGinley_Resume.pdf">Resume (PDF)</a></p>
+  </header>
+
+  <canvas class="divider dsn" role="img" aria-label="When NASA's Deep Space Network antennas at Goldstone, Madrid and Canberra can see Voyager 1, from six hours ago to 42 hours ahead"></canvas>
+
+  <main>
+    <section class="history" aria-labelledby="experience-h">
+      <h2 class="axis" id="experience-h">Experience</h2>
+      <ol>
+        <li class="entry">
+          <div class="when"><span class="year">2026-present</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwBACdASooACgAPl0kjkWjoiEcZAA4BcS0gABG8youGJBhlrnCrfbu2im4AAD+/vXZ+/Tt+kB5WESgqapa+hYHKXOut6T1m+Su7lXe+1lrGQv0LWN98tG5kO7IHStTbaK2169qP5cqriihWrmQAAAA" alt="" width="20" height="20"><b>Northrop Grumman Space Systems</b></p>
+            <p>Principal Software Engineer</p>
+            <p class="detail">Building satellite software.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2024-2026</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAACQCACdASooACgAPm0sk0YkIqGhMdM6AIANiWQAlQNP27o4wF2Aby75KtGzbyBbAphHjl1ACvf8wjnm0KKpk8jC8w7H06Vejl0kZH+IAAD++F+Ftf1cj+WUR/+FaZF7N5PZXoxodQ3TJeErBzvP0jrnhkcle0Y360CJ8k/xh7b+dE8OPLlSVfIoGnea6F5jr55//41OL/xUV0vrCEMdbFZ9AunnqL0ocCrfVnoh+MJePJCAAiHH5S9aoHLh/JB/lGjeus/4EbL8r8baPvOMUj9Q8AG/nP/BhQx7YinIUjBmxnaVUJ7wPjq/JrH+zvQSAf4k35bTn7zq7GAc/q6t2N9Ag6PgcX2S5Sxf8bi5YZx/42kym3XKi43B1yjhBa/d7vrsi9vdRSP2GmHuQVWZfmP5/3+dLrODfLfSwMJN2fBtluwJZ2Bm596rK/7BdNrsKsr2lhY0VF4AAA==" alt="" width="20" height="20"><b>Capital One</b></p>
+            <ol class="titles" aria-label="Titles, most recent first">
+              <li>Senior Associate Software Engineer</li>
+              <li>Associate Software Engineer</li>
+            </ol>
+            <p class="detail">Building <a href="https://capitalonesoftware.com/slingshot">Slingshot</a>, a platform for Snowflake and Databricks cost optimization, query tuning, and AI workflows.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2023</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAACQCACdASooACgAPm0sk0YkIqGhMdM6AIANiWQAlQNP27o4wF2Aby75KtGzbyBbAphHjl1ACvf8wjnm0KKpk8jC8w7H06Vejl0kZH+IAAD++F+Ftf1cj+WUR/+FaZF7N5PZXoxodQ3TJeErBzvP0jrnhkcle0Y360CJ8k/xh7b+dE8OPLlSVfIoGnea6F5jr55//41OL/xUV0vrCEMdbFZ9AunnqL0ocCrfVnoh+MJePJCAAiHH5S9aoHLh/JB/lGjeus/4EbL8r8baPvOMUj9Q8AG/nP/BhQx7YinIUjBmxnaVUJ7wPjq/JrH+zvQSAf4k35bTn7zq7GAc/q6t2N9Ag6PgcX2S5Sxf8bi5YZx/42kym3XKi43B1yjhBa/d7vrsi9vdRSP2GmHuQVWZfmP5/3+dLrODfLfSwMJN2fBtluwJZ2Bm596rK/7BdNrsKsr2lhY0VF4AAA==" alt="" width="20" height="20"><b>Capital One</b></p>
+            <p>Software Engineer Intern</p>
+            <p class="detail">PySpark on Databricks and serverless data pipelines powering insights.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/webp;base64,UklGRloDAABXRUJQVlA4IE4DAACwDwCdASooACgAPm0qkkakIiGhLjv4AIANiWQAnTLCRhSIa64xldX1AbY+7ht5D/ztbG8G/Ed5Mjp8uXcV/R8IMqKhm5gNLLMo8d30P7Bf6zb66XjcIhC0sUCmbu6aOY9E5n8R0wtNk7AlXtbrRHGxym9ynGs6QK3ak1tbAcu/M471p8nUAAD+/uyoq+9YHxb2zJero0p5u+s+zAqY842b5C0f5JfnoyI2+toTd3r752s04RhKjdk7iLwXeuWTZemYY7Mv8mlOsQS7p+CCMZT3+XwZamc4jKHORdCQE/6+CqY9bAjsu0wCK1EHEMEXfzuFr8yRtBLs1Vtey++G7Q6x58OocObQGtvQSwp+1Nlpmw4QuQ7F0htEHf7izs/srJ1FEScN1piF3YCXetFapPbYg+Brbr1ohaSRd/hUivEugThBrhyuie/ANY7Aoffv91fP0dRzGHCcDGg1+Zdc/BiP9/uPTiF7FrjdLV4bFN8jDZjpcNQOBiZ5jf8LSwrXO1hLJsUskcfjRzIGMbg245POBLrkXLtggwgZ8lXA3wEIkjQ3UctVCuNgugwi2/IJvRWw+ZYeYn3ku3BzcEa7H5/V7IB/nQeYAwkuxnQWk4abk4rBkXX7r1Gf2S+r9Ors+Jh+vW/wskebjnqOD8bLY3nRe18HDEXT6Dp1/NZsAdbHtE0/St2tUKzn1JMxP1GZUJlvE8SZ94keO51P4o1dKBgqReFVcmOW0nVIKX4t329VY+015r8IykUERXz/y9OCGhCitbJGmp6dC3DvHyf0K9d/Dc87y7reAQLSKeTEqSKAs/vnjGihtdc6lY6liE2P7/spMqLnbms3kTSC4zQ99mwzYKtl/qT1/+XJ/qGdw1z992iG+n+Z1htTaDLu6ldCUmKfV1zwqddCQPpJay+dr6CxFIu0aLs1W8pn+gKxPtyIHw6dq6j81fSlKpSsY7C6m2Wc/b8v3zQNV+n570K6VSsZAQmkpodG5NU4hOblWNoXcNcKwll491nLW+s8Qzm61octr0DIi2s0/tkEIQ7rwQFKSX5RDlxAPi3UEmnUTxcnOt23m95nIBPgBhL1iLVxrEJJQpNhfVHA2moE+CdalX1t9QGLAAIzJOfVNoAAAAA=" alt="" width="20" height="20"><b>U.S. Government</b></p>
+            <p>Software Engineer Intern</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2019-2022</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0.03 627.29 522.74'%3E%3Cg transform='translate%28-331.93688,-482.78218%29'%3E%3Cpath fill='%230077C0' d='M331.937,482.813v522.741h243.95v-313.65h139.399v313.65h243.94V482.813H331.937z'/%3E%3C/g%3E%3C/svg%3E" alt="" width="20" height="20"><b>NetApp</b></p>
+            <p>Software Engineer in Test Intern</p>
+            <p class="detail">Automated firmware testing for enterprise data storage systems.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2021</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 298 160.41'%3E%3Cg transform='matrix%282.2533 0 0 2.2533 .12941 -.59454%29'%3E%3Cpath d='m0.3 71.1 11-25.9h14.2l7.9-18.5h-14.2l11-25.9h78.1c6.9 0 16.5 0.8 21.1 7.7s1.1 15-1 19.9c-5.6 13.1-13.7 21.8-34.9 21.8h-14.7l-8.8 20.9z'/%3E%3Cpath d='m125.4 11.2c-2.5-3.8-7.9-5.5-17-5.5h-75l-6.9 16.3h14.1l-11.9 28h-14.2l-6.9 16.3h59.2l6.9-16.3h-14.3l1.9-4.5h32.2c20.7 0 26.3-9 30.5-18.9 2.3-5.4 4.3-11 1.4-15.4zm-54.1 10.8h23.7c1.7 0 2.5 0.4 2.7 0.7 0.2 0.2 0.1 0.9-0.3 2-1.2 2.8-4.1 4.6-7.6 4.6h-21.6z' fill='%239d9795'/%3E%3Cpath d='m108.4 8.2h-73.3l-4.8 11.3h14.1l-14.1 33h-14.1l-4.8 11.3h53.8l4.8-11.3h-14.4l4.1-9.5h33.9c19.4 0 24.3-8.2 28.2-17.4s6-17.4-13.4-17.4zm-18.6 23.5h-25.3l5.2-12.2h25.3c4.5 0 6.3 2.3 4.7 6.1-1.7 3.8-5.4 6.1-9.9 6.1z' fill='%23cfb991'/%3E%3C/g%3E%3C/svg%3E" alt="" width="20" height="20"><b>Purdue University</b></p>
+            <p>Machine Learning Research Intern</p>
+            <p class="detail">Researched new machine learning approaches to detecting bugs in open-source Java code.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2020</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAwFBMVEX/6gD20QKmpgBoWx60lw7/3gC3mQ1VVQD/fwD/2QDYsgiDbxf/AAB/AACqqlXMmQD//3/kvgbctgYFCzAAAAAmJioXGiz//wA4NChQRyR2ZRuLdhe0lw//vwBnWh3HpgmchBNCPCb//wAeICv0yAH/2gDHpwrNqgj+1wCiiRL/9wC3mQ1mWSH/5gD/+wDxxgLwxgJcUSL/qgD81gC/vwD/5wDZtQfsxQTZtAeBbRjyyALWtQfkuwR/fwD+2QDjuwUmPZ15AAAAQHRSTlOb5wP12CK2AwJV6NgBAgMFAnua/AD9/Ab+/v388wT+0/T+K/2KdfWyi/lszv5tV8+t/wOvBFb7/s79eLbQAs6zpIZhmQAAAp1JREFUeNrdlFdyGzEMQFfFPT0Eu7m9d/Wu+98qoCQ7nthJ/JtghtQO9AgCIACHvFOcfxZks8df5U1w8k6Lt4Q1cRQ5mV1W4jjevATZBK+YTT6TeSKFkB6uXPRV3/didP8Mssf902ft0VEuqPAM9T1J5cPD6PrqArJbuwVNnUVdp6kcaDDLhIvlwjdtlkXZGWTofVB3Sa4qIXweAgf6YnHuJ4EFGWJTLREQRirPU1QmMjSJBJEoMElZru5s1IywTAt0Z3HI6iJgzFE0X4xCNTB0vVSgt+k2Yo7lWkmFTvK1VLqdRqVeeJxz0eMS4OPFPI+JM0ROUCM5r5QbXTVaoF9qub3eTtPrtEutbGNiLU4leszVsUBficspCP5dNa9e5jhO1lorvdi1pVsO1mhuusIwXdfdta47Xt3dDG9mCC4AwNwDULHkAGoEkJCsoqgFfylwc8nHk8VaAfQDD0AcSqDSAEin01rnAHznIp5erg5UGK6bHELZlJzmGm2pKWNMA1R1ykMRkdkJjE0IXiFDUI2kvCwQoLIjeB5k4+H3nDyewE4AT2N0piwqKr6R2pJVN386nwdf2AnEfIgo9UEcN4JWd8HcSazNAQc/jSvKXUI+nEBU984YY7FH1MGTRqNNyDmIaYsFsSs2thjQImoltznCVBtJKfUPGLrxMSiDkRmvJftTMPgfYE1QmqOeCsVN4WEONGqwaoGq+NRDDotyWTapUm4R4TuXwUoXGLEqxkrXET5ZTG4vzcUC/A0CdKRQ1MXGajEH96hm5LxdunB4Ll1Crj4FmopVfZR43/zGqoc/e9daZB/shnVJYkWhx6DkxirYWf1GXzNMt/H9Cv0a/nkA7Ambb77OGdn/bVJMfjtTnFfjaTZ79uv/mLhvyA+bMZ1mimZ6RQAAAABJRU5ErkJggg==" alt="" width="20" height="20"><b>Wichita State University</b></p>
+            <p>Machine Learning Research Intern</p>
+            <p class="detail">Built neural networks for phishing email classification and finetuned GPT-2 for a scam-baiting system.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="history" aria-labelledby="education-h">
+      <h2 class="axis" id="education-h">Education</h2>
+      <ol>
+        <li class="entry">
+          <div class="when"><span class="year">2023</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAwFBMVEVvXCbZnA7/0AF/fy3npQseMEmYdyF/Pz+FayWPe0R/f38AAH+qqlUaKTqqVVXUtmuliUOqqgDawoi/fwDVvoRCPyv/fwAAAADq16rjyoz9/PdLSTfz6M8sOEUPJ0zaum3n0ZpmWS9aUjX147f//QDRqkx1Yy4zODQ6QkPewHmuhBv88tkBHVB1YyzXs1uEayg8QD2jfR5ER0CEayiTeDDPoziqVQD/AAClhTS5ihjhxH3UmhGbhUvMnS0AAFXIkxMq7/ZFAAAAQHRSTlPrVx8EPv6dBNr/AgID/wP//wP/BP//AgD////+//7+///5/f8H//r+//+P//3W/7j9if/+//8DAf92/1T//wNp8gbRJAAAA7NJREFUeNptVYlW4zgQdLgGdmBn9tTROizJlu3cJ4RA4P//aqoFYZh9q7z4kMvdrVJ1uRKn8XCOw9nTajHDWKyeznB73nw8rk4X90I0r4vYW4r2Mq5tHxePTZn+Ffi7aEaht25K5AJtls65SwqvDR58Bj68iNEMwcg5Sx2RBc4GnGcj8fLwE9h8FaNAzmY7vevCdrvNsbuzmJja8Ci+Nidg8yLGPaMcbdo6pcMuJdVuKrJhY/uxeGnegV/EVU+c87nWWqu5V8rzxZbwtqMVAAV4LsZrR3Ea5slIDCMHr3DSE09Lmx1injPwXjwFin23SdoYraVRO9XKZPCSTjn2bhqfxB+ian5rAgihnJBNS6RVRteylnyr02Z5GWwAqLoVV2tyFJL2LWqrJYBGeeW9b+dGp0DW9iizEmdhCTYGbeaeUxttBo/DZCL5rFUXNxTOUOOqz8F9x4wfjPdlOarmg1QFuXe9tWPUOLPYEYmigJozMCkly1ADpnXqHNmqqS4i9d33hNrfw+FhbWTCr5SgJs9EFC+q1Tpk8mXBH0DFq+aIPK//JqS8qhY92ZgYhwCyJAVDfFGrA1OlEyK6RTVzkTKWIjl1DQz/uWRejNFz1JSXgUIVbKSbCd40WLUqo+aIyD8fjNnhyU2XC9C652TeaiwwDqlKoa2Xdav0c4fqOGL3jJJBDVIDxVkVF2pkm3StdAFyRKKt1kjOqy6llSLl/HjcYRMQ48blGKoZJB9AYuFRveOUTDVrEzTgmENws2phNz2lGotp27J1sqC9OhjppUKJiezSLkC4tR0TO0jOjN9Qv4mobVuI7Wj+7GLsV9UFgaU9aAVhBkQWvn3JirAa6r1BU9IFRHHpqKo1+EofgoB8h5q7wSDzP5QdRCEewbjba9m2ux1UoFqPKyWPbTvMoR+9pxDWK8HCRbd33/TQKmgcde78cPBHvivq6Ry6BsK9FWP2hcDJjSqq5R1MyMvUpDCFaYzFLTdXdjZO0VxqfnxjUpoDDqXs7KJ1mZsL7TqKDkGva42mMZ4DQiAtkyA3COfiCKBiAI/91MVY+Qmkge5mGg0r0VcU7BQG8NfJUsbom+i6/WFiysaxsCdq35FbLlHgu6UI+Np4DY/L1G1hUhOMVH/bQtgUlusxXOyz7bEJRBvu4BnbfYZQOm4VFz/bXjHSi2vrOgpsfhFWus6MW1//aqTFwpvXDGtm9sMlYkdYSYaL3//X7P89mb1zxHZDYfH6f2b/8fkYX11X1ezq/fPx8PH4B5xpumNOSaXtAAAAAElFTkSuQmCC" alt="" width="20" height="20"><b>University of California San Diego</b></p>
+            <p>M.S. Computer Science</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span></div>
+          <div>
+            <p class="what"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAwFBMVEX/6gD20QKmpgBoWx60lw7/3gC3mQ1VVQD/fwD/2QDYsgiDbxf/AAB/AACqqlXMmQD//3/kvgbctgYFCzAAAAAmJioXGiz//wA4NChQRyR2ZRuLdhe0lw//vwBnWh3HpgmchBNCPCb//wAeICv0yAH/2gDHpwrNqgj+1wCiiRL/9wC3mQ1mWSH/5gD/+wDxxgLwxgJcUSL/qgD81gC/vwD/5wDZtQfsxQTZtAeBbRjyyALWtQfkuwR/fwD+2QDjuwUmPZ15AAAAQHRSTlOb5wP12CK2AwJV6NgBAgMFAnua/AD9/Ab+/v388wT+0/T+K/2KdfWyi/lszv5tV8+t/wOvBFb7/s79eLbQAs6zpIZhmQAAAp1JREFUeNrdlFdyGzEMQFfFPT0Eu7m9d/Wu+98qoCQ7nthJ/JtghtQO9AgCIACHvFOcfxZks8df5U1w8k6Lt4Q1cRQ5mV1W4jjevATZBK+YTT6TeSKFkB6uXPRV3/didP8Mssf902ft0VEuqPAM9T1J5cPD6PrqArJbuwVNnUVdp6kcaDDLhIvlwjdtlkXZGWTofVB3Sa4qIXweAgf6YnHuJ4EFGWJTLREQRirPU1QmMjSJBJEoMElZru5s1IywTAt0Z3HI6iJgzFE0X4xCNTB0vVSgt+k2Yo7lWkmFTvK1VLqdRqVeeJxz0eMS4OPFPI+JM0ROUCM5r5QbXTVaoF9qub3eTtPrtEutbGNiLU4leszVsUBficspCP5dNa9e5jhO1lorvdi1pVsO1mhuusIwXdfdta47Xt3dDG9mCC4AwNwDULHkAGoEkJCsoqgFfylwc8nHk8VaAfQDD0AcSqDSAEin01rnAHznIp5erg5UGK6bHELZlJzmGm2pKWNMA1R1ykMRkdkJjE0IXiFDUI2kvCwQoLIjeB5k4+H3nDyewE4AT2N0piwqKr6R2pJVN386nwdf2AnEfIgo9UEcN4JWd8HcSazNAQc/jSvKXUI+nEBU984YY7FH1MGTRqNNyDmIaYsFsSs2thjQImoltznCVBtJKfUPGLrxMSiDkRmvJftTMPgfYE1QmqOeCsVN4WEONGqwaoGq+NRDDotyWTapUm4R4TuXwUoXGLEqxkrXET5ZTG4vzcUC/A0CdKRQ1MXGajEH96hm5LxdunB4Ll1Crj4FmopVfZR43/zGqoc/e9daZB/shnVJYkWhx6DkxirYWf1GXzNMt/H9Cv0a/nkA7Ambb77OGdn/bVJMfjtTnFfjaTZ79uv/mLhvyA+bMZ1mimZ6RQAAAABJRU5ErkJggg==" alt="" width="20" height="20"><b>Wichita State University</b></p>
+            <p>B.S. Computer Science, Minor in Mathematics</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="publications-h">
+      <h2 class="axis" id="publications-h">Publications</h2>
+      <ol>
+        <li class="entry">
+          <div class="when"><span class="year">2021</span><button class="thumb" type="button" popovertarget="plate-paper" aria-label="Enlarge image: Convolutional Neural Network Optimization for Phishing Email Classification, 2021"><picture><source type="image/avif" srcset="assets/thumb-layers-96.avif 96w, assets/thumb-layers-192.avif 192w" sizes="(max-width: 40rem) 3.65rem, 5.3rem"><img class="contain" src="assets/thumb-layers-192.webp" srcset="assets/thumb-layers-96.webp 96w, assets/thumb-layers-192.webp 192w" sizes="(max-width: 40rem) 3.65rem, 5.3rem" width="192" height="192" alt="" loading="lazy" decoding="async"></picture></button></div>
+          <div>
+            <p class="what"><a href="https://ieeexplore.ieee.org/abstract/document/9671531"><b>Convolutional Neural Network Optimization for Phishing Email Classification</b></a></p>
+            <p>Cameron McGinley and <a href="https://scholar.google.com/citations?user=2Gh-ZdAAAAAJ&amp;hl=en&amp;oi=sra">Sergio A. Salinas Monroy</a></p>
+            <p class="detail">2021 IEEE International Conference on Big Data<span class="sep">|</span><wbr><a href="https://ieeexplore.ieee.org/abstract/document/9671531">IEEE</a><span class="sep">|</span><wbr><a href="https://scholar.google.com/scholar?cluster=12860478389443421757&amp;hl=en&amp;as_sdt=2005&amp;sciodt=0,5">Google Scholar</a></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="projects" aria-labelledby="projects-h">
+      <h2 class="axis" id="projects-h">Projects</h2>
+      <ol>
+        <li class="entry">
+          <div class="when"><span class="year">2024</span><button class="thumb" type="button" popovertarget="plate-sitewatch" aria-label="Enlarge image: SiteWatch architecture, 2024"><picture><source type="image/avif" srcset="assets/thumb-sitewatch-128.avif 128w, assets/thumb-sitewatch-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 8rem"><img src="assets/thumb-sitewatch-256.webp" srcset="assets/thumb-sitewatch-128.webp 128w, assets/thumb-sitewatch-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 8rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture></button></div>
+          <div>
+            <p class="top"><b>SiteWatch</b><span class="brackets">[<a href="https://github.com/cameronmcginley/sitewatch" aria-label="SiteWatch code on GitHub">code</a>] [<a href="https://sitewatchapp.com/" aria-label="SiteWatch site">site</a>]</span></p>
+            <p class="desc">Automates website monitoring by allowing users to upload URLs and configure pre-made 'check' functions, intervals, and alerts. The system scrapes data on a schedule from these URLs, analyzes it, and sends emails when conditions are met.</p>
+            <p class="detail">TypeScript, Next.js, AWS Lambda, DynamoDB, Redis</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span><button class="thumb" type="button" popovertarget="plate-bf" aria-label="Enlarge image: Optimized Brainf**k Interpreter, 2022"><picture><source type="image/avif" srcset="assets/thumb-brainfk-128.avif 128w, assets/thumb-brainfk-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 8rem"><img src="assets/thumb-brainfk-256.webp" srcset="assets/thumb-brainfk-128.webp 128w, assets/thumb-brainfk-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 8rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture></button></div>
+          <div>
+            <p class="top"><b>Optimized Brainf**k Interpreter</b><span class="brackets">[<a href="https://github.com/cameronmcginley/optimized-brainfk-interpreter" aria-label="Optimized Brainf**k Interpreter code on GitHub">code</a>]</span></p>
+            <p class="desc">Compiles programs to a bytecode IR, applying instruction folding and pattern recognition optimizations that typically reduce instructions executed and runtime by over 99%.</p>
+            <p class="detail">C++</p>
+          </div>
+        </li>
+      </ol>
+
+      <details class="older">
+        <summary>Older projects</summary>
+        <ol>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span><button class="thumb" type="button" popovertarget="plate-points" aria-label="Enlarge image: Projectile Points Database, 2022"><picture><source type="image/avif" srcset="assets/thumb-projectile-points-128.avif 128w, assets/thumb-projectile-points-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 6rem"><img src="assets/thumb-projectile-points-256.webp" srcset="assets/thumb-projectile-points-128.webp 128w, assets/thumb-projectile-points-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 6rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture></button></div>
+          <div>
+            <p class="top"><b>Projectile Points Database</b><span class="brackets">[<a href="https://github.com/cameronmcginley/projectile-points-web-database" aria-label="Projectile Points Database code on GitHub">code</a>] [<a href="http://projectile-points-database.vercel.app/" aria-label="Projectile Points Database site">site</a>]</span></p>
+            <p class="desc">Web app serving as a dynamic database for archaeological projectile point data. Inspired by projectilepoints.net and designed with greater structure and maintainability.</p>
+            <p class="detail">TypeScript, Next.js, GraphQL, PostgreSQL</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span><button class="thumb" type="button" popovertarget="plate-course" aria-label="Enlarge image: Course Sign-In Dashboard, 2022"><picture><source type="image/avif" srcset="assets/thumb-course-signin-128.avif 128w, assets/thumb-course-signin-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 6rem"><img src="assets/thumb-course-signin-256.webp" srcset="assets/thumb-course-signin-128.webp 128w, assets/thumb-course-signin-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 6rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture></button></div>
+          <div>
+            <p class="top"><b>Course Sign-In Dashboard</b><span class="brackets">[<a href="https://github.com/cameronmcginley/CourseDashboard/" aria-label="Course Sign-In Dashboard code on GitHub">code</a>] [<a href="https://coursedashboard.web.app/" aria-label="Course Sign-In Dashboard site">site</a>]</span></p>
+            <p class="desc">Manage courses and attendees with QR code sign-ins, tracking, and data handling, supporting efficient administration with data export and querying.</p>
+            <p class="detail">JavaScript, React, Node.js, Firebase</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span><button class="thumb" type="button" popovertarget="plate-sorting" aria-label="Enlarge video: Sorting Visualizer, 2022"><picture><source type="image/avif" srcset="assets/thumb-sorting-vis-128.avif 128w, assets/thumb-sorting-vis-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 6rem"><img src="assets/thumb-sorting-vis-256.webp" srcset="assets/thumb-sorting-vis-128.webp 128w, assets/thumb-sorting-vis-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 6rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture><video src="assets/loop-sorting-vis.webm" loop muted playsinline preload="none" aria-hidden="true"></video></button></div>
+          <div>
+            <p class="top"><b>Sorting Visualizer</b><span class="brackets">[<a href="https://github.com/cameronmcginley/sorting-visualizer/" aria-label="Sorting Visualizer code on GitHub">code</a>] [<a href="https://cameronmcginley.com/sorting-visualizer/" aria-label="Sorting Visualizer site">site</a>]</span></p>
+            <p class="desc">Interactive visualizer for sorting algorithms including bubble, merge, radix, and bogo sort, with customizable delay, array size, and sound settings.</p>
+            <p class="detail">JavaScript, React</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2022</span><button class="thumb" type="button" popovertarget="plate-ml" aria-label="Enlarge image: ML Algorithm Tester, 2022"><picture><source type="image/avif" srcset="assets/thumb-ml-test-128.avif 128w, assets/thumb-ml-test-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 6rem"><img src="assets/thumb-ml-test-256.webp" srcset="assets/thumb-ml-test-128.webp 128w, assets/thumb-ml-test-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 6rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture></button></div>
+          <div>
+            <p class="top"><b>ML Algorithm Tester</b><span class="brackets">[<a href="https://github.com/cameronmcginley/ml-algorithm-testing" aria-label="ML Algorithm Tester code on GitHub">code</a>]</span></p>
+            <p class="desc">Tool for assessing and visualizing machine learning algorithm performance, featuring easy integration of new models and automatic hyperparameter optimization.</p>
+            <p class="detail">Python, scikit-learn</p>
+          </div>
+        </li>
+        <li class="entry">
+          <div class="when"><span class="year">2021</span><button class="thumb" type="button" popovertarget="plate-roblox" aria-label="Enlarge video: Roblox Object Placement System, 2021"><picture><source type="image/avif" srcset="assets/thumb-rblx-placement-128.avif 128w, assets/thumb-rblx-placement-256.avif 256w" sizes="(max-width: 40rem) 5.75rem, 6rem"><img src="assets/thumb-rblx-placement-256.webp" srcset="assets/thumb-rblx-placement-128.webp 128w, assets/thumb-rblx-placement-256.webp 256w" sizes="(max-width: 40rem) 5.75rem, 6rem" width="256" height="192" alt="" loading="lazy" decoding="async"></picture><video src="assets/loop-rblx-placement.webm" loop muted playsinline preload="none" aria-hidden="true"></video></button></div>
+          <div>
+            <p class="top"><b>Roblox Object Placement System</b><span class="brackets">[<a href="https://github.com/cameronmcginley/RBLX-PlacementSystem/" aria-label="Roblox Object Placement System code on GitHub">code</a>] [<a href="https://www.roblox.com/games/7619626087/Placement-System-Demo" aria-label="Roblox Object Placement System demo">demo</a>]</span></p>
+            <p class="desc">Object placement with raycasting, client-server communication, customizable object design, per-account saving, and Rojo Git integration.</p>
+            <p class="detail">Lua, Roblox Studio, Rojo</p>
+          </div>
+        </li>
+        </ol>
+      </details>
+    </section>
+  </main>
+</div>
+
+<!-- Enlarged images. Each thumbnail opens one of these with the HTML popover API; Esc or a click outside closes it. -->
+  <div class="plate" id="plate-paper" popover>
+    <figure>
+      <img src="assets/plate-layers.webp" loading="lazy" decoding="async" width="1967" height="1967" alt="Diagram of the CNN architecture: character-level embedding, convolution and pooling layers, fully connected layers, and a sigmoid output.">
+      <figcaption><span>Convolutional Neural Network Optimization for Phishing Email Classification, 2021.</span><button class="close" type="button" popovertarget="plate-paper" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-sitewatch" popover>
+    <figure>
+      <img src="assets/plate-sitewatch.webp" loading="lazy" decoding="async" width="1019" height="856" alt="SiteWatch architecture diagram: an EventBridge timer triggers a processor Lambda that invokes executor Lambdas, which fetch pages through a proxy, call AI APIs, and email users. Redis and DynamoDB store checks, and API Gateway and API Lambdas serve a Next.js frontend hosted on a DigitalOcean droplet.">
+      <figcaption><span>SiteWatch architecture, 2024.</span><button class="close" type="button" popovertarget="plate-sitewatch" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-bf" popover>
+    <figure>
+      <img src="assets/plate-brainfk.webp" loading="lazy" decoding="async" width="960" height="540" alt="A Brainf**k program in green monospace text on a dark background.">
+      <figcaption><span>Optimized Brainf**k Interpreter, 2022.</span><button class="close" type="button" popovertarget="plate-bf" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-points" popover>
+    <figure>
+      <img src="assets/plate-projectile-points.webp" loading="lazy" decoding="async" width="1163" height="938" alt="Screenshot of a projectile point record with its description, measurements, and background.">
+      <figcaption><span>Projectile Points Database, 2022.</span><button class="close" type="button" popovertarget="plate-points" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-course" popover>
+    <figure>
+      <img src="assets/plate-course-signin.webp" loading="lazy" decoding="async" width="748" height="667" alt="Screenshot of the sign-in data table with export, delete, and search controls.">
+      <figcaption><span>Course Sign-In Dashboard, 2022.</span><button class="close" type="button" popovertarget="plate-course" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-sorting" popover>
+    <figure>
+      <video src="assets/plate-sorting-vis.webm" width="600" height="364" loop muted playsinline controls preload="none" aria-label="Sorting visualizer demo"></video>
+      <figcaption><span>Sorting Visualizer, 2022.</span><button class="close" type="button" popovertarget="plate-sorting" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-ml" popover>
+    <figure>
+      <img src="assets/plate-ml-test.webp" loading="lazy" decoding="async" width="640" height="480" alt="Plot of classifier decision regions for three iris species after PCA dimensionality reduction.">
+      <figcaption><span>ML Algorithm Tester, 2022.</span><button class="close" type="button" popovertarget="plate-ml" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+  <div class="plate" id="plate-roblox" popover>
+    <figure>
+      <video src="assets/plate-rblx-placement.webm" width="600" height="462" loop muted playsinline controls preload="none" aria-label="Roblox object placement system demo"></video>
+      <figcaption><span>Roblox Object Placement System, 2021.</span><button class="close" type="button" popovertarget="plate-roblox" popovertargetaction="hide">Close</button></figcaption>
+    </figure>
+  </div>
+<script>
+// The divider. Each row is one Deep Space Network site, and a block marks the hours when
+// Voyager 1 (RA 17h 15.8m, Dec +12.37) is at least 10 degrees above that site's horizon.
+// It is worked out from the clock, so the blocks slide left as time passes and the dark tick stays on now.
+(() => {
+  const cv = document.querySelector('canvas.dsn');
+  if (!cv) return;
+  const ctx = cv.getContext('2d'), RAD = Math.PI / 180, HOUR = 3600000, DAY = 86400000, ra = 258.95, dec = 12.37;
+  const sites = [[35.426, -116.89, '#1f3a68'], [40.431, -4.248, '#cc5500'], [-35.401, 148.982, '#9ab7d8']];
+  const gmst = ms => ((280.46061837 + 360.98564736629 * (ms / DAY + 2440587.5 - 2451545)) % 360 + 360) % 360;
+  const visible = (ms, lat, lon) => Math.asin(Math.sin(lat * RAD) * Math.sin(dec * RAD) + Math.cos(lat * RAD) * Math.cos(dec * RAD) * Math.cos((gmst(ms) + lon - ra) * RAD)) / RAD > 10;
+  function draw() {
+    const w = cv.clientWidth, h = 26, dpr = Math.min(devicePixelRatio || 1, 2);
+    if (!w) return;
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const now = Date.now(), t0 = now - 6 * HOUR, span = 48 * HOUR;
+    ctx.fillStyle = 'rgba(26, 26, 26, 0.06)';
+    for (let d = Math.ceil(t0 / DAY) * DAY; d < t0 + span; d += DAY) ctx.fillRect(Math.round((d - t0) / span * w), 0, 1, h);
+    sites.forEach(([lat, lon, col], k) => {
+      const y = 3 + k * 7.5;
+      ctx.fillStyle = 'rgba(26, 26, 26, 0.14)'; ctx.fillRect(0, y + 2, w, 0.6);
+      ctx.fillStyle = col;
+      let run = -1;
+      for (let x = 0; x <= w; x++) {
+        const up = x < w && visible(t0 + span * x / w, lat, lon);
+        if (up && run < 0) run = x;
+        if (!up && run >= 0) { ctx.fillRect(run, y, x - run, 4.6); run = -1; }
+      }
+    });
+    ctx.fillStyle = 'rgba(26, 26, 26, 0.75)';
+    ctx.fillRect(Math.round((now - t0) / span * w) - 0.5, 1, 1, h - 2);
+  }
+  new ResizeObserver(draw).observe(cv); // also makes the first drawing, before the first paint
+  setInterval(draw, 60000);
+})();
+
+// Media out of sight waits. The looping thumbnails play only while Older projects is open and they are on
+// screen. An enlarged view starts loading when its thumbnail is pointed at or focused, and its demo plays while open.
+(() => {
+  const calm = matchMedia('(prefers-reduced-motion: reduce)');
+  const older = document.querySelector('.older');
+  const loops = [...document.querySelectorAll('.thumb video')], seen = new Set();
+  const run = () => loops.forEach(v => older.open && seen.has(v) && !calm.matches ? v.play().catch(() => {}) : v.pause());
+  if (older && loops.length) {
+    const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)); run(); });
+    loops.forEach(v => io.observe(v));
+    older.addEventListener('toggle', run);
+    calm.addEventListener('change', run);
+  }
+  const warm = b => {
+    const p = document.getElementById(b.getAttribute('popovertarget'));
+    p?.querySelectorAll('img').forEach(i => { i.loading = 'eager'; });
+    p?.querySelectorAll('video').forEach(v => { v.preload = 'auto'; });
+  };
+  document.querySelectorAll('button.thumb').forEach(b => ['pointerenter', 'focus'].forEach(t => b.addEventListener(t, () => warm(b), { once: true })));
+  document.querySelectorAll('.plate').forEach(p => p.addEventListener('toggle', e => p.querySelectorAll('video').forEach(v => {
+    if (e.newState !== 'open') v.pause();
+    else if (calm.matches) v.preload = 'auto';
+    else v.play().catch(() => {});
+  })));
+})();
+</script>
+</body>
+</html>
